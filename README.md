@@ -1,6 +1,6 @@
-# RWA Vaults Overview
+# VaultTerms (vaultterms.com)
 
-Curated registry + live data pipeline for an overview page of RWA vaults:
+Curated registry + live data pipeline behind vaultterms.com — an overview of RWA vaults:
 what backs each vault, who can invest, on what terms, and where.
 
 ## Status (Sep 1, 2026)
