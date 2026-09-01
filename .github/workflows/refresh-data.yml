@@ -1,0 +1,39 @@
+name: Refresh vault data
+
+on:
+  schedule:
+    - cron: "15 0 * * *"   # daily 00:15 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild tracked tier (DeFiLlama RWA categories)
+        run: python3 registry/fetch_tracked.py
+
+      - name: Enrich curated registry (DeFiLlama + AskSurf cross-check)
+        env:
+          ASKSURF_API_KEY: ${{ secrets.ASKSURF_API_KEY }}
+        run: python3 registry/enrich.py
+
+      - name: Commit and push if data changed
+        run: |
+          git config user.name "vaultterms-bot"
+          git config user.email "actions@github.com"
+          git add registry/tracked.json registry/vaults.enriched.json
+          if git diff --cached --quiet; then
+            echo "No data changes today."
+          else
+            git commit -m "Daily data refresh: DeFiLlama TVL/APY + tracked tier"
+            git push
+          fi

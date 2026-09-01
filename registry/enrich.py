@@ -4,6 +4,7 @@
 Usage: python3 enrich.py            # reads vaults.json, writes vaults.enriched.json
 """
 import json
+import os
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -31,9 +32,11 @@ def main():
 
     # optional second-opinion APY check via AskSurf (covers only DeFi-native majors)
     surf_apy = {}
+    key = os.environ.get("ASKSURF_API_KEY")
     surf_key_file = Path.home() / ".config" / "asksurf.env"
-    if surf_key_file.exists():
+    if not key and surf_key_file.exists():
         key = surf_key_file.read_text().strip().split("=", 1)[1]
+    if key:
         # superstate is deliberately absent: Surf's top superstate pool is USCC (crypto carry), not USTB
         SURF_PROJECTS = {"maple": "maple", "ethena-usde": "ethena", "ondo-yield-assets": "ondo"}
         for slug, proj in SURF_PROJECTS.items():
