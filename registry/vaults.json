@@ -1394,7 +1394,7 @@
     "terms": {
       "min_investment": "$100 USDC ($100 minimum also qualifies for the deposit bonus)",
       "kyc": "kyc_retail",
-      "jurisdiction": "Two routes in: humans deposit via the permissioned vault after one-time KYC with IXS (MAS-licensed, Singapore; per-country eligibility at onboarding, US unverified). AI agents deposit via the permissionless ERC-7540 Agent Rail \u2014 no KYC (agents can't pass one), any wallet, one API call.",
+      "jurisdiction": "Two routes in: humans deposit via the permissioned vault after one-time KYC with IXS (MAS-licensed, Singapore) \u2014 US persons admitted. AI agents deposit via the permissionless ERC-7540 Agent Rail \u2014 no KYC (agents can't pass one), any wallet, one API call.",
       "redemption": "Withdraw anytime, settlement next day; principal and accrued vault yield kept on early exit (only unvested bonus is forfeited). Same mechanics on both the permissioned and agent rails.",
       "lockup": "None on principal",
       "fees": "50 bps exit fee; no stated deposit or management fee to the investor"
@@ -1408,10 +1408,10 @@
         }
       ],
       "regions": {
-        "us": false,
+        "us": true,
         "eu": true,
         "row": true,
-        "note": "Human (KYC) route: eligibility set at IXS onboarding, US unverified. Agent Rail: permissionless at the contract level, standard sanctioned-jurisdiction ToS restrictions."
+        "note": "US persons admitted (confirmed by IXS, Sep 2026). Human route: one-time KYC at IXS onboarding. Agent Rail: permissionless at the contract level, standard sanctioned-jurisdiction ToS restrictions."
       },
       "min_usd": 100,
       "agent_addressable": true
