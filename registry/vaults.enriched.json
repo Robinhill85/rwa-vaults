@@ -1,0 +1,1612 @@
+[
+  {
+    "id": "blackrock-buidl",
+    "name": "BlackRock USD Institutional Digital Liquidity Fund (BUIDL)",
+    "issuer": "BlackRock (tokenized, distributed and transfer-agented by Securitize)",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A BVI-domiciled fund holding cash, short-term US Treasury bills and repurchase agreements, targeting a stable $1.00 NAV with daily accrued dividends paid in new tokens.",
+    "tokens": [
+      "BUIDL"
+    ],
+    "chains": [
+      "Ethereum",
+      "Aptos",
+      "Solana",
+      "Avalanche",
+      "BNB Chain",
+      "Optimism",
+      "Arbitrum",
+      "Polygon"
+    ],
+    "tvl_usd_approx": 3607000000,
+    "apy_pct_approx": 4.0,
+    "terms": {
+      "min_investment": "$5M minimum subscription (min redemption 250,000 USDC)",
+      "kyc": "qualified_purchaser",
+      "jurisdiction": "Offered under Reg D 506(c) / 3(c)(7) to US Qualified Purchasers and eligible institutions; onboarding via Securitize",
+      "redemption": "USD via Securitize T+0/T+1; 24/7 instant USDC exit via Circle's USDC smart-contract facility at $1",
+      "lockup": "None stated; shares transferable only between whitelisted Securitize-KYC'd wallets",
+      "fees": "Management fee ~0.20-0.50%/yr depending on share class/chain; no subscription or redemption fee"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {
+          "method": "Onboard as qualified purchaser via Securitize portal",
+          "url": "https://securitize.io/blackrock/BUIDL"
+        },
+        {
+          "method": "Indirect exposure via wrappers (e.g. Ondo OUSG holds BUIDL)",
+          "url": "https://ondo.finance/ousg"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 5000000
+    },
+    "defillama_slug": "blackrock-buidl",
+    "risk_notes": "Largest tokenized treasury fund; risks are primarily issuer/transfer-agent operational risk (Securitize whitelist), smart-contract risk on 8 chains, and reliance on Circle's USDC facility for instant liquidity. Underlying is government paper, so credit risk is minimal. APY drifts with front-end rates (~3.5-4% mid-2026).",
+    "sources": [
+      "https://eco.com/support/en/articles/15254013-buidl-deep-dive-2026",
+      "https://www.stablewatch.io/research/project-spotlight-buidl",
+      "https://app.rwa.xyz/assets/BUIDL",
+      "https://api.llama.fi/protocol/blackrock-buidl"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 3607276178.290448,
+      "apy_pct": 3.27266
+    }
+  },
+  {
+    "id": "circle-usyc",
+    "name": "USYC (US Yield Coin, formerly Hashnote)",
+    "issuer": "Circle (via Hashnote Management, acquired by Circle in January 2025)",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "Tokenized share of the Hashnote International Short Duration Yield Fund Ltd (Cayman), which invests primarily in overnight reverse repurchase agreements backed by US government securities plus short-dated T-bills; yield accrues via NAV price appreciation.",
+    "tokens": [
+      "USYC"
+    ],
+    "chains": [
+      "Ethereum",
+      "BNB Chain",
+      "Canton",
+      "Sui",
+      "Solana"
+    ],
+    "tvl_usd_approx": 2764000000,
+    "apy_pct_approx": 3.6,
+    "terms": {
+      "min_investment": "$100k reported minimum for direct subscription",
+      "kyc": "institutional_only",
+      "jurisdiction": "Non-US Persons (Reg S) \u2014 entities only, non-individual accredited investors; a feeder also serves US qualified purchasers",
+      "redemption": "Near-instant atomic T+0 conversion between USYC and USDC via Circle infrastructure, subject to fund cut-offs",
+      "lockup": "None",
+      "fees": "~0.04% subscription / 0.03% redemption; fees auto-waived on first $1M of combined daily volume (Ethereum/Solana); management fee embedded in NAV"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {
+          "method": "Institutional onboarding with Circle/Hashnote",
+          "url": "https://www.circle.com/usyc"
+        },
+        {
+          "method": "Held as yield-bearing trading collateral via Binance and other institutional venues",
+          "url": "https://developers.circle.com/tokenized/usyc/overview"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 100000
+    },
+    "defillama_slug": "circle-usyc",
+    "risk_notes": "Yield accrues via NAV appreciation (no fixed APY; tracks overnight repo minus fees, est. ~3.5-3.8% mid-2026). The bulk of supply (~$2.7B) now sits on BNB Chain as Binance institutional collateral, concentrating counterparty/venue risk; individuals cannot subscribe.",
+    "sources": [
+      "https://www.circle.com/usyc",
+      "https://developers.circle.com/tokenized/usyc/overview",
+      "https://eco.com/support/en/articles/15254018-usyc-deep-dive-2026-hashnote-and-circle-s-tokenized-money-market",
+      "https://api.llama.fi/protocol/circle-usyc"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 2762953582.1633124,
+      "apy_pct": 3.29008
+    }
+  },
+  {
+    "id": "ondo-usdy",
+    "name": "Ondo US Dollar Yield Token (USDY)",
+    "issuer": "Ondo Finance (Ondo USDY LLC)",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A tokenized, bankruptcy-remote note secured by short-term US Treasuries and bank demand deposits, overcollateralized ~3%, paying a variable Ondo-set APY that accrues into the token price.",
+    "tokens": [
+      "USDY",
+      "rUSDY"
+    ],
+    "chains": [
+      "Ethereum",
+      "Solana",
+      "Stellar",
+      "Sei",
+      "XRP Ledger",
+      "Mantle",
+      "Sui",
+      "Aptos",
+      "Arbitrum",
+      "Noble"
+    ],
+    "tvl_usd_approx": 2100000000,
+    "apy_pct_approx": 4.65,
+    "terms": {
+      "min_investment": "$100k for direct mint/redemption with Ondo; no minimum on secondary markets (DEXs/CEXs)",
+      "kyc": "kyc_retail",
+      "jurisdiction": "Non-US persons only (Reg S) \u2014 individuals and institutions outside the US and other restricted jurisdictions; ondo.finance geo-blocks US visitors",
+      "redemption": "Direct: submit USDY, USD wired T+1 to a non-US bank account (USDC paths also supported); or sell instantly on secondary markets",
+      "lockup": "Newly minted tokens are transfer-restricted for 40-50 days after purchase (Reg S seasoning); secondary-market tokens are freely transferable",
+      "fees": "No explicit user fee; Ondo earns the spread between portfolio yield and the ~25bps management take built into the set APY; DEX spreads typically 5-15bps"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "Direct mint via Ondo portal after KYC (non-US, $100k+)",
+          "url": "https://ondo.finance/usdy"
+        },
+        {
+          "method": "Buy on secondary markets: Curve (Ethereum), Orca (Solana), CEX listings \u2014 any size, no KYC with Ondo",
+          "url": "https://app.rwa.xyz/assets/USDY"
+        }
+      ],
+      "regions": {
+        "us": false,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 0
+    },
+    "defillama_slug": "ondo-yield-assets",
+    "risk_notes": "Bearer-style note rather than a fund share: holders rely on Ondo USDY LLC's collateral structure and the Ankura trust; the Ondo-set APY (4.65% as of April 2026) exceeds prevailing T-bill yields, implying duration/deposit spread. The 40-50 day mint seasoning makes fresh primary tokens illiquid. DeFiLlama lumps USDY with OUSG under 'ondo-yield-assets' (~$2.5B combined).",
+    "sources": [
+      "https://eco.com/support/en/articles/14798657-ondo-usdy-tokenized-treasuries-explained",
+      "https://docs.ondo.finance/general-access-products/usdy/faq/transfers",
+      "https://app.rwa.xyz/assets/USDY",
+      "https://api.llama.fi/protocol/ondo-yield-assets"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 2515623030.8162904,
+      "apy_pct": 3.55,
+      "apy_check_asksurf": 3.55
+    }
+  },
+  {
+    "id": "ondo-ousg",
+    "name": "Ondo Short-Term US Government Treasuries (OUSG)",
+    "issuer": "Ondo Finance (Ondo I LP)",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A tokenized fund investing in short-term US Treasuries largely via other tokenized/institutional funds \u2014 primarily BlackRock's BUIDL, plus Franklin Templeton, WisdomTree and similar money-market exposure, GSE securities, bank deposits and USDC for liquidity.",
+    "tokens": [
+      "OUSG",
+      "rOUSG"
+    ],
+    "chains": [
+      "Ethereum",
+      "Polygon",
+      "Solana"
+    ],
+    "tvl_usd_approx": 375000000,
+    "apy_pct_approx": 3.49,
+    "terms": {
+      "min_investment": "$5k for instant mint/redeem (subject to daily limits); $100k min investment / $50k min redemption for non-instant",
+      "kyc": "qualified_purchaser",
+      "jurisdiction": "US Qualified Purchasers and equivalent international institutions after Ondo Qualified Access onboarding",
+      "redemption": "Instant 24/7/365 USDC mint and redemption (settled via the BUIDL primary market), plus standard USD wire path",
+      "lockup": "None; tokens transferable only between Ondo-whitelisted addresses",
+      "fees": "0.15% management fee, waived until January 1, 2027; 0% mint/redeem fees"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {
+          "method": "Onboard as qualified purchaser via Ondo portal, then mint with USDC/USD",
+          "url": "https://ondo.finance/ousg"
+        },
+        {
+          "method": "Docs / eligibility details",
+          "url": "https://docs.ondo.finance/qualified-access-products/ousg/overview"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 5000
+    },
+    "defillama_slug": "ondo-yield-assets",
+    "risk_notes": "Effectively a QP-gated wrapper over BUIDL with better minimums ($5k instant vs $5M) and 24/7 USDC liquidity \u2014 inherits BUIDL/Securitize operational risk plus Ondo's own whitelist/contract risk. TVL ~$375M (rwa.xyz, Aug 2026); shares the 'ondo-yield-assets' DeFiLlama slug with USDY.",
+    "sources": [
+      "https://docs.ondo.finance/qualified-access-products/ousg/overview",
+      "https://eco.com/support/en/articles/15254014-ousg-deep-dive-2026-ondo-s-short-treasury-fund",
+      "https://app.rwa.xyz/assets/OUSG",
+      "https://api.llama.fi/protocol/ondo-yield-assets"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 2515623030.8162904,
+      "apy_pct": 3.55,
+      "apy_check_asksurf": 3.55
+    }
+  },
+  {
+    "id": "franklin-benji-fobxx",
+    "name": "Franklin OnChain US Government Money Fund (FOBXX / BENJI)",
+    "issuer": "Franklin Templeton",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A US SEC-registered 1940 Act government money market fund holding at least 99.5% US government securities, cash and fully collateralized repos; each BENJI token is one $1.00 fund share with daily yield accrual.",
+    "tokens": [
+      "BENJI"
+    ],
+    "chains": [
+      "Stellar",
+      "Ethereum",
+      "Solana",
+      "Base",
+      "Avalanche",
+      "Polygon",
+      "Arbitrum",
+      "Aptos",
+      "BNB Chain"
+    ],
+    "tvl_usd_approx": 1029000000,
+    "apy_pct_approx": 3.5,
+    "terms": {
+      "min_investment": "$20 via the Benji Investments app (retail; institutional channels higher)",
+      "kyc": "kyc_retail",
+      "jurisdiction": "US retail investors in eligible states (standard US mutual fund restrictions apply to non-US persons); institutions via Benji Institutional portal",
+      "redemption": "Subscriptions/redemptions in USD through the Benji app/portal at daily NAV; USDC on/off-ramp conversions supported; peer-to-peer BENJI transfers enabled",
+      "lockup": "None",
+      "fees": "Expense ratio contractually capped/waived to ~0.20% net; no mint/redeem fees"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "Benji Investments mobile app (retail, US) or Benji Institutional web portal",
+          "url": "https://digitalassets.franklintempleton.com/benji/"
+        },
+        {
+          "method": "FOBXX fund page (yields, prospectus)",
+          "url": "https://www.franklintempleton.com/investments/options/money-market-funds/products/29386/SINGLCLASS/franklin-on-chain-u-s-government-money-fund/FOBXX"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": false,
+        "row": false,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 20
+    },
+    "defillama_slug": null,
+    "risk_notes": "The most retail-friendly and most heavily regulated of the treasuries group (registered US money market fund, $20 minimum), but tokens live inside Franklin's permissioned Benji ecosystem \u2014 no DEX trading, wallet-whitelisted transfers. Not listed as a protocol on DeFiLlama (tracked on rwa.xyz); BENJI platform total ~$1.03B, 7-day yield 3.50% (Mar 2026).",
+    "sources": [
+      "https://digitalassets.franklintempleton.com/benji/",
+      "https://eco.com/support/en/articles/15254016-benji-deep-dive-2026-franklin-templeton-s-tokenized-money-market",
+      "https://www.theblock.co/news/defi/2026-08-12-sec-clears-franklin-templeton-funds-use-onchain-benji-system-cash-management-411654"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": null,
+      "apy_pct": null
+    }
+  },
+  {
+    "id": "superstate-ustb",
+    "name": "USTB \u2014 Invesco Short Duration US Government Securities Fund (formerly Superstate)",
+    "issuer": "Superstate (tokenization/transfer agent); Invesco Advisers became investment manager in Q2 2026",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A private fund holding short-duration US Treasury bills seeking current income with liquidity and principal stability; ownership represented by the USTB token or book-entry records.",
+    "tokens": [
+      "USTB"
+    ],
+    "chains": [
+      "Ethereum",
+      "Solana",
+      "Plume"
+    ],
+    "tvl_usd_approx": 643000000,
+    "apy_pct_approx": 3.53,
+    "terms": {
+      "min_investment": "No public minimum stated (institutional-scale in practice; 0.10% fee rebate above $25M)",
+      "kyc": "accredited",
+      "jurisdiction": "US Accredited Investors and Qualified Purchasers (US-focused offering, entity onboarding via Superstate)",
+      "redemption": "Each market day in USD or USDC; USDC redemptions immediate/same-day, USD same-day with 1pm ET cutoff",
+      "lockup": "None; allowlisted addresses only",
+      "fees": "Management fee up to 0.15%, with 0.10% rebate on balances over $25M"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {
+          "method": "Onboard with Superstate (KYC as accredited investor/QP), then subscribe in USD or USDC",
+          "url": "https://superstate.com/ustb"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": false,
+        "row": false,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 100000
+    },
+    "defillama_slug": "invesco-ustb",
+    "risk_notes": "DeFiLlama's 'Invesco USTB' entry IS Superstate's USTB \u2014 not a ticker collision: Invesco took over as investment manager (announced Mar 2026, completed Q2 2026) and the fund was renamed, keeping the same USTB ticker, contracts and token address, with Superstate as digital transfer agent. Fund AUM $829.7M (on-chain token TVL lower because some ownership is book-entry); 30-day yield 3.53%.",
+    "sources": [
+      "https://superstate.com/ustb",
+      "https://www.prnewswire.com/news-releases/invesco-and-superstate-advance-institutional-tokenization-through-ustb-partnership-302722437.html",
+      "https://www.ledgerinsights.com/invesco-to-take-over-superstates-ustb-tokenized-mmf-in-tradfi-rebrand/",
+      "https://api.llama.fi/protocol/invesco-ustb"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 642715636.4420688,
+      "apy_pct": 3.39087
+    }
+  },
+  {
+    "id": "spiko",
+    "name": "Spiko (EUTBL / USTBL money market funds)",
+    "issuer": "Spiko (Paris, France) \u2014 AMF-regulated fund manager; funds are French UCITS money market funds",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "Short-term French/EU and US government Treasury bills held in AMF-approved UCITS money market funds (EUTBL holds euro-denominated EU T-bills, USTBL holds US T-bills), with CACEIS as custodian.",
+    "tokens": [
+      "EUTBL",
+      "USTBL",
+      "UKTBL",
+      "CHTBL"
+    ],
+    "chains": [
+      "Ethereum",
+      "Polygon",
+      "Arbitrum",
+      "Base",
+      "Stellar",
+      "Starknet",
+      "Etherlink"
+    ],
+    "tvl_usd_approx": 2500000000,
+    "apy_pct_approx": 4.1,
+    "terms": {
+      "min_investment": "\u20ac/$1,000 on the first subscription only; subsequent orders and redemptions from \u20ac/$1",
+      "kyc": "kyc_retail",
+      "jurisdiction": "France-domiciled UCITS regulated by the AMF; open to EU/EEA retail individuals and businesses \u2014 the key differentiator: a genuinely retail-accessible EU-regulated tokenized MMF. Not offered to US persons.",
+      "redemption": "Daily subscriptions/redemptions at NAV; order cut-off 10:30 CET, executed on next known NAV (T+0/T+1 settlement); minimum redemption \u20ac1",
+      "lockup": "None",
+      "fees": "0.25%/yr management (EUTBL), 0.30%/yr (USTBL); 0% subscription and 0% redemption fees; yields quoted net of fees (~2.1-2.6% EUR, ~3.7-4.1% USD as of Aug 2026)"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "Spiko app \u2014 open an account in ~5 minutes (KYC), deposit EUR/USD via bank transfer or stablecoins",
+          "url": "https://app.spiko.io"
+        },
+        {
+          "method": "Spiko website / product pages",
+          "url": "https://www.spiko.io"
+        }
+      ],
+      "regions": {
+        "us": false,
+        "eu": true,
+        "row": false,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 1000
+    },
+    "defillama_slug": "spiko",
+    "risk_notes": "Regulated UCITS short-term VNAV money market fund, so credit risk is essentially sovereign T-bill risk plus fund/custodian operational risk; NAV is variable (not a hard $1 peg) and yields track ECB/Fed short rates. Token layer adds smart-contract and chain-bridge risk across 7 networks.",
+    "sources": [
+      "https://www.spiko.io/",
+      "https://www.spiko.io/spiko-euro",
+      "https://www.spiko.io/blog/spiko-launches-the-worlds-first-tokenized-money-market-funds",
+      "https://app.rwa.xyz/assets/USTBL",
+      "https://defillama.com/protocol/spiko"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 2504029529.412178,
+      "apy_pct": null
+    }
+  },
+  {
+    "id": "openeden-tbill",
+    "name": "OpenEden TBILL Vault",
+    "issuer": "OpenEden \u2014 TBILL tokens issued by Treasury Bills Institutional Liquidity Limited, a BVI FSC-regulated professional fund",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "Short-dated US Treasury bills (~99% of portfolio, maturities under 6 months) plus a small allocation to an AAAm-rated Treasury money market fund; rated AA+f/S1+ by S&P.",
+    "tokens": [
+      "TBILL"
+    ],
+    "chains": [
+      "BNB Chain",
+      "XRPL",
+      "Ethereum",
+      "Solana",
+      "Arbitrum"
+    ],
+    "tvl_usd_approx": 247000000,
+    "apy_pct_approx": 3.6,
+    "terms": {
+      "min_investment": "First deposit 100,000 USDC minimum; subsequent deposits from 1 USDC",
+      "kyc": "accredited",
+      "jurisdiction": "BVI professional fund; open to Accredited/Professional Investors globally (KYC/AML onboarding required); not a retail product",
+      "redemption": "On-chain redemption to USDC at NAV, minimum redemption 1 USDC; near-instant/24-7 via smart contract subject to liquidity",
+      "lockup": "None",
+      "fees": "0.30%/yr total expense ratio + 0.05% (5 bps) transaction fee on redemptions"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {
+          "method": "OpenEden app \u2014 onboard as accredited/professional investor, deposit USDC",
+          "url": "https://openeden.com/tbill"
+        },
+        {
+          "method": "Docs / onboarding requirements",
+          "url": "https://docs.openeden.com/tbill/faq"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 100000
+    },
+    "defillama_slug": "openeden-tbill",
+    "risk_notes": "Underlying is high-quality (S&P AA+f rated) but access is permissioned: TBILL is non-transferable to non-whitelisted wallets, so no secondary-market exit \u2014 you depend on OpenEden's redemption mechanism and the BVI fund structure. Most supply now sits on BNB Chain (~$202M of $247M).",
+    "sources": [
+      "https://docs.openeden.com/tbill/faq",
+      "https://openeden.com/tbill",
+      "https://app.rwa.xyz/assets/TBILL",
+      "https://www.spglobal.com/ratings/en/regulatory/article/-/view/sourceId/101644198",
+      "https://defillama.com/protocol/openeden-tbill"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 246783523.93478322,
+      "apy_pct": 3.18969
+    }
+  },
+  {
+    "id": "wisdomtree-wtgxx",
+    "name": "WisdomTree Government Money Market Digital Fund (WTGXX) / WisdomTree Connect",
+    "issuer": "WisdomTree Digital Trust / WisdomTree, Inc. (NYSE: WT), SEC-registered under the Investment Company Act of 1940",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A '40-Act US government money market fund holding short-term US government securities and repos, targeting a stable $1.00 NAV, with fund shares recorded as tokens on public blockchains.",
+    "tokens": [
+      "WTGXX"
+    ],
+    "chains": [
+      "Ethereum",
+      "Stellar",
+      "Avalanche",
+      "Arbitrum",
+      "Base",
+      "Optimism",
+      "Plume",
+      "Solana"
+    ],
+    "tvl_usd_approx": 1030000000,
+    "apy_pct_approx": 3.7,
+    "terms": {
+      "min_investment": "$1 (initial and subsequent purchases)",
+      "kyc": "kyc_retail",
+      "jurisdiction": "US only \u2014 SEC-registered fund offered to US persons via WisdomTree Prime (retail app, most US states) and WisdomTree Connect (institutional/business)",
+      "redemption": "Daily at $1.00 stable NAV; 24/7 trading and instant settlement being rolled out via WisdomTree Connect; standard MMF gates/fees can apply in stress",
+      "lockup": "None",
+      "fees": "0.25% expense ratio; no subscription/redemption fees in normal conditions"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "WisdomTree Prime mobile app (US retail)",
+          "url": "https://www.wisdomtreeprime.com/digital-funds/wtgxx/"
+        },
+        {
+          "method": "WisdomTree Connect (institutions/businesses, wallet-based access, 13 tokenized funds)",
+          "url": "https://www.wisdomtreeconnect.com/digital-funds/money-market/wtgxx"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": false,
+        "row": false,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 1
+    },
+    "defillama_slug": "wisdomtree",
+    "risk_notes": "Strongest regulatory wrapper of the group (SEC-registered '40-Act MMF from a public asset manager), but geographically inverted vs Spiko: US-persons only, so inaccessible to EU retail. Stable-NAV MMF risk applies \u2014 $1.00 is targeted, not guaranteed, and redemption fees/gates can be imposed. DeFiLlama TVL (~$1.03B) covers WisdomTree's tokenized fund suite.",
+    "sources": [
+      "https://www.wisdomtreeconnect.com/digital-funds/money-market/wtgxx",
+      "https://www.wisdomtreeprime.com/digital-funds/wtgxx/",
+      "https://ir.wisdomtree.com/news-events/press-releases/detail/725/wisdomtree-connect-now-offers-13-tokenized-funds-across",
+      "https://defillama.com/protocol/wisdomtree"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 1030450726.3518857,
+      "apy_pct": null
+    }
+  },
+  {
+    "id": "midas-mtbill",
+    "name": "Midas mTBILL",
+    "issuer": "Midas (regulated German/European tokenization platform; tokens issued as ISIN-bearing tracker certificates under European law)",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A tokenized certificate tracking short-term US Treasury exposure, primarily via BlackRock's iShares $ Treasury Bond 0-1yr UCITS ETF held with regulated custodians; sister token mBASIS instead tracks a crypto basis-trade strategy (not treasuries).",
+    "tokens": [
+      "mTBILL"
+    ],
+    "chains": [
+      "Ethereum",
+      "Base"
+    ],
+    "tvl_usd_approx": 71000000,
+    "apy_pct_approx": 3.2,
+    "terms": {
+      "min_investment": "No stated minimum currently (rwa.xyz lists 0 USDC); earlier instant-mint tiers had higher thresholds",
+      "kyc": "kyc_retail",
+      "jurisdiction": "Non-US (and non-UK) persons only; KYC/AML 'greenlisting' required to mint/redeem; EU-friendly but not a UCITS fund \u2014 it's a debt certificate on Midas",
+      "redemption": "Instant on-chain mint/redeem vs USDC at NAV via Midas smart contracts (subject to liquidity buffer); primary redemption otherwise processed against the underlying ETF",
+      "lockup": "None",
+      "fees": "0% management/issuance fees; rwa.xyz lists 0% redemption, historical docs cite ~15 bps redemption fee on primary redemption; ETF TER borne inside NAV"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "Midas app \u2014 connect wallet, complete KYC greenlisting, mint mTBILL with USDC (geo-blocked for US/UK)",
+          "url": "https://midas.app/mtbill"
+        },
+        {
+          "method": "Secondary DeFi markets (mTBILL is a permissionless-transfer ERC-20 once issued)",
+          "url": "https://midas.app/"
+        }
+      ],
+      "regions": {
+        "us": false,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 0
+    },
+    "defillama_slug": "midas-rwa",
+    "risk_notes": "You hold a certificate (debt claim) on Midas that tracks a BlackRock T-bill ETF \u2014 issuer/structure risk sits above the sovereign risk, unlike direct fund shares. mTBILL itself is ~$71M; the larger DeFiLlama figure is all Midas products including mBASIS and vault strategies with very different risk profiles.",
+    "sources": [
+      "https://midas.app/mtbill",
+      "https://app.rwa.xyz/assets/mTBILL",
+      "https://forum.arbitrum.foundation/t/midas-step-application/23635",
+      "https://defillama.com/protocol/midas-rwa"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 147059766.85000008,
+      "apy_pct": 3.28
+    }
+  },
+  {
+    "id": "opentrade",
+    "name": "OpenTrade Yield Vaults",
+    "issuer": "OpenTrade (UK; works with an FCA-regulated asset manager; investment-committee-reviewed vaults)",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "Stablecoin (USDC/EURC) vaults whose deposits are deployed into US Treasury bills, money market funds and other institutional fixed-income/RWA strategies via regulated asset managers, paying yield back on-chain.",
+    "tokens": [],
+    "chains": [
+      "Avalanche",
+      "Plume",
+      "Ethereum"
+    ],
+    "tvl_usd_approx": 258000000,
+    "apy_pct_approx": 4.0,
+    "terms": {
+      "min_investment": "Varies by vault/partner \u2014 e.g. from 1 USDC on partner integrations (IXS), ~$100 on InvestaX Earn; direct OpenTrade relationships are negotiated B2B",
+      "kyc": "institutional_only",
+      "jurisdiction": "B2B: onboards exchanges, neobanks, fintechs, wallets and institutional investors (non-US focus); retail reaches it only indirectly through partner apps (e.g. Criptan, Littio, IXS, El Dorado) which run their own KYC",
+      "redemption": "Daily/flexible entry-exit with no lockups on core USDC treasury vaults; settlement typically T+0/T+1 through partner rails",
+      "lockup": "None on flexible-term vaults; fixed-term products exist",
+      "fees": "Not publicly standardized \u2014 spread/management fees are embedded per-vault and per-partner agreement"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {
+          "method": "Direct B2B onboarding for institutions/fintechs",
+          "url": "https://www.opentrade.io/"
+        },
+        {
+          "method": "Indirectly as retail via partner apps that embed OpenTrade yield (own KYC per app)",
+          "url": "https://docs.opentrade.io/"
+        }
+      ],
+      "regions": {
+        "us": false,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 100000
+    },
+    "defillama_slug": "opentrade",
+    "risk_notes": "Infrastructure/B2B layer rather than a fund you buy directly \u2014 end users carry both OpenTrade's structure risk and their partner platform's counterparty risk, and fee/yield terms are opaque compared with Spiko/WisdomTree. Underlying treasury vaults are conservative; newer vaults (private credit, staking-powered yield) are not treasury risk.",
+    "sources": [
+      "https://www.opentrade.io/",
+      "https://docs.opentrade.io/",
+      "https://build.avax.network/integrations/opentrade",
+      "https://www.ixs.finance/news/ixs-offer-institutional-on-chain-yield-through-mmfs-and-blackrock-backed-bond-etf",
+      "https://defillama.com/protocol/opentrade"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 258544499.9093516,
+      "apy_pct": null
+    }
+  },
+  {
+    "id": "hastra",
+    "name": "Hastra (wYLDS / PRIME)",
+    "issuer": "Hastra \u2014 a DeFi liquidity protocol incubated by Figure Technology (NYSE-listed) and the Provenance Blockchain Foundation; Hastra itself is not a registered fund issuer",
+    "asset_class": "private_credit",
+    "underlying": "NOT treasuries: wYLDS is a wrapper backed 1:1 by YLDS, Figure's SEC-registered yield-bearing stablecoin (a face-amount certificate), and PRIME/AUTO stake wYLDS into yield from Figure's Democratized Prime HELOC and auto-loan lending pools \u2014 consumer-credit yield, not T-bills.",
+    "tokens": [
+      "wYLDS",
+      "PRIME",
+      "AUTO"
+    ],
+    "chains": [
+      "Ethereum",
+      "Solana"
+    ],
+    "tvl_usd_approx": 597000000,
+    "apy_pct_approx": 3.3,
+    "terms": {
+      "min_investment": "None \u2014 permissionless wallet interaction",
+      "kyc": "none",
+      "jurisdiction": "Permissionless DeFi protocol (US-linked via Figure/YLDS's SEC registration, but Hastra tokens themselves are unregistered; standard sanctioned-jurisdiction restrictions in ToS)",
+      "redemption": "On-chain: swap/claim wYLDS back toward YLDS via redemption vaults; unstake PRIME/AUTO to wYLDS. Distributions are variable and not guaranteed",
+      "lockup": "None stated for wYLDS; staking tokens redeem back to wYLDS",
+      "fees": "No on-chain protocol fee; Figure monetizes via off-chain lending spreads. wYLDS ~3.3% APY, PRIME ~5.7% APY (variable)"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "hastra.io app \u2014 connect a Solana or Ethereum wallet, acquire wYLDS, optionally stake for PRIME/AUTO",
+          "url": "https://hastra.io/"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 0
+    },
+    "defillama_slug": "hastra",
+    "risk_notes": "Legitimate provenance (incubated by publicly-traded Figure, Dec-2025 RWA Consortium with Solana/Chainlink partners) but NOT a tokenized-treasury vault: yield comes from HELOC/auto-loan credit spreads wrapped in an unregistered DeFi token. Very new, with only ~400-500 active wallets against ~$597M TVL \u2014 implying heavy concentration in a few large holders; Figure formally disclaims issuing or endorsing wYLDS/PRIME. Treat as RWA private-credit DeFi exposure, not a T-bill cash substitute.",
+    "sources": [
+      "https://hastra.io/",
+      "https://hastra.io/terms",
+      "https://defillama.com/protocol/hastra",
+      "https://investors.figure.com/news-releases/news-release-details/figure-and-leading-crypto-partners-launch-rwa-consortium-onchain"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 596530453.5015527,
+      "apy_pct": 5.73554
+    }
+  },
+  {
+    "id": "maple-syrup",
+    "name": "Maple syrupUSDC / syrupUSDT",
+    "issuer": "Maple Finance (Maple International Operations SPC, segregated portfolios)",
+    "asset_class": "private_credit",
+    "underlying": "Fixed-rate, overcollateralized loans to institutional crypto borrowers (trading firms, market makers) secured by digital-asset collateral (BTC, ETH, SOL etc.) held by custodians \u2014 a permissionless wrapper on Maple's institutional lending book, risk-segregated from Maple's KYC-gated institutional pools.",
+    "tokens": [
+      "syrupUSDC",
+      "syrupUSDT"
+    ],
+    "chains": [
+      "Ethereum",
+      "Base",
+      "Arbitrum",
+      "Solana"
+    ],
+    "tvl_usd_approx": 1100000000,
+    "apy_pct_approx": 5.5,
+    "terms": {
+      "min_investment": "None (no minimum or maximum deposit)",
+      "kyc": "none",
+      "jurisdiction": "Cayman SPC issuer; US persons and sanctioned jurisdictions excluded from the official interface via geofencing (token itself is permissionless ERC-20)",
+      "redemption": "Open-ended; normally instant via pool liquidity, up to ~24h in rare cases, contractual max 30 days; also sellable on DEXs (Uniswap, Curve etc.)",
+      "lockup": "None",
+      "fees": "No deposit/withdrawal fees to lenders; Maple takes protocol/performance fees out of gross loan interest (net APY displayed)"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "Deposit USDC/USDT at Maple app (permissionless, wallet only)",
+          "url": "https://app.maple.finance/earn"
+        },
+        {
+          "method": "Buy syrupUSDC on DEX aggregators",
+          "url": "https://app.uniswap.org"
+        }
+      ],
+      "regions": {
+        "us": false,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 0
+    },
+    "defillama_slug": "maple",
+    "risk_notes": "Credit risk of institutional crypto borrowers, mitigated by overcollateralization with volatile digital assets and active margin calls \u2014 losses possible in fast crashes or custodial failure. Liquidity can gate to a 30-day max in stress; not available to US persons via the official interface. Distinct from Maple's KYC institutional products (min $100k+, full KYC); protocol-wide TVL ~$3.0B, syrupUSDC alone ~$0.97B.",
+    "sources": [
+      "https://docs.maple.finance/syrupusdc-usdt-usdg-for-lenders/faq",
+      "https://docs.maple.finance/legal/interface-terms-of-use-syrupusdc-and-syrupusdt",
+      "https://www.stablewatch.io/analytics/assets/syrupUSDC-Maple",
+      "https://app.rwa.xyz/assets/syrupUSDC",
+      "https://defillama.com/protocol/maple"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 2994676390.1972156,
+      "apy_pct": 5.04328,
+      "apy_check_asksurf": 5.04
+    }
+  },
+  {
+    "id": "centrifuge-jtrsy",
+    "name": "Centrifuge / Janus Henderson Anemoy Treasury Fund (JTRSY) + deRWA",
+    "issuer": "Anemoy Limited (BVI), sub-managed by Janus Henderson; tokenized on Centrifuge",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A BVI-licensed professional fund holding short-term US Treasury bills \u2014 the US government is the borrower; NOT private credit. Centrifuge's flagship pool alongside JAAA (Janus Henderson AAA CLO fund, which is securitized corporate credit).",
+    "tokens": [
+      "JTRSY",
+      "deJTRSY"
+    ],
+    "chains": [
+      "Ethereum",
+      "Arbitrum",
+      "Base",
+      "Avalanche",
+      "BNB Chain",
+      "Celo",
+      "Plume",
+      "Solana"
+    ],
+    "tvl_usd_approx": 881000000,
+    "apy_pct_approx": 3.4,
+    "terms": {
+      "min_investment": "500,000 USDC primary subscription; no minimum on secondary/deRWA",
+      "kyc": "accredited",
+      "jurisdiction": "British Virgin Islands fund; non-US professional/accredited investors only for primary subscriptions",
+      "redemption": "Open-ended; onchain subscription/redemption 24/7/365, executed against NAV on the next US banking day; deRWA (deJTRSY) tokens are freely transferable and tradable on DEXs for instant exit",
+      "lockup": "None",
+      "fees": "0.25% management fee; 0% subscription and redemption fees"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {
+          "method": "KYC + subscribe on Centrifuge app (non-US professional investors)",
+          "url": "https://app.centrifuge.io"
+        },
+        {
+          "method": "Buy deJTRSY on supported DEXs (transfer-compliant wrapper)",
+          "url": "https://centrifuge.io"
+        }
+      ],
+      "regions": {
+        "us": false,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 500000
+    },
+    "defillama_slug": "anemoy-capital",
+    "risk_notes": "Effectively US sovereign duration risk (very short T-bills) plus smart-contract, NAV-oracle, and BVI fund-structure risk \u2014 minimal credit risk character. Primary access gated to non-US professional investors; retail can only touch it via deRWA secondary liquidity. Centrifuge platform TVL ~$1.64B across all pools; JTRSY alone ~$881M.",
+    "sources": [
+      "https://app.rwa.xyz/assets/JTRSY",
+      "https://www.janushenderson.com/corporate/press-releases/janus-henderson-to-partner-with-anemoy-and-centrifuge-on-its-first-tokenized-fund/",
+      "https://app.centrifuge.io/?assetId=80",
+      "https://defillama.com/protocol/centrifuge"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 870841981.5641487,
+      "apy_pct": null
+    }
+  },
+  {
+    "id": "goldfinch-prime",
+    "name": "Goldfinch Prime (WINDING DOWN)",
+    "issuer": "Goldfinch protocol / Warbler Labs",
+    "asset_class": "private_credit",
+    "underlying": "One onchain pool giving exposure to senior secured loans from large institutional private-credit funds (Ares, Apollo, Golub and others) lending to mid-market corporate borrowers.",
+    "tokens": [],
+    "chains": [
+      "Ethereum"
+    ],
+    "tvl_usd_approx": 1600000,
+    "apy_pct_approx": null,
+    "terms": {
+      "min_investment": "n/a \u2014 closed to new deposits",
+      "kyc": "kyc_retail",
+      "jurisdiction": "Was non-US persons only (US accredited retail was served via Heron Finance, $10k min)",
+      "redemption": "All existing Prime investors are being fully redeemed in the wind-down",
+      "lockup": "n/a",
+      "fees": "Targeted 9-12% net of all fees when live"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [],
+      "regions": {
+        "us": false,
+        "eu": false,
+        "row": false,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 0
+    },
+    "defillama_slug": "goldfinch",
+    "risk_notes": "NOT INVESTABLE: GIP-87 (June 2026) wound down Goldfinch Prime and put the protocol in maintenance mode after legacy borrower-pool defaults (~$50M+). Kept in registry as a cautionary data point; exclude from the investable overview or show as historical.",
+    "sources": [
+      "https://gov.goldfinch.finance/t/gip-87-maintenance-mode-of-goldfinch-operations-and-wind-down-goldfinch-prime/2202",
+      "https://thedefiant.io/news/defi/goldfinch-finance-winds-down-depositors-report-50m-defaults",
+      "https://goldfinch.finance/",
+      "https://defillama.com/protocol/goldfinch"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 1608064.7005953758,
+      "apy_pct": null
+    }
+  },
+  {
+    "id": "securitize-acred",
+    "name": "Apollo Diversified Credit Securitize Fund (ACRED)",
+    "issuer": "Securitize Tokenized Apollo Diversified Credit Fund (BVI feeder); managed by Securitize Capital, sub-advised by Apollo Global Management",
+    "asset_class": "private_credit",
+    "underlying": "Tokenized BVI feeder investing substantially all assets in the Apollo Diversified Credit Fund, a multi-strategy credit interval fund (corporate direct lending, asset-backed lending, performing credit, dislocated and structured credit).",
+    "tokens": [
+      "ACRED"
+    ],
+    "chains": [
+      "Ethereum",
+      "Solana",
+      "Aptos",
+      "Sei",
+      "Ink",
+      "Avalanche",
+      "Polygon"
+    ],
+    "tvl_usd_approx": 95600000,
+    "apy_pct_approx": 8.5,
+    "terms": {
+      "min_investment": "$50,000",
+      "kyc": "accredited",
+      "jurisdiction": "BVI feeder under US Reg D exemption; offered via Securitize Markets (SEC-registered broker-dealer) to verified accredited investors",
+      "redemption": "Quarterly liquidity via the underlying interval fund's repurchase offers (typically 5-25% of shares per quarter, not guaranteed); no open-ended daily redemption",
+      "lockup": "No hard lockup, but practically illiquid between quarterly windows; sACRED vault (Polygon-Morpho) enables DeFi leverage, not exit",
+      "fees": "0.50% tokenized-feeder management fee, 0% sub/redemption fees, plus the underlying Apollo fund's own fees and expenses"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {
+          "method": "KYC + accreditation verification and subscription via Securitize Markets",
+          "url": "https://securitize.io/apollo"
+        },
+        {
+          "method": "Fund/asset page",
+          "url": "https://securitize.io/invest/acred"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 50000
+    },
+    "defillama_slug": "apollo-diversified-credit-securitize-fund",
+    "risk_notes": "Real diversified private-credit risk: sub-investment-grade corporate and asset-backed exposure with NAV drawdown possible; liquidity limited to quarterly interval-fund repurchases that can be prorated in stress. On-chain AUM ~$95.6M as of Aug 31 2026 (the old ~$29M figure is stale); NAV-per-token ~$1,112, income accretes into NAV. 30D APY ~8.5% but variable.",
+    "sources": [
+      "https://app.rwa.xyz/assets/ACRED",
+      "https://securitize.io/learn/press/apollo-and-securitize-announce-partnership-and-launch-tokenized-access-to-credit-fund",
+      "https://www.apollo.com/wealth/strategies/products/apollo-diversified-credit-fund",
+      "https://defillama.com/protocol/apollo-diversified-credit-securitize-fund"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 95493611.82401611,
+      "apy_pct": 8.6586
+    }
+  },
+  {
+    "id": "figure-democratized-prime",
+    "name": "Figure Markets Democratized Prime",
+    "issuer": "Figure Markets (Figure Technology Solutions)",
+    "asset_class": "private_credit",
+    "underlying": "A rate-matched onchain lending marketplace on Provenance where depositors lend USD/stablecoins/crypto to pools 100% collateralized by real loans originated by Figure and partners \u2014 HELOCs (home equity), auto loans, small-business loans \u2014 plus crypto-backed loans.",
+    "tokens": [],
+    "chains": [
+      "Provenance"
+    ],
+    "tvl_usd_approx": 237000000,
+    "apy_pct_approx": 8,
+    "terms": {
+      "min_investment": "No stated minimum (deposit any amount from a Figure Markets account)",
+      "kyc": "kyc_retail",
+      "jurisdiction": "US-based platform (Figure Markets exchange account with standard KYC); availability subject to state/country restrictions \u2014 verify per-pool eligibility at signup",
+      "redemption": "Open-ended, no epochs: interest accrues hourly, add/withdraw anytime, marketed withdrawal within ~1 hour (subject to pool liquidity)",
+      "lockup": "None",
+      "fees": "No explicit lender fee disclosed; Figure earns via origination/borrow-lend spread; rates float with pool supply/demand (advertised 8.5-12% 'up to', varies by pool)"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "Create Figure Markets account (KYC), go to Earn > Democratized Prime, pick a pool and deposit",
+          "url": "https://www.figuremarkets.com/markets/democratized-prime/earn/"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": false,
+        "row": false,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 0
+    },
+    "defillama_slug": "figure-markets-democratized-prime",
+    "risk_notes": "Consumer/SMB credit risk (HELOC, auto, SMB collateral) plus crypto-collateral volatility on crypto-backed pools; loans stated 100% collateralized on-chain but yields are variable and withdrawal speed depends on pool liquidity. Centralized-platform counterparty risk (not FDIC/SIPC insured). One of the few US-retail-accessible private-credit options.",
+    "sources": [
+      "https://www.figuremarkets.com/markets/democratized-prime/earn/",
+      "https://www.businesswire.com/news/home/20250603454772/en/Figure-Markets-Opens-%2415M-HELOC-Facility-as-First-Real-World-Asset-Financing-on-a-DeFi-Marketplace",
+      "https://defillama.com/protocol/figure-markets-democratized-prime"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 237399915.71725562,
+      "apy_pct": null
+    }
+  },
+  {
+    "id": "aave-horizon",
+    "name": "Aave Horizon RWA Market",
+    "issuer": "Aave Labs (Horizon), on the Aave v3 codebase",
+    "asset_class": "private_credit",
+    "underlying": "An Ethereum lending market where allowlisted institutions post permissioned tokenized RWAs (Superstate USTB/USCC, Centrifuge JTRSY/JAAA, Circle USYC etc. \u2014 mostly tokenized treasuries and AAA CLOs) as collateral to borrow stablecoins; suppliers lend USDC/RLUSD/GHO against that overcollateralized book.",
+    "tokens": [],
+    "chains": [
+      "Ethereum"
+    ],
+    "tvl_usd_approx": 255000000,
+    "apy_pct_approx": null,
+    "terms": {
+      "min_investment": "None for stablecoin suppliers",
+      "kyc": "none",
+      "jurisdiction": "Stablecoin supply side: permissionless/global (standard Aave interface geo-policies apply); RWA collateral side: only users qualified and allowlisted by each RWA issuer (institutional_only)",
+      "redemption": "Open-ended Aave-style: withdraw supplied stablecoins anytime subject to pool utilization (funds locked only when fully borrowed)",
+      "lockup": "None",
+      "fees": "Standard Aave mechanics \u2014 suppliers earn borrow interest minus reserve factor; no deposit/withdrawal fees. Supply APY is variable/utilization-driven"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "Supply USDC/RLUSD/GHO permissionlessly via the Horizon market in the Aave app",
+          "url": "https://app.aave.com"
+        },
+        {
+          "method": "Docs (market address 0xAe05Cd22df81871bc7cC2a04BeCfb516bFe332C8, Ethereum)",
+          "url": "https://aave.com/docs/aave-v3/horizon"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 0
+    },
+    "defillama_slug": "aave-horizon-rwa",
+    "risk_notes": "For stablecoin suppliers the credit character is indirect and comparatively strong: loans overcollateralized by tokenized treasuries/AAA CLOs from institutional borrowers, with liquidation machinery \u2014 key risks are RWA liquidation/settlement latency, oracle/NAV risk, and smart-contract risk rather than direct borrower default. Utilization risk can delay withdrawals.",
+    "sources": [
+      "https://aave.com/docs/aave-v3/horizon",
+      "https://aave.com/blog/horizon-launch",
+      "https://avara.xyz/blog/horizon",
+      "https://defillama.com/protocol/aave-horizon-rwa"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 254965097.05963522,
+      "apy_pct": null
+    }
+  },
+  {
+    "id": "paxos-gold-paxg",
+    "name": "Pax Gold",
+    "issuer": "Paxos Trust Company, N.A. (NYDFS-regulated New York trust company)",
+    "asset_class": "gold",
+    "underlying": "Each PAXG token represents one fine troy ounce of a physical LBMA Good Delivery gold bar held in Brink's vaults in London, custodied by Paxos Trust.",
+    "tokens": [
+      "PAXG"
+    ],
+    "chains": [
+      "Ethereum",
+      "Solana"
+    ],
+    "tvl_usd_approx": 1907000000,
+    "apy_pct_approx": 0,
+    "terms": {
+      "min_investment": "~0.01 troy oz (~$20-40) on the Paxos platform; any fraction on exchanges/DEXs",
+      "kyc": "kyc_retail",
+      "jurisdiction": "US (NYDFS-regulated); token itself trades globally, available to US retail",
+      "redemption": "Redeemable via Paxos for USD, unallocated loco London gold, or physical LBMA Good Delivery bars (minimum ~430 PAXG = one full bar, collected in London); smaller physical amounts via third parties like Alpha Bullion",
+      "lockup": "None",
+      "fees": "Zero custody/storage fees and zero Paxos on-chain transfer fee; tiered creation/redemption fees on the Paxos platform; large flat fee (reported ~$15k per request, unconfirmed) plus logistics for physical bar redemption; normal gas on DEX trades"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "Buy/redeem directly with Paxos (KYC account)",
+          "url": "https://www.paxos.com/pax-gold"
+        },
+        {
+          "method": "Buy on exchanges (Coinbase, Kraken, Binance) or DEXs (Uniswap, Solana DEXs)",
+          "url": "https://www.coinbase.com/price/pax-gold"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 0
+    },
+    "defillama_slug": "paxos-gold",
+    "risk_notes": "Gold pays no yield; you hold price exposure plus issuer/custody risk on Paxos. Physical redemption is effectively institutional-scale (one whole ~430 oz bar, ~$1.5M+, picked up in London).",
+    "sources": [
+      "https://www.paxos.com/pax-gold",
+      "https://www.paxos.com/paxg-1pager-2026.pdf",
+      "https://xgram.io/blog/can-you-redeen-paxg-for-physical-gold-bars",
+      "https://defillama.com/protocol/paxos-gold"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 1907345778.5930154,
+      "apy_pct": null
+    }
+  },
+  {
+    "id": "tether-gold-xaut",
+    "name": "Tether Gold",
+    "issuer": "TG Commodities Limited (Tether Gold, redomiciled to El Salvador under its DALMA license)",
+    "asset_class": "gold",
+    "underlying": "Each XAUT represents one fine troy ounce of physical LBMA Good Delivery gold held on an allocated basis in a vault in Switzerland.",
+    "tokens": [
+      "XAUT"
+    ],
+    "chains": [
+      "Ethereum",
+      "TON"
+    ],
+    "tvl_usd_approx": 3142000000,
+    "apy_pct_approx": 0,
+    "terms": {
+      "min_investment": "50 XAUT (~$170k+ at 2026 gold prices) to buy directly from Tether Gold; any fraction on exchanges",
+      "kyc": "kyc_retail",
+      "jurisdiction": "El Salvador issuer, Swiss vaulting; direct platform excludes US persons and other restricted jurisdictions",
+      "redemption": "Verified direct customers can redeem for physical gold delivered to a Swiss address (full-bar increments, ~430 XAUT minimum for a bar) or have the bar sold and receive cash proceeds",
+      "lockup": "None",
+      "fees": "0.25% fee on direct purchase and on redemption; zero custody/storage fees; shipping/insurance on physical delivery; gas on transfers"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "Direct purchase/redemption (KYC, 50 XAUT min, non-US)",
+          "url": "https://gold.tether.to/"
+        },
+        {
+          "method": "Buy fractional XAUT on exchanges (Bitfinex, Bybit, OKX, KuCoin)",
+          "url": "https://www.bitfinex.com/"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 0
+    },
+    "defillama_slug": "tether-gold",
+    "risk_notes": "No yield; concentrated issuer risk with Tether-affiliated entity and lighter regulatory oversight than Paxos (El Salvador regime, attestations rather than a US trust charter). Direct mint/redeem thresholds put primary access out of retail reach; retail is secondary-market only.",
+    "sources": [
+      "https://gold.tether.to/faq",
+      "https://gold.tether.to/legal/termsofservice",
+      "https://defillama.com/protocol/tether-gold"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 3142472013.933556,
+      "apy_pct": null
+    }
+  },
+  {
+    "id": "ondo-global-markets",
+    "name": "Ondo Global Markets (Ondo Stocks)",
+    "issuer": "Ondo Finance",
+    "asset_class": "tokenized_stocks",
+    "underlying": "Tokens providing 1:1 price exposure to 430+ US-listed stocks and ETFs (e.g. TSLAon, NVDAon, SPYon), backed by real securities held with regulated broker-dealer custodians and minted/redeemed against Wall Street market liquidity.",
+    "tokens": [
+      "TSLAon",
+      "NVDAon",
+      "SPYon",
+      "QQQon",
+      "GOOGLon",
+      "CRCLon"
+    ],
+    "chains": [
+      "Ethereum",
+      "Solana",
+      "BNB Chain"
+    ],
+    "tvl_usd_approx": 953000000,
+    "apy_pct_approx": null,
+    "terms": {
+      "min_investment": "No meaningful minimum (fractional tokens)",
+      "kyc": "kyc_retail",
+      "jurisdiction": "Non-US only \u2014 offered exclusively to eligible non-US persons in supported jurisdictions; US persons excluded",
+      "redemption": "Mint and redeem at prevailing market price 24/5 for the full list; 24/7 instant mint/redeem live since June 2026 for the most-traded names (SPYon, QQQon, CRCLon, NVDAon, TSLAon, GOOGLon)",
+      "lockup": "None",
+      "fees": "No explicit platform fee schedule published; costs embedded in mint/redeem spread plus network gas; venue fees apply on CEX/DEX trades"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "Onboard and mint/redeem on the Ondo Stocks platform (KYC, non-US)",
+          "url": "https://app.ondo.finance/"
+        },
+        {
+          "method": "Trade on integrated venues: MetaMask, CEXs, DEXs and aggregators across Ethereum/Solana/BNB",
+          "url": "https://ondo.finance/ondo-stocks"
+        }
+      ],
+      "regions": {
+        "us": false,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 0
+    },
+    "defillama_slug": "ondo-global-markets",
+    "risk_notes": "Retail-friendly but strictly non-US; you hold price exposure via Ondo's issuing structure, not direct share ownership (no shareholder voting), with issuer/custodian and regulatory-perimeter risk. First tokenized-stock platform past $1B TVL \u2014 larger than all competitors combined.",
+    "sources": [
+      "https://ondo.finance/ondo-stocks",
+      "https://ondo.finance/blog/real-24-7-trading-for-tokenized-stocks",
+      "https://solana.com/news/ondo-global-markets-tokenized-stocks-etfs-solana",
+      "https://defillama.com/protocol/ondo-global-markets"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 953408243.3384814,
+      "apy_pct": null
+    }
+  },
+  {
+    "id": "xstocks-backed",
+    "name": "xStocks",
+    "issuer": "Backed Finance (Backed Assets, Swiss/Jersey structure under an EU/EEA prospectus regime)",
+    "asset_class": "tokenized_stocks",
+    "underlying": "Fully collateralized tracker certificates on blue-chip US stocks and ETFs (TSLAx, AAPLx, SPYx, etc.), each backed 1:1 by the underlying security held with a regulated custodian; tokens are freely transferable SPL/ERC-20s.",
+    "tokens": [
+      "TSLAx",
+      "AAPLx",
+      "NVDAx",
+      "SPYx",
+      "MSTRx"
+    ],
+    "chains": [
+      "Solana",
+      "Ethereum",
+      "BNB Chain",
+      "Base"
+    ],
+    "tvl_usd_approx": 442000000,
+    "apy_pct_approx": null,
+    "terms": {
+      "min_investment": "None on exchanges/DEXs (fractional); primary mint/redeem with Backed is for qualified/professional investors",
+      "kyc": "kyc_retail",
+      "jurisdiction": "Not available to US, Canadian, UK persons (and other excluded jurisdictions); eligible across much of EU, LatAm, Asia, Africa per Backed's EU prospectus regime",
+      "redemption": "Retail exits via secondary markets (Kraken, Bybit, Solana DEXs, 24/7); direct primary redemption for underlying value restricted to qualified investors onboarded with Backed",
+      "lockup": "None",
+      "fees": "No custody fee to holders; exchange trading fees or DEX swap fees; Backed primary market fees apply to qualified investors"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "Trade on Kraken or Bybit (exchange KYC, non-US/CA/UK)",
+          "url": "https://www.kraken.com/"
+        },
+        {
+          "method": "Swap permissionlessly on Solana DEXs (Jupiter, Raydium)",
+          "url": "https://xstocks.fi/"
+        },
+        {
+          "method": "Primary mint/redeem for qualified investors via Backed",
+          "url": "https://backed.fi/"
+        }
+      ],
+      "regions": {
+        "us": false,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 0
+    },
+    "defillama_slug": "xstocks",
+    "risk_notes": "Debt-instrument (certificate) structure, not direct equity \u2014 no voting rights, dividends handled via token adjustments; issuer and tracking risk. Explicitly prohibited for US/Canada/UK persons even though the on-chain tokens are technically freely transferable.",
+    "sources": [
+      "https://xstocks.fi/",
+      "https://assets.backed.fi/legal-documentation",
+      "https://backed.fi/news-updates/backed-announces-xstocks-coming-soon-to-kraken-and-solana",
+      "https://eco.com/support/en/articles/15083158-kraken-xstocks-explained",
+      "https://defillama.com/protocol/xstocks"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 441847675.9117476,
+      "apy_pct": null
+    }
+  },
+  {
+    "id": "ethena-susde",
+    "name": "Ethena sUSDe (staked USDe)",
+    "issuer": "Ethena Labs (Ethena GmbH / offshore issuing structure)",
+    "asset_class": "basis_yield",
+    "underlying": "NOT a traditional RWA: sUSDe is staked USDe, a synthetic dollar backed by a delta-neutral basis trade \u2014 Ethena holds spot BTC/ETH/liquid-staking collateral plus a large liquid stablecoin sleeve and shorts equivalent perpetual futures, so price risk nets to ~zero while the position harvests perp funding rates, staking yield, and stablecoin/DeFi lending yield; sUSDe accrues that yield via a rising exchange rate.",
+    "tokens": [
+      "sUSDe",
+      "USDe"
+    ],
+    "chains": [
+      "Ethereum",
+      "Solana",
+      "Arbitrum",
+      "Base",
+      "Mantle",
+      "many L2s via LayerZero"
+    ],
+    "tvl_usd_approx": 4117000000,
+    "apy_pct_approx": 4.8,
+    "terms": {
+      "min_investment": "None (permissionless staking of any USDe amount)",
+      "kyc": "none",
+      "jurisdiction": "Offshore/unregulated for on-chain users; direct mint/redeem of USDe restricted to whitelisted (KYC'd, non-US) approved participants; not MiCA-authorized (delisted from some EU venues)",
+      "redemption": "Unstake sUSDe -> 7-day cooldown -> withdraw USDe; USDe itself exits via deep DEX liquidity or whitelisted redemption",
+      "lockup": "7-day unstaking cooldown",
+      "fees": "No deposit/unstake fee; ~10% protocol fee taken from gross yield before distribution"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "Buy USDe on a DEX/CEX and stake to sUSDe in the Ethena app",
+          "url": "https://app.ethena.fi/"
+        },
+        {
+          "method": "Buy sUSDe directly on Curve/Uniswap or use via Pendle/Aave",
+          "url": "https://curve.fi/"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 0
+    },
+    "defillama_slug": "ethena-usde",
+    "risk_notes": "Yield is path-dependent and highly variable (35% peak in 2024, ~4-5% mid-2026 as funding compressed and backing shifted ~89% to liquid cash/lending); risks include funding-rate inversion, exchange/custodian failure, and the October 2025-style deleveraging events. Insurance fund ~$73M (~1.7% of supply) is the loss buffer.",
+    "sources": [
+      "https://ethena.fi/",
+      "https://gov.ethenafoundation.com/t/ethenas-may-2026-governance-update/796",
+      "https://eco.com/support/en/articles/14798653-susde-explained-ethena-s-yield-bearing-stablecoin",
+      "https://defillama.com/protocol/ethena-usde"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 4117127601.450224,
+      "apy_pct": 4.80051,
+      "apy_check_asksurf": 4.86
+    }
+  },
+  {
+    "id": "ethena-usdtb",
+    "name": "Ethena USDtb",
+    "issuer": "Ethena Labs (offshore issuer; US issuance transitioning to Anchorage Digital Bank as first GENIUS Act-compliant federally regulated stablecoin)",
+    "asset_class": "basis_yield",
+    "underlying": "A fully-reserved US dollar stablecoin backed by cash and short-duration US Treasury exposure, held predominantly (~90%) in BlackRock's tokenized treasury fund BUIDL \u2014 a true T-bill-backed RWA stable, unlike its basis-trade sibling USDe.",
+    "tokens": [
+      "USDtb"
+    ],
+    "chains": [
+      "Ethereum"
+    ],
+    "tvl_usd_approx": 483000000,
+    "apy_pct_approx": 0,
+    "terms": {
+      "min_investment": "None on secondary markets; direct mint/redeem reserved for approved institutional parties",
+      "kyc": "none",
+      "jurisdiction": "Offshore issuance (BVI structure) moving onshore to Anchorage Digital Bank (US OCC-chartered) under the GENIUS Act; direct minters must be KYC'd approved participants, mostly non-US institutions",
+      "redemption": "Whitelisted institutions mint/redeem 1:1 against reserves; everyone else buys/sells on DEXs and CEXs",
+      "lockup": "None",
+      "fees": "No fee to hold; mint/redeem terms per institutional agreement; reserve yield accrues to the issuer, not holders (GENIUS-compliant stables cannot pay holder interest \u2014 venues like Bybit have run separate 5% APR holding promos)"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "Buy on secondary markets (Curve, Bybit and other CEXs)",
+          "url": "https://curve.fi/"
+        },
+        {
+          "method": "Institutional mint/redeem via Ethena",
+          "url": "https://usdtb.money/"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 0
+    },
+    "defillama_slug": "ethena-usdtb",
+    "risk_notes": "Holders get stability, not yield \u2014 the T-bill income goes to the issuer. Two-tier access (institutions mint, retail only buys) plus reliance on BUIDL/BlackRock and the Anchorage transition are the main structural dependencies; supply has fallen from its ~$1.4B peak to ~$483M.",
+    "sources": [
+      "https://usdtb.money/",
+      "https://www.anchorage.com/insights/anchorage-digital-partners-with-ethena-labs-to-launch-first-genius-compliant-federally-regulated-stablecoin",
+      "https://app.rwa.xyz/assets/USDtb",
+      "https://defillama.com/protocol/ethena-usdtb"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 483262968.89936286,
+      "apy_pct": null
+    }
+  },
+  {
+    "id": "re-tokenized-reinsurance",
+    "name": "Re Protocol (re.xyz)",
+    "issuer": "Re (Resilience Foundation / Re licensed reinsurance vehicles, operating on a Bermuda-style transformer structure)",
+    "asset_class": "reinsurance",
+    "underlying": "Deposit tokens (reUSD senior tranche, reUSDe mezzanine) whose capital collateralizes real-world reinsurance contracts \u2014 low-volatility programs like property, trucking, aviation and workers' comp \u2014 so holders earn insurance premium yield plus a base money-market rate, tranched by loss priority.",
+    "tokens": [
+      "reUSD",
+      "reUSDe",
+      "RE"
+    ],
+    "chains": [
+      "Ethereum",
+      "Avalanche"
+    ],
+    "tvl_usd_approx": 328000000,
+    "apy_pct_approx": 6.4,
+    "terms": {
+      "min_investment": "No public minimum for reUSD deposits via the app; earlier tokenized fund vintages required accredited-investor-scale tickets",
+      "kyc": "kyc_retail",
+      "jurisdiction": "Non-US persons only (Regulation S) in permitted jurisdictions after KYC/AML; earlier fund products also admitted US accredited investors, but the current token suite prohibits US persons",
+      "redemption": "reUSD: near-real-time from an on-chain liquidity buffer subject to daily caps, falling back to a quarterly queue if the buffer drops to 1% of supply; reUSDe: quarterly windows only, sized by an independent actuary against regulatory surplus",
+      "lockup": "reUSD effectively liquid within caps; reUSDe quarterly (capital is deployed as offchain reinsurance collateral); RE staking has lockups/cooldowns",
+      "fees": "No published deposit fee; yield quoted net (reUSD ~ SOFR + 250bps, currently ~6.4%; reUSDe ~ SOFR + 850bps, currently ~12.3%)"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {
+          "method": "KYC onboarding and deposit into reUSD/reUSDe on the Re app (non-US)",
+          "url": "https://re.xyz/"
+        },
+        {
+          "method": "Institutional programs on Avalanche's institutional DeFi ecosystem",
+          "url": "https://re.xyz/insights/re-protocol-token-suite-explained"
+        }
+      ],
+      "regions": {
+        "us": false,
+        "eu": true,
+        "row": true,
+        "note": "Admission at ANY tier (incl. secondary markets or accredited/QP paths); the kyc field says which tier."
+      },
+      "min_usd": 0
+    },
+    "defillama_slug": "re",
+    "risk_notes": "Genuine insurance underwriting risk: mezzanine reUSDe absorbs losses before reUSD, and capital is locked in offchain reinsurance collateral trusts with quarterly, actuary-gated exits \u2014 this is not redeemable-on-demand DeFi. US persons are excluded from the current token suite despite the protocol's US roots.",
+    "sources": [
+      "https://re.xyz/insights/re-protocol-token-suite-explained",
+      "https://re.xyz/insights/re-tge-launch",
+      "https://www.coindesk.com/business/2024/05/14/rwa-platform-re-debuts-tokenized-reinsurance-fund-on-avalanche-with-15m-commitment-from-nexus-mutual",
+      "https://defillama.com/protocol/re"
+    ],
+    "verified_at": "2026-09-01",
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": 328070074.9604463,
+      "apy_pct": 6.38596
+    }
+  },
+  {
+    "id": "ixs-blackrock-hy-bond",
+    "name": "IXS/InvestaX High Yield Corporate Bond Vault (Avalanche)",
+    "issuer": "InvestaX / IXS \u2014 regulated and operated under license from the Monetary Authority of Singapore (MAS); custody via Wilmington Trust; yield rails by OpenTrade",
+    "asset_class": "corporate_bonds",
+    "underlying": "USDC vault whose deposits are deployed via OpenTrade into the iShares 0-5 Year High Yield Corporate Bond ETF (SHYG) \u2014 short-duration sub-investment-grade US corporate bonds \u2014 with daily interest accrual paid on-chain.",
+    "tokens": [],
+    "chains": [
+      "Avalanche"
+    ],
+    "tvl_usd_approx": null,
+    "apy_pct_approx": 7.0,
+    "terms": {
+      "min_investment": "$100 USDC ($100 minimum also qualifies for the deposit bonus)",
+      "kyc": "none",
+      "jurisdiction": "Permissionless ERC-4626 vault \u2014 any wallet can deposit, no KYC on the vault itself (confirmed by IXS, Sep 2026). Identity verification is only required to claim the IXS deposit bonus at redemption. Issuer regulated under MAS (Singapore) license.",
+      "redemption": "Withdraw anytime, settlement next day; principal and accrued vault yield kept on early exit (only unvested bonus is forfeited)",
+      "lockup": "None on principal",
+      "fees": "50 bps exit fee; no stated deposit or management fee to the investor"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {
+          "method": "IXS app > Earn > High Yield Corporate Bond \u2014 connect wallet, complete KYC whitelist, deposit USDC",
+          "url": "https://app.ixs.finance/#/earn"
+        },
+        {
+          "method": "IXS Permissionless Vaults landing (ERC-4626 / Agent Rail API)",
+          "url": "https://vaults.ixs.finance"
+        }
+      ],
+      "regions": {
+        "us": true,
+        "eu": true,
+        "row": true,
+        "note": "Permissionless at the contract level; standard sanctioned-jurisdiction restrictions in ToS. Bonus claim requires identity verification."
+      },
+      "min_usd": 100
+    },
+    "defillama_slug": null,
+    "risk_notes": "High-yield (junk) corporate bond credit + duration risk via SHYG \u2014 returns are variable and can be negative (last quarter ~0.85% before fees vs the 7%/yr target); NAV moves with rates and credit conditions. 50 bps exit fee. Platform/rails risk: InvestaX issuer, Wilmington Trust custody, OpenTrade deployment. Vault deposits are permissionless (per IXS, Sep 2026); the in-app 'Whitelist Unavailable' notice applies to the legacy earn flow / bonus claim, not the ERC-4626 vault. Earlier public materials showed conflicting rates (6% landing, 13.36% in-app APR, 8.5% 2025 promo) \u2014 the investor summary's 7% target / ~5% trailing is the authoritative framing. BlackRock manages the ETF and does not endorse the product.",
+    "sources": [
+      "InvestaX HYCB Vault Investor Summary PDF (2026-09-01, provided by client)",
+      "https://vaults.ixs.finance",
+      "https://app.ixs.finance/#/earn",
+      "https://www.ixs.finance/news/ixs-offer-institutional-on-chain-yield-through-mmfs-and-blackrock-backed-bond-etf"
+    ],
+    "verified_at": "2026-09-01",
+    "yield_profile": {
+      "target_pct": 7.0,
+      "trailing_12m_pct": 5.0,
+      "last_quarter_pct_before_fees": 0.85,
+      "guaranteed": false,
+      "note": "Target yield, not fixed or guaranteed; returns are variable and can be negative. 90-day vault yield range shown in the investor doc: roughly 3.5%/yr recent rate up to the 7% target, net of the 50 bps exit fee."
+    },
+    "promotions": [
+      {
+        "name": "IXS Deposit Bonus Program",
+        "status": "active",
+        "window": {
+          "start": "2026-08-30",
+          "end": "2026-09-12"
+        },
+        "mechanic": "Fixed IXS-token bonus set at deposit, independent of vault performance; vests exactly 90 days after deposit; claim within 30 days of vesting or it expires; bonuses vest and pay Nov 28 - Dec 11 2026; processing pauses mid-Dec to Jan 5 (claim windows in that period resume after Jan 5). Early withdrawal forfeits the unvested bonus. The vault itself is permissionless; KYC applies only to the bonus claim (one bonus per verified identity, verified at redemption).",
+        "tiers": [
+          {
+            "deposit_usd": 100,
+            "bonus_ixs_usd": 5,
+            "bonus_pct": 5.0,
+            "annualized_pct": 20
+          },
+          {
+            "deposit_usd": 1000,
+            "bonus_ixs_usd": 30,
+            "bonus_pct": 3.0,
+            "annualized_pct": 12
+          },
+          {
+            "deposit_usd": 5000,
+            "bonus_ixs_usd": 100,
+            "bonus_pct": 2.0,
+            "annualized_pct": 8
+          },
+          {
+            "deposit_usd": 10000,
+            "bonus_ixs_usd": 150,
+            "bonus_pct": 1.5,
+            "annualized_pct": 6
+          }
+        ],
+        "caveats": "Bonus paid in IXS tokens, which carry their own price volatility; annualized rate is the fixed 90-day bonus expressed yearly and is separate from (not additive guidance on) the variable vault yield. One bonus per verified identity.",
+        "source": "InvestaX HYCB Vault Investor Summary (HYCB_Vault_Investor_Summary.pdf, received 2026-09-01)"
+      }
+    ],
+    "live": {
+      "as_of": "2026-08-31T23:57:44+00:00",
+      "tvl_usd": null,
+      "apy_pct": null
+    }
+  }
+]

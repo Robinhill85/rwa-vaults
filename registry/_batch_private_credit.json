@@ -1,0 +1,178 @@
+[
+  {
+    "id": "maple-syrup",
+    "name": "Maple syrupUSDC / syrupUSDT",
+    "issuer": "Maple Finance (Maple International Operations SPC, segregated portfolios)",
+    "asset_class": "private_credit",
+    "underlying": "Fixed-rate, overcollateralized loans to institutional crypto borrowers (trading firms, market makers) secured by digital-asset collateral (BTC, ETH, SOL etc.) held by custodians — a permissionless wrapper on Maple's institutional lending book, risk-segregated from Maple's KYC-gated institutional pools.",
+    "tokens": ["syrupUSDC", "syrupUSDT"],
+    "chains": ["Ethereum", "Base", "Arbitrum", "Solana"],
+    "tvl_usd_approx": 1100000000,
+    "apy_pct_approx": 5.5,
+    "terms": {
+      "min_investment": "None (no minimum or maximum deposit)",
+      "kyc": "none",
+      "jurisdiction": "Cayman SPC issuer; US persons and sanctioned jurisdictions excluded from the official interface via geofencing (token itself is permissionless ERC-20)",
+      "redemption": "Open-ended; normally instant via pool liquidity, up to ~24h in rare cases, contractual max 30 days; also sellable on DEXs (Uniswap, Curve etc.)",
+      "lockup": "None",
+      "fees": "No deposit/withdrawal fees to lenders; Maple takes protocol/performance fees out of gross loan interest (net APY displayed)"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "Deposit USDC/USDT at Maple app (permissionless, wallet only)", "url": "https://app.maple.finance/earn"},
+        {"method": "Buy syrupUSDC on DEX aggregators", "url": "https://app.uniswap.org"}
+      ]
+    },
+    "defillama_slug": "maple",
+    "risk_notes": "Credit risk of institutional crypto borrowers, mitigated by overcollateralization with volatile digital assets and active margin calls — losses possible in fast crashes or custodial failure. Liquidity can gate to a 30-day max in stress; not available to US persons via the official interface. Distinct from Maple's KYC institutional products (min $100k+, full KYC); protocol-wide TVL ~$3.0B, syrupUSDC alone ~$0.97B.",
+    "sources": ["https://docs.maple.finance/syrupusdc-usdt-usdg-for-lenders/faq", "https://docs.maple.finance/legal/interface-terms-of-use-syrupusdc-and-syrupusdt", "https://www.stablewatch.io/analytics/assets/syrupUSDC-Maple", "https://app.rwa.xyz/assets/syrupUSDC", "https://defillama.com/protocol/maple"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "centrifuge-jtrsy",
+    "name": "Centrifuge / Janus Henderson Anemoy Treasury Fund (JTRSY) + deRWA",
+    "issuer": "Anemoy Limited (BVI), sub-managed by Janus Henderson; tokenized on Centrifuge",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A BVI-licensed professional fund holding short-term US Treasury bills — the US government is the borrower; NOT private credit. Centrifuge's flagship pool alongside JAAA (Janus Henderson AAA CLO fund, which is securitized corporate credit).",
+    "tokens": ["JTRSY", "deJTRSY"],
+    "chains": ["Ethereum", "Arbitrum", "Base", "Avalanche", "BNB Chain", "Celo", "Plume", "Solana"],
+    "tvl_usd_approx": 881000000,
+    "apy_pct_approx": 3.4,
+    "terms": {
+      "min_investment": "500,000 USDC primary subscription; no minimum on secondary/deRWA",
+      "kyc": "accredited",
+      "jurisdiction": "British Virgin Islands fund; non-US professional/accredited investors only for primary subscriptions",
+      "redemption": "Open-ended; onchain subscription/redemption 24/7/365, executed against NAV on the next US banking day; deRWA (deJTRSY) tokens are freely transferable and tradable on DEXs for instant exit",
+      "lockup": "None",
+      "fees": "0.25% management fee; 0% subscription and redemption fees"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {"method": "KYC + subscribe on Centrifuge app (non-US professional investors)", "url": "https://app.centrifuge.io"},
+        {"method": "Buy deJTRSY on supported DEXs (transfer-compliant wrapper)", "url": "https://centrifuge.io"}
+      ]
+    },
+    "defillama_slug": "centrifuge",
+    "risk_notes": "Effectively US sovereign duration risk (very short T-bills) plus smart-contract, NAV-oracle, and BVI fund-structure risk — minimal credit risk character. Primary access gated to non-US professional investors; retail can only touch it via deRWA secondary liquidity. Centrifuge platform TVL ~$1.64B across all pools; JTRSY alone ~$881M.",
+    "sources": ["https://app.rwa.xyz/assets/JTRSY", "https://www.janushenderson.com/corporate/press-releases/janus-henderson-to-partner-with-anemoy-and-centrifuge-on-its-first-tokenized-fund/", "https://app.centrifuge.io/?assetId=80", "https://defillama.com/protocol/centrifuge"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "goldfinch-prime",
+    "name": "Goldfinch Prime (WINDING DOWN)",
+    "issuer": "Goldfinch protocol / Warbler Labs",
+    "asset_class": "private_credit",
+    "underlying": "One onchain pool giving exposure to senior secured loans from large institutional private-credit funds (Ares, Apollo, Golub and others) lending to mid-market corporate borrowers.",
+    "tokens": [],
+    "chains": ["Ethereum"],
+    "tvl_usd_approx": 1600000,
+    "apy_pct_approx": null,
+    "terms": {
+      "min_investment": "n/a — closed to new deposits",
+      "kyc": "kyc_retail",
+      "jurisdiction": "Was non-US persons only (US accredited retail was served via Heron Finance, $10k min)",
+      "redemption": "All existing Prime investors are being fully redeemed in the wind-down",
+      "lockup": "n/a",
+      "fees": "Targeted 9-12% net of all fees when live"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": []
+    },
+    "defillama_slug": "goldfinch",
+    "risk_notes": "NOT INVESTABLE: GIP-87 (June 2026) wound down Goldfinch Prime and put the protocol in maintenance mode after legacy borrower-pool defaults (~$50M+). Kept in registry as a cautionary data point; exclude from the investable overview or show as historical.",
+    "sources": ["https://gov.goldfinch.finance/t/gip-87-maintenance-mode-of-goldfinch-operations-and-wind-down-goldfinch-prime/2202", "https://thedefiant.io/news/defi/goldfinch-finance-winds-down-depositors-report-50m-defaults", "https://goldfinch.finance/", "https://defillama.com/protocol/goldfinch"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "securitize-acred",
+    "name": "Apollo Diversified Credit Securitize Fund (ACRED)",
+    "issuer": "Securitize Tokenized Apollo Diversified Credit Fund (BVI feeder); managed by Securitize Capital, sub-advised by Apollo Global Management",
+    "asset_class": "private_credit",
+    "underlying": "Tokenized BVI feeder investing substantially all assets in the Apollo Diversified Credit Fund, a multi-strategy credit interval fund (corporate direct lending, asset-backed lending, performing credit, dislocated and structured credit).",
+    "tokens": ["ACRED"],
+    "chains": ["Ethereum", "Solana", "Aptos", "Sei", "Ink", "Avalanche", "Polygon"],
+    "tvl_usd_approx": 95600000,
+    "apy_pct_approx": 8.5,
+    "terms": {
+      "min_investment": "$50,000",
+      "kyc": "accredited",
+      "jurisdiction": "BVI feeder under US Reg D exemption; offered via Securitize Markets (SEC-registered broker-dealer) to verified accredited investors",
+      "redemption": "Quarterly liquidity via the underlying interval fund's repurchase offers (typically 5-25% of shares per quarter, not guaranteed); no open-ended daily redemption",
+      "lockup": "No hard lockup, but practically illiquid between quarterly windows; sACRED vault (Polygon-Morpho) enables DeFi leverage, not exit",
+      "fees": "0.50% tokenized-feeder management fee, 0% sub/redemption fees, plus the underlying Apollo fund's own fees and expenses"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {"method": "KYC + accreditation verification and subscription via Securitize Markets", "url": "https://securitize.io/apollo"},
+        {"method": "Fund/asset page", "url": "https://securitize.io/invest/acred"}
+      ]
+    },
+    "defillama_slug": "apollo-diversified-credit-securitize-fund",
+    "risk_notes": "Real diversified private-credit risk: sub-investment-grade corporate and asset-backed exposure with NAV drawdown possible; liquidity limited to quarterly interval-fund repurchases that can be prorated in stress. On-chain AUM ~$95.6M as of Aug 31 2026 (the old ~$29M figure is stale); NAV-per-token ~$1,112, income accretes into NAV. 30D APY ~8.5% but variable.",
+    "sources": ["https://app.rwa.xyz/assets/ACRED", "https://securitize.io/learn/press/apollo-and-securitize-announce-partnership-and-launch-tokenized-access-to-credit-fund", "https://www.apollo.com/wealth/strategies/products/apollo-diversified-credit-fund", "https://defillama.com/protocol/apollo-diversified-credit-securitize-fund"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "figure-democratized-prime",
+    "name": "Figure Markets Democratized Prime",
+    "issuer": "Figure Markets (Figure Technology Solutions)",
+    "asset_class": "private_credit",
+    "underlying": "A rate-matched onchain lending marketplace on Provenance where depositors lend USD/stablecoins/crypto to pools 100% collateralized by real loans originated by Figure and partners — HELOCs (home equity), auto loans, small-business loans — plus crypto-backed loans.",
+    "tokens": [],
+    "chains": ["Provenance"],
+    "tvl_usd_approx": 237000000,
+    "apy_pct_approx": 8,
+    "terms": {
+      "min_investment": "No stated minimum (deposit any amount from a Figure Markets account)",
+      "kyc": "kyc_retail",
+      "jurisdiction": "US-based platform (Figure Markets exchange account with standard KYC); availability subject to state/country restrictions — verify per-pool eligibility at signup",
+      "redemption": "Open-ended, no epochs: interest accrues hourly, add/withdraw anytime, marketed withdrawal within ~1 hour (subject to pool liquidity)",
+      "lockup": "None",
+      "fees": "No explicit lender fee disclosed; Figure earns via origination/borrow-lend spread; rates float with pool supply/demand (advertised 8.5-12% 'up to', varies by pool)"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "Create Figure Markets account (KYC), go to Earn > Democratized Prime, pick a pool and deposit", "url": "https://www.figuremarkets.com/markets/democratized-prime/earn/"}
+      ]
+    },
+    "defillama_slug": "figure-markets-democratized-prime",
+    "risk_notes": "Consumer/SMB credit risk (HELOC, auto, SMB collateral) plus crypto-collateral volatility on crypto-backed pools; loans stated 100% collateralized on-chain but yields are variable and withdrawal speed depends on pool liquidity. Centralized-platform counterparty risk (not FDIC/SIPC insured). One of the few US-retail-accessible private-credit options.",
+    "sources": ["https://www.figuremarkets.com/markets/democratized-prime/earn/", "https://www.businesswire.com/news/home/20250603454772/en/Figure-Markets-Opens-%2415M-HELOC-Facility-as-First-Real-World-Asset-Financing-on-a-DeFi-Marketplace", "https://defillama.com/protocol/figure-markets-democratized-prime"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "aave-horizon",
+    "name": "Aave Horizon RWA Market",
+    "issuer": "Aave Labs (Horizon), on the Aave v3 codebase",
+    "asset_class": "private_credit",
+    "underlying": "An Ethereum lending market where allowlisted institutions post permissioned tokenized RWAs (Superstate USTB/USCC, Centrifuge JTRSY/JAAA, Circle USYC etc. — mostly tokenized treasuries and AAA CLOs) as collateral to borrow stablecoins; suppliers lend USDC/RLUSD/GHO against that overcollateralized book.",
+    "tokens": [],
+    "chains": ["Ethereum"],
+    "tvl_usd_approx": 255000000,
+    "apy_pct_approx": null,
+    "terms": {
+      "min_investment": "None for stablecoin suppliers",
+      "kyc": "none",
+      "jurisdiction": "Stablecoin supply side: permissionless/global (standard Aave interface geo-policies apply); RWA collateral side: only users qualified and allowlisted by each RWA issuer (institutional_only)",
+      "redemption": "Open-ended Aave-style: withdraw supplied stablecoins anytime subject to pool utilization (funds locked only when fully borrowed)",
+      "lockup": "None",
+      "fees": "Standard Aave mechanics — suppliers earn borrow interest minus reserve factor; no deposit/withdrawal fees. Supply APY is variable/utilization-driven"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "Supply USDC/RLUSD/GHO permissionlessly via the Horizon market in the Aave app", "url": "https://app.aave.com"},
+        {"method": "Docs (market address 0xAe05Cd22df81871bc7cC2a04BeCfb516bFe332C8, Ethereum)", "url": "https://aave.com/docs/aave-v3/horizon"}
+      ]
+    },
+    "defillama_slug": "aave-horizon-rwa",
+    "risk_notes": "For stablecoin suppliers the credit character is indirect and comparatively strong: loans overcollateralized by tokenized treasuries/AAA CLOs from institutional borrowers, with liquidation machinery — key risks are RWA liquidation/settlement latency, oracle/NAV risk, and smart-contract risk rather than direct borrower default. Utilization risk can delay withdrawals.",
+    "sources": ["https://aave.com/docs/aave-v3/horizon", "https://aave.com/blog/horizon-launch", "https://avara.xyz/blog/horizon", "https://defillama.com/protocol/aave-horizon-rwa"],
+    "verified_at": "2026-09-01"
+  }
+]

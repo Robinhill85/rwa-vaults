@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vault Ledger — RWA vaults: what backs your yield, and whether they'll let you in</title>
+<meta name="description" content="~100 real-world-asset vaults. 26 with hand-verified terms: underlying assets, KYC tier, jurisdiction, minimums, redemption, fees, where to invest. Live TVL and APY.">
+<meta property="og:title" content="Vault Ledger">
+<meta property="og:description" content="What actually backs your yield — and whether they'll let you in. RWA vaults with hand-verified terms.">
+<meta property="og:image" content="https://rwa-vaults.vercel.app/hero.jpg">
+<style>
+:root {
+  --bg-top: #2c4bff; --bg-mid: #1f37d6; --bg-bot: #15268f;
+  --panel: rgba(7, 15, 54, 0.55);
+  --panel-deep: rgba(4, 10, 40, 0.6);
+  --line: rgba(255, 255, 255, 0.14);
+  --grid: rgba(255, 255, 255, 0.07);
+  --text: #eef2ff; --muted: #a9b8f2;
+  --accent: #ffb224; --accent2: #9db4ff;
+  --up: #5be39a; --down: #ff6b6b;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  color: var(--text);
+  font: 15px/1.5 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 55%, var(--bg-bot) 100%) fixed;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.85), rgba(0,0,0,.35));
+          mask-image: linear-gradient(180deg, rgba(0,0,0,.85), rgba(0,0,0,.35));
+}
+main { position: relative; z-index: 1; max-width: 1060px; margin: 0 auto; padding: 36px 20px 64px; }
+a { color: #fff; }
+
+/* hero */
+.hero { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
+.hdr h1 { font-size: 40px; line-height: 1.05; margin: 0 0 8px; letter-spacing: -.03em; font-weight: 800; text-transform: uppercase; color: #fff; text-shadow: 0 2px 0 rgba(0,0,0,.12); }
+.hdr h1 .amp { color: var(--accent); }
+.tag { color: #e6ecff; margin: 0 0 8px; max-width: 620px; }
+.tag strong { color: #fff; }
+.status { color: var(--muted); font-size: 13px; }
+.hero-img { flex: 0 0 auto; width: 340px; max-width: 40%; height: auto; border-radius: 12px; border: 1px solid var(--line); display: block; box-shadow: 0 8px 30px rgba(0,0,0,.25); }
+
+/* eligibility desk */
+.desk { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px 20px; backdrop-filter: blur(6px); margin-bottom: 22px; }
+.desk-title { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent2); font-weight: 600; margin-bottom: 12px; }
+.desk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.q label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 6px; }
+.q select { width: 100%; font: inherit; font-size: 14px; color: var(--text); padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-deep); }
+.q select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.q option { color: #111; }
+.verdict { margin-top: 15px; padding-top: 13px; border-top: 1px dashed var(--line); display: flex; flex-wrap: wrap; align-items: baseline; gap: 9px; }
+.verdict .count { font-size: 32px; line-height: 1; font-weight: 800; color: var(--up); }
+.verdict .count.zero { color: var(--down); }
+.verdict .reset { margin-left: auto; font-size: 12px; background: none; border: none; color: var(--muted); text-decoration: underline; cursor: pointer; padding: 4px; }
+.verdict .reset:focus-visible { outline: 2px solid var(--accent); }
+
+/* filter rail */
+.rail { position: sticky; top: 0; z-index: 5; padding: 10px 0; display: flex; gap: 8px; flex-wrap: wrap; background: linear-gradient(180deg, rgba(31,55,214,.92), rgba(31,55,214,.75)); backdrop-filter: blur(6px); border-radius: 0 0 10px 10px; margin-bottom: 4px; }
+.chip { font-size: 12px; letter-spacing: .03em; border: 1px solid var(--line); background: var(--panel-deep); color: var(--text); padding: 6px 11px; cursor: pointer; border-radius: 999px; }
+.chip[aria-pressed="true"] { background: var(--accent); color: #1a1503; border-color: var(--accent); font-weight: 700; }
+.chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* class sections */
+.classhead { display: flex; align-items: baseline; gap: 14px; margin: 30px 0 4px; }
+.classhead h2 { font-size: 20px; font-weight: 800; text-transform: uppercase; letter-spacing: .02em; }
+.classhead .meta { font-size: 12px; color: var(--accent2); margin-left: auto; text-align: right; font-variant-numeric: tabular-nums; }
+.classnote { font-size: 13px; color: var(--muted); margin: 2px 0 12px; max-width: 62em; }
+
+/* vault cards */
+.vault { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; margin-bottom: 12px; backdrop-filter: blur(6px); }
+.vault.dead { opacity: .55; }
+.v-top { display: grid; grid-template-columns: minmax(0,1fr) 300px; gap: 20px; }
+.v-id .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--accent2); }
+.v-id h3 { font-size: 18px; font-weight: 700; line-height: 1.3; margin: 3px 0 6px; }
+.v-id .underlying { font-size: 13.5px; color: #dde5ff; max-width: 46em; }
+.stamps { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 11px; align-items: center; }
+.stamp { font-size: 10px; letter-spacing: .08em; padding: 2px 7px; border: 1px solid currentColor; border-radius: 4px; text-transform: uppercase; font-weight: 600; }
+.stamp.open { color: var(--up); }
+.stamp.kyc { color: var(--accent2); }
+.stamp.gate { color: var(--accent); }
+.stamp.dead { color: var(--down); }
+.stamp.bonus { color: #1a1503; background: var(--accent); border-color: var(--accent); }
+.chainlist { font-size: 11px; color: var(--muted); }
+.v-figures { border-left: 1px solid var(--line); padding-left: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 9px 12px; align-content: start; }
+.fig .k { font-size: 10px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.fig .n { font-size: 16px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; margin-top: 1px; }
+.fig .n small { font-size: 10.5px; font-weight: 400; color: var(--muted); }
+.fig .n.plain { color: var(--text); font-size: 13px; font-weight: 600; }
+.regions { grid-column: 1/-1; font-size: 11.5px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 8px; font-variant-numeric: tabular-nums; }
+.regions b { color: var(--up); font-weight: 700; }
+.regions s { color: var(--down); }
+
+.v-more { margin-top: 10px; }
+.v-more > summary { list-style: none; cursor: pointer; font-size: 12px; color: var(--muted); display: inline-flex; gap: 6px; padding: 2px 0; user-select: none; }
+.v-more > summary:hover { color: var(--accent); }
+.v-more > summary::-webkit-details-marker { display: none; }
+.v-more > summary::before { content: "+"; }
+.v-more[open] > summary::before { content: "–"; }
+.v-more > summary:focus-visible { outline: 2px solid var(--accent); }
+.terms { margin-top: 12px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 26px; background: var(--panel-deep); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+.term .k { font-size: 10px; letter-spacing: .07em; text-transform: uppercase; color: var(--accent2); margin-bottom: 2px; font-weight: 600; }
+.term .v { font-size: 13px; color: #dde5ff; }
+.term.full { grid-column: 1/-1; }
+.invest { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.invest a { font-size: 12px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); text-decoration: none; }
+.invest a:hover { border-color: var(--accent); color: var(--accent); }
+.risk { border-left: 3px solid var(--down); padding-left: 10px; }
+.promo { grid-column: 1/-1; border: 1px solid var(--accent); border-radius: 10px; background: rgba(255,178,36,.08); padding: 12px 14px; }
+.promo .k { color: var(--accent); }
+.promo table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px; font-variant-numeric: tabular-nums; }
+.promo th, .promo td { text-align: left; padding: 3px 10px 3px 0; border-bottom: 1px dashed rgba(255,178,36,.35); }
+.promo th { font-size: 10px; text-transform: uppercase; letter-spacing: .07em; color: var(--accent); }
+.disclosure { grid-column: 1/-1; font-size: 12px; color: var(--muted); font-style: italic; }
+.srcs { font-size: 11px; color: var(--muted); overflow-wrap: anywhere; }
+.srcs a { color: var(--muted); }
+
+/* tracked tier */
+.tracked-note { font-size: 13px; color: var(--muted); margin: 4px 0 12px; max-width: 62em; }
+.board-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table.board { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; backdrop-filter: blur(6px); }
+.board th, .board td { padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.board th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent2); font-weight: 600; }
+.board tbody tr:last-child td { border-bottom: none; }
+.rank { color: var(--accent2); width: 36px; font-weight: 700; }
+.board .tvl { font-weight: 800; color: var(--accent); }
+.up { color: var(--up); } .down { color: var(--down); }
+.cat { display: inline-block; font-size: 10px; color: var(--accent2); border: 1px solid var(--accent2); border-radius: 4px; padding: 0 5px; text-transform: uppercase; letter-spacing: .05em; }
+.board .chains-cell { font-size: 12px; color: var(--muted); }
+.board a.pname { text-decoration: none; font-weight: 600; }
+.board a.pname:hover { color: var(--accent); }
+
+footer { margin-top: 32px; color: var(--muted); font-size: 13px; position: relative; z-index: 1; }
+footer p { max-width: 66em; margin-bottom: 10px; }
+footer .fine { font-size: 11px; }
+footer a { color: #fff; text-decoration: underline; }
+
+@media (max-width: 720px) {
+  main { padding: 20px 12px 48px; }
+  .hero { flex-direction: column; }
+  .hero-img { max-width: 100%; width: 100%; }
+  .hdr h1 { font-size: 28px; }
+  .desk-grid { grid-template-columns: 1fr; }
+  .v-top { grid-template-columns: 1fr; }
+  .v-figures { border-left: none; border-top: 1px dashed var(--line); padding-left: 0; padding-top: 12px; }
+  .terms { grid-template-columns: 1fr; }
+  .board th:nth-child(4), .board td:nth-child(4) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="hero-text hdr">
+      <h1>Vault <span class="amp">&amp;</span> Ledger</h1>
+      <p class="tag"><strong>What actually backs your yield — and whether they'll let you in.</strong> A hand-verified ledger of real-world-asset vaults: underlying assets, minimums, KYC tier, jurisdiction, redemption, fees, and the practical way in. Live TVL &amp; APY joined daily.</p>
+      <p class="status" id="updated">loading figures…</p>
+    </div>
+    <img class="hero-img" src="hero.jpg" alt="Engraved bank vault statue on a pedestal labeled Tokenized Real-World Assets">
+  </section>
+
+  <section class="desk">
+    <div class="desk-title">Eligibility desk</div>
+    <div class="desk-grid">
+      <div class="q">
+        <label for="q-region">Where are you?</label>
+        <select id="q-region">
+          <option value="any">Anywhere / just browsing</option>
+          <option value="us">United States</option>
+          <option value="eu">Europe (EU/EEA)</option>
+          <option value="row">Rest of world</option>
+        </select>
+      </div>
+      <div class="q">
+        <label for="q-ticket">Ticket size</label>
+        <select id="q-ticket">
+          <option value="0">Any amount</option>
+          <option value="100">$100</option>
+          <option value="1000">$1,000</option>
+          <option value="10000">$10,000</option>
+          <option value="100000">$100,000</option>
+          <option value="10000000">$1M+</option>
+        </select>
+      </div>
+      <div class="q">
+        <label for="q-kyc">How much KYC will you sit through?</label>
+        <select id="q-kyc">
+          <option value="any">Whatever it takes</option>
+          <option value="none">None — wallet only</option>
+          <option value="kyc_retail">Standard KYC is fine</option>
+          <option value="accredited">I'm accredited / professional</option>
+          <option value="qualified_purchaser">Qualified purchaser / institution</option>
+        </select>
+      </div>
+    </div>
+    <div class="verdict">
+      <span class="count" id="v-count">–</span>
+      <span class="line" id="v-line">vaults will take your money.</span>
+      <button class="reset" id="v-reset" type="button">reset</button>
+    </div>
+  </section>
+
+  <nav class="rail" id="rail" aria-label="Asset class filter"></nav>
+
+  <section id="ledger" aria-live="polite"></section>
+
+  <section id="tracked-section">
+    <div class="classhead"><h2>Tracked</h2><div class="meta" id="tracked-meta"></div></div>
+    <p class="tracked-note"><strong>Not hand-verified.</strong> Auto-generated from DeFiLlama's RWA categories — live TVL only; no terms, KYC, or access data. Entries graduate to the verified ledger above as we research them.</p>
+    <div class="board-wrap"><table class="board" id="tracked-board"></table></div>
+  </section>
+
+  <footer>
+    <p><strong>This is information, not advice.</strong> Nothing here is a recommendation to invest, and yields shown are targets or trailing figures that can fall or go negative. Terms were verified against official issuer documents on the date shown per entry; issuers change terms without telling us. Always read the issuer's own documents before sending money anywhere.</p>
+    <p>Access verdicts show whether an issuer admits <em>anyone</em> from a region at <em>any</em> tier — a "will take your money" result can still require accreditation or institutional onboarding; the stamp on each entry says which. Disclosure: IXS is a client of this site's author; their entry is marked.</p>
+    <p class="fine">Curated registry, hand-verified · live TVL &amp; APY from DeFiLlama · APY cross-checked via AskSurf · <span id="counts"></span></p>
+  </footer>
+</main>
+
+<script>
+const CLASS_META = {
+  tokenized_treasuries: {name:"Tokenized treasuries", note:"Short-term government paper and money-market funds on-chain. The borrower is (mostly) the US government; the risk you actually shop for here is access, wrapper structure, and redemption mechanics."},
+  private_credit: {name:"Private credit", note:"Real lending books — institutional crypto borrowers, HELOCs, corporate credit. Higher yield, real default risk, and liquidity that can gate when you most want out."},
+  corporate_bonds: {name:"Corporate bonds", note:"Public fixed income (bond ETFs) wrapped on-chain — NAV moves with rates and credit, unlike the T-bill vaults."},
+  gold: {name:"Gold", note:"Allocated physical gold per token. No yield — you hold price exposure plus the issuer and the vault door."},
+  tokenized_stocks: {name:"Tokenized stocks", note:"Price exposure to US equities and ETFs, not direct share ownership — no voting rights, and almost universally closed to US persons."},
+  basis_yield: {name:"Basis-trade yield", note:"Delta-neutral crypto carry dressed as a dollar. Not a traditional RWA; funding rates set the yield and can invert."},
+  reinsurance: {name:"Reinsurance", note:"Insurance premium yield, tranched by loss priority. Genuine underwriting risk with actuary-gated quarterly exits."}
+};
+const CLASS_ORDER = ["tokenized_treasuries","private_credit","corporate_bonds","gold","tokenized_stocks","basis_yield","reinsurance"];
+const KYC_LABEL = {none:"No KYC", kyc_retail:"Retail KYC", accredited:"Accredited", qualified_purchaser:"QP only", institutional_only:"Institutions"};
+const KYC_RANK  = {none:0, kyc_retail:1, accredited:2, qualified_purchaser:3, institutional_only:3};
+const TRACK_CAT = {rwa:"RWA", rwa_lending:"RWA Lending", basis_trading:"Basis"};
+const state = {region:"any", ticket:0, kyc:"any", klass:"all"};
+let VAULTS = [], TRACKED = null;
+
+const fmtUsd = n => n==null ? "—" : n>=1e9 ? "$"+(n/1e9).toFixed(2)+"B" : n>=1e6 ? "$"+(n/1e6).toFixed(1)+"M" : "$"+Math.round(n).toLocaleString("en-US");
+const fmtMin = n => n===0 ? "None" : "$"+n.toLocaleString("en-US");
+const esc = s => String(s??"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function apyOf(v){
+  const live = v.live && v.live.apy_pct;
+  const target = v.yield_profile ? v.yield_profile.target_pct : null;
+  const approx = v.apy_pct_approx;
+  if (target!=null) return {n:target, tag:"target"};
+  if (live!=null)   return {n:Math.round(live*100)/100, tag:"live"};
+  if (approx!=null) return {n:approx, tag:"approx"};
+  return {n:null, tag:""};
+}
+function activePromo(v){
+  if (!v.promotions) return null;
+  const today = new Date().toISOString().slice(0,10);
+  return v.promotions.find(p => p.window && p.window.start <= today && today <= p.window.end) || null;
+}
+function isDead(v){ return v.id === "goldfinch-prime"; }
+function eligible(v){
+  if (isDead(v)) return false;
+  if (state.region !== "any" && !v.access.regions[state.region]) return false;
+  if (state.ticket > 0 && (v.access.min_usd||0) > state.ticket) return false;
+  if (state.kyc !== "any" && KYC_RANK[v.terms.kyc] > KYC_RANK[state.kyc]) return false;
+  return true;
+}
+
+function vaultHtml(v){
+  const apy = apyOf(v);
+  const tvl = v.live && v.live.tvl_usd != null ? v.live.tvl_usd : v.tvl_usd_approx;
+  const promo = activePromo(v);
+  const dead = isDead(v);
+  const kycClass = v.terms.kyc === "none" ? "open" : (KYC_RANK[v.terms.kyc] >= 2 ? "gate" : "kyc");
+  const r = v.access.regions || {};
+  const reg = ["us","eu","row"].map(k => r[k] ? `<b>${k.toUpperCase()}</b>` : `<s>${k.toUpperCase()}</s>`).join(" · ");
+  const invest = (v.access.how_to_invest||[]).map(h => `<a href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.method.split("—")[0].split("(")[0].trim())} ↗</a>`).join("");
+  const promoHtml = promo ? `
+    <div class="term promo">
+      <div class="k">${esc(promo.name)} — ends ${esc(promo.window.end)}</div>
+      <div class="v">${esc(promo.mechanic)}</div>
+      ${promo.tiers ? `<table><thead><tr><th>Deposit</th><th>Bonus (in IXS)</th><th>Annualized</th></tr></thead><tbody>
+        ${promo.tiers.map(t=>`<tr><td>$${t.deposit_usd.toLocaleString("en-US")}</td><td>$${t.bonus_ixs_usd} (${t.bonus_pct}%)</td><td>${t.annualized_pct}%</td></tr>`).join("")}
+      </tbody></table>`:""}
+      <div class="v" style="margin-top:8px">${esc(promo.caveats)}</div>
+    </div>` : "";
+  const disclosure = v.id.startsWith("ixs") ? `<div class="disclosure">Disclosure: IXS is a client of this site's author.</div>` : "";
+  return `
+  <article class="vault ${dead?"dead":""}" data-id="${v.id}" data-class="${v.asset_class}">
+    <div class="v-top">
+      <div class="v-id">
+        <div class="eyebrow">${esc(v.issuer.split("(")[0].split("—")[0].trim())}</div>
+        <h3>${esc(v.name)}</h3>
+        <p class="underlying">${esc(v.underlying)}</p>
+        <div class="stamps">
+          ${dead ? `<span class="stamp dead">Wound down</span>` : ""}
+          <span class="stamp ${kycClass}">${KYC_LABEL[v.terms.kyc]||esc(v.terms.kyc)}</span>
+          ${promo ? `<span class="stamp bonus">Bonus live</span>` : ""}
+          <span class="chainlist">${(v.chains||[]).slice(0,4).join(" · ")}${(v.chains||[]).length>4 ? " +"+(v.chains.length-4):""}</span>
+        </div>
+      </div>
+      <div class="v-figures">
+        <div class="fig"><div class="k">Yield</div><div class="n">${apy.n!=null ? apy.n+"%" : "—"} <small>${apy.tag}</small></div></div>
+        <div class="fig"><div class="k">TVL</div><div class="n">${fmtUsd(tvl)} <small>${v.live && v.live.tvl_usd!=null ? "live":"approx"}</small></div></div>
+        <div class="fig"><div class="k">Minimum</div><div class="n plain">${fmtMin(v.access.min_usd||0)}</div></div>
+        <div class="fig"><div class="k">Lockup</div><div class="n plain">${esc((v.terms.lockup||"—").split(";")[0])}</div></div>
+        <div class="regions">Admits: ${reg}</div>
+      </div>
+    </div>
+    <details class="v-more">
+      <summary>terms &amp; how to invest</summary>
+      <div class="terms">
+        <div class="term"><div class="k">Minimum investment</div><div class="v">${esc(v.terms.min_investment)}</div></div>
+        <div class="term"><div class="k">Jurisdiction</div><div class="v">${esc(v.terms.jurisdiction)}</div></div>
+        <div class="term"><div class="k">Redemption</div><div class="v">${esc(v.terms.redemption)}</div></div>
+        <div class="term"><div class="k">Fees</div><div class="v">${esc(v.terms.fees)}</div></div>
+        ${promoHtml}
+        <div class="term full"><div class="k">Where to invest</div><div class="invest">${invest || "<span class='v'>Not currently investable.</span>"}</div></div>
+        <div class="term full risk"><div class="k">Risk notes</div><div class="v">${esc(v.risk_notes)}</div></div>
+        ${disclosure}
+        <div class="term full srcs">Verified ${esc(v.verified_at)} · Sources: ${(v.sources||[]).map(s => s.startsWith("http") ? `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(new URL(s).hostname.replace("www.",""))}</a>` : esc(s)).join(" · ")}</div>
+      </div>
+    </details>
+  </article>`;
+}
+
+function render(){
+  const ledger = document.getElementById("ledger");
+  const anyQ = state.region!=="any" || state.ticket>0 || state.kyc!=="any";
+  let html = "";
+  for (const k of CLASS_ORDER){
+    if (state.klass!=="all" && state.klass!==k) continue;
+    const all = VAULTS.filter(v=>v.asset_class===k);
+    const show = all.filter(v => !anyQ || eligible(v));
+    if (!show.length) continue;
+    const tvl = show.reduce((s,v)=> s + ((v.live&&v.live.tvl_usd)||v.tvl_usd_approx||0), 0);
+    html += `<div class="classhead"><h2>${CLASS_META[k].name}</h2><div class="meta">${show.length} ${show.length===1?"entry":"entries"} · ${fmtUsd(tvl)} TVL</div></div>
+             <p class="classnote">${CLASS_META[k].note}</p>` + show.map(vaultHtml).join("");
+  }
+  ledger.innerHTML = html || `<div class="vault" style="text-align:center;color:var(--muted);padding:40px">No verified vaults match — that combination of region, ticket and KYC shuts every door we track. Loosen one.</div>`;
+
+  const inClass = VAULTS.filter(v => state.klass==="all" || v.asset_class===state.klass);
+  const n = anyQ ? inClass.filter(eligible).length : inClass.length;
+  const el = document.getElementById("v-count");
+  el.textContent = n;
+  el.classList.toggle("zero", n===0);
+  document.getElementById("v-line").textContent =
+    anyQ ? (n===1 ? "vault will take your money." : "vaults will take your money.")
+         : "verified vaults — answer the three questions to see which will take your money.";
+  document.getElementById("tracked-section").style.display = (state.klass==="all" && !anyQ) ? "" : "none";
+}
+
+function renderTracked(){
+  if (!TRACKED) return;
+  const rows = TRACKED.protocols;
+  document.getElementById("tracked-meta").textContent = rows.length + " protocols · " + fmtUsd(rows.reduce((s,r)=>s+r.tvl_usd,0)) + " TVL";
+  document.getElementById("tracked-board").innerHTML = `
+    <thead><tr><th>#</th><th>Protocol</th><th>Category</th><th>Chains</th><th>TVL</th><th>7d</th></tr></thead>
+    <tbody>${rows.map((r,i)=>{
+      const ch = r.change_7d_pct;
+      const chCell = ch==null ? "<span class='chains-cell'>—</span>" : `<span class="${ch>=0?"up":"down"}">${ch>=0?"+":""}${ch}%</span>`;
+      return `<tr>
+        <td class="rank">${i+1}</td>
+        <td><a class="pname" href="${esc(r.defillama_url)}" target="_blank" rel="noopener">${esc(r.name)}</a></td>
+        <td><span class="cat">${TRACK_CAT[r.category]||r.category}</span></td>
+        <td class="chains-cell">${(r.chains||[]).slice(0,3).join(", ")}</td>
+        <td class="tvl">${fmtUsd(r.tvl_usd)}</td>
+        <td>${chCell}</td>
+      </tr>`;}).join("")}</tbody>`;
+}
+
+function buildRail(){
+  const rail = document.getElementById("rail");
+  const counts = {all: VAULTS.length};
+  VAULTS.forEach(v => counts[v.asset_class]=(counts[v.asset_class]||0)+1);
+  rail.innerHTML = [`<button class="chip" data-k="all" aria-pressed="true">All · ${counts.all}</button>`]
+    .concat(CLASS_ORDER.filter(k=>counts[k]).map(k =>
+      `<button class="chip" data-k="${k}" aria-pressed="false">${CLASS_META[k].name} · ${counts[k]}</button>`)).join("");
+  rail.addEventListener("click", e => {
+    const b = e.target.closest(".chip"); if(!b) return;
+    state.klass = b.dataset.k;
+    rail.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c===b ? "true":"false"));
+    render();
+  });
+}
+
+["q-region","q-ticket","q-kyc"].forEach(id => document.getElementById(id).addEventListener("change", e => {
+  if(id==="q-region") state.region = e.target.value;
+  if(id==="q-ticket") state.ticket = Number(e.target.value);
+  if(id==="q-kyc")    state.kyc    = e.target.value;
+  render();
+}));
+document.getElementById("v-reset").addEventListener("click", ()=>{
+  state.region="any"; state.ticket=0; state.kyc="any";
+  document.getElementById("q-region").value="any";
+  document.getElementById("q-ticket").value="0";
+  document.getElementById("q-kyc").value="any";
+  render();
+});
+
+Promise.all([
+  fetch("registry/vaults.enriched.json").then(r => r.ok ? r.json() : Promise.reject(r.status)),
+  fetch("registry/tracked.json").then(r => r.ok ? r.json() : null).catch(() => null)
+]).then(([data, tracked]) => {
+  VAULTS = data; TRACKED = tracked;
+  const asOf = data.find(v=>v.live && v.live.as_of);
+  const total = data.length + (tracked ? tracked.protocols.length : 0);
+  document.getElementById("updated").textContent =
+    `${data.length} verified · ${tracked ? tracked.protocols.length : 0} tracked · ${total} vaults` + (asOf ? ` · figures as of ${asOf.live.as_of.slice(0,10)}` : "");
+  document.getElementById("counts").textContent = total+" vaults · "+fmtUsd(
+    data.reduce((s,v)=>s+((v.live&&v.live.tvl_usd)||v.tvl_usd_approx||0),0) + (tracked ? tracked.protocols.reduce((s,r)=>s+r.tvl_usd,0) : 0))+" tracked TVL";
+  buildRail();
+  render();
+  renderTracked();
+}).catch(() => {
+  document.getElementById("ledger").innerHTML = "<div class='vault'>The ledger failed to load its data (registry/vaults.enriched.json). If you're opening this file directly, serve the folder over HTTP instead.</div>";
+  document.getElementById("updated").textContent = "data unavailable";
+});
+</script>
+</body>
+</html>

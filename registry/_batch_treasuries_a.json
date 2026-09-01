@@ -1,0 +1,181 @@
+[
+  {
+    "id": "blackrock-buidl",
+    "name": "BlackRock USD Institutional Digital Liquidity Fund (BUIDL)",
+    "issuer": "BlackRock (tokenized, distributed and transfer-agented by Securitize)",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A BVI-domiciled fund holding cash, short-term US Treasury bills and repurchase agreements, targeting a stable $1.00 NAV with daily accrued dividends paid in new tokens.",
+    "tokens": ["BUIDL"],
+    "chains": ["Ethereum", "Aptos", "Solana", "Avalanche", "BNB Chain", "Optimism", "Arbitrum", "Polygon"],
+    "tvl_usd_approx": 3607000000,
+    "apy_pct_approx": 4.0,
+    "terms": {
+      "min_investment": "$5M minimum subscription (min redemption 250,000 USDC)",
+      "kyc": "qualified_purchaser",
+      "jurisdiction": "Offered under Reg D 506(c) / 3(c)(7) to US Qualified Purchasers and eligible institutions; onboarding via Securitize",
+      "redemption": "USD via Securitize T+0/T+1; 24/7 instant USDC exit via Circle's USDC smart-contract facility at $1",
+      "lockup": "None stated; shares transferable only between whitelisted Securitize-KYC'd wallets",
+      "fees": "Management fee ~0.20-0.50%/yr depending on share class/chain; no subscription or redemption fee"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {"method": "Onboard as qualified purchaser via Securitize portal", "url": "https://securitize.io/blackrock/BUIDL"},
+        {"method": "Indirect exposure via wrappers (e.g. Ondo OUSG holds BUIDL)", "url": "https://ondo.finance/ousg"}
+      ]
+    },
+    "defillama_slug": "blackrock-buidl",
+    "risk_notes": "Largest tokenized treasury fund; risks are primarily issuer/transfer-agent operational risk (Securitize whitelist), smart-contract risk on 8 chains, and reliance on Circle's USDC facility for instant liquidity. Underlying is government paper, so credit risk is minimal. APY drifts with front-end rates (~3.5-4% mid-2026).",
+    "sources": ["https://eco.com/support/en/articles/15254013-buidl-deep-dive-2026", "https://www.stablewatch.io/research/project-spotlight-buidl", "https://app.rwa.xyz/assets/BUIDL", "https://api.llama.fi/protocol/blackrock-buidl"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "circle-usyc",
+    "name": "USYC (US Yield Coin, formerly Hashnote)",
+    "issuer": "Circle (via Hashnote Management, acquired by Circle in January 2025)",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "Tokenized share of the Hashnote International Short Duration Yield Fund Ltd (Cayman), which invests primarily in overnight reverse repurchase agreements backed by US government securities plus short-dated T-bills; yield accrues via NAV price appreciation.",
+    "tokens": ["USYC"],
+    "chains": ["Ethereum", "BNB Chain", "Canton", "Sui", "Solana"],
+    "tvl_usd_approx": 2764000000,
+    "apy_pct_approx": 3.6,
+    "terms": {
+      "min_investment": "$100k reported minimum for direct subscription",
+      "kyc": "institutional_only",
+      "jurisdiction": "Non-US Persons (Reg S) — entities only, non-individual accredited investors; a feeder also serves US qualified purchasers",
+      "redemption": "Near-instant atomic T+0 conversion between USYC and USDC via Circle infrastructure, subject to fund cut-offs",
+      "lockup": "None",
+      "fees": "~0.04% subscription / 0.03% redemption; fees auto-waived on first $1M of combined daily volume (Ethereum/Solana); management fee embedded in NAV"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {"method": "Institutional onboarding with Circle/Hashnote", "url": "https://www.circle.com/usyc"},
+        {"method": "Held as yield-bearing trading collateral via Binance and other institutional venues", "url": "https://developers.circle.com/tokenized/usyc/overview"}
+      ]
+    },
+    "defillama_slug": "circle-usyc",
+    "risk_notes": "Yield accrues via NAV appreciation (no fixed APY; tracks overnight repo minus fees, est. ~3.5-3.8% mid-2026). The bulk of supply (~$2.7B) now sits on BNB Chain as Binance institutional collateral, concentrating counterparty/venue risk; individuals cannot subscribe.",
+    "sources": ["https://www.circle.com/usyc", "https://developers.circle.com/tokenized/usyc/overview", "https://eco.com/support/en/articles/15254018-usyc-deep-dive-2026-hashnote-and-circle-s-tokenized-money-market", "https://api.llama.fi/protocol/circle-usyc"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "ondo-usdy",
+    "name": "Ondo US Dollar Yield Token (USDY)",
+    "issuer": "Ondo Finance (Ondo USDY LLC)",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A tokenized, bankruptcy-remote note secured by short-term US Treasuries and bank demand deposits, overcollateralized ~3%, paying a variable Ondo-set APY that accrues into the token price.",
+    "tokens": ["USDY", "rUSDY"],
+    "chains": ["Ethereum", "Solana", "Stellar", "Sei", "XRP Ledger", "Mantle", "Sui", "Aptos", "Arbitrum", "Noble"],
+    "tvl_usd_approx": 2100000000,
+    "apy_pct_approx": 4.65,
+    "terms": {
+      "min_investment": "$100k for direct mint/redemption with Ondo; no minimum on secondary markets (DEXs/CEXs)",
+      "kyc": "kyc_retail",
+      "jurisdiction": "Non-US persons only (Reg S) — individuals and institutions outside the US and other restricted jurisdictions; ondo.finance geo-blocks US visitors",
+      "redemption": "Direct: submit USDY, USD wired T+1 to a non-US bank account (USDC paths also supported); or sell instantly on secondary markets",
+      "lockup": "Newly minted tokens are transfer-restricted for 40-50 days after purchase (Reg S seasoning); secondary-market tokens are freely transferable",
+      "fees": "No explicit user fee; Ondo earns the spread between portfolio yield and the ~25bps management take built into the set APY; DEX spreads typically 5-15bps"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "Direct mint via Ondo portal after KYC (non-US, $100k+)", "url": "https://ondo.finance/usdy"},
+        {"method": "Buy on secondary markets: Curve (Ethereum), Orca (Solana), CEX listings — any size, no KYC with Ondo", "url": "https://app.rwa.xyz/assets/USDY"}
+      ]
+    },
+    "defillama_slug": "ondo-yield-assets",
+    "risk_notes": "Bearer-style note rather than a fund share: holders rely on Ondo USDY LLC's collateral structure and the Ankura trust; the Ondo-set APY (4.65% as of April 2026) exceeds prevailing T-bill yields, implying duration/deposit spread. The 40-50 day mint seasoning makes fresh primary tokens illiquid. DeFiLlama lumps USDY with OUSG under 'ondo-yield-assets' (~$2.5B combined).",
+    "sources": ["https://eco.com/support/en/articles/14798657-ondo-usdy-tokenized-treasuries-explained", "https://docs.ondo.finance/general-access-products/usdy/faq/transfers", "https://app.rwa.xyz/assets/USDY", "https://api.llama.fi/protocol/ondo-yield-assets"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "ondo-ousg",
+    "name": "Ondo Short-Term US Government Treasuries (OUSG)",
+    "issuer": "Ondo Finance (Ondo I LP)",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A tokenized fund investing in short-term US Treasuries largely via other tokenized/institutional funds — primarily BlackRock's BUIDL, plus Franklin Templeton, WisdomTree and similar money-market exposure, GSE securities, bank deposits and USDC for liquidity.",
+    "tokens": ["OUSG", "rOUSG"],
+    "chains": ["Ethereum", "Polygon", "Solana"],
+    "tvl_usd_approx": 375000000,
+    "apy_pct_approx": 3.49,
+    "terms": {
+      "min_investment": "$5k for instant mint/redeem (subject to daily limits); $100k min investment / $50k min redemption for non-instant",
+      "kyc": "qualified_purchaser",
+      "jurisdiction": "US Qualified Purchasers and equivalent international institutions after Ondo Qualified Access onboarding",
+      "redemption": "Instant 24/7/365 USDC mint and redemption (settled via the BUIDL primary market), plus standard USD wire path",
+      "lockup": "None; tokens transferable only between Ondo-whitelisted addresses",
+      "fees": "0.15% management fee, waived until January 1, 2027; 0% mint/redeem fees"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {"method": "Onboard as qualified purchaser via Ondo portal, then mint with USDC/USD", "url": "https://ondo.finance/ousg"},
+        {"method": "Docs / eligibility details", "url": "https://docs.ondo.finance/qualified-access-products/ousg/overview"}
+      ]
+    },
+    "defillama_slug": "ondo-yield-assets",
+    "risk_notes": "Effectively a QP-gated wrapper over BUIDL with better minimums ($5k instant vs $5M) and 24/7 USDC liquidity — inherits BUIDL/Securitize operational risk plus Ondo's own whitelist/contract risk. TVL ~$375M (rwa.xyz, Aug 2026); shares the 'ondo-yield-assets' DeFiLlama slug with USDY.",
+    "sources": ["https://docs.ondo.finance/qualified-access-products/ousg/overview", "https://eco.com/support/en/articles/15254014-ousg-deep-dive-2026-ondo-s-short-treasury-fund", "https://app.rwa.xyz/assets/OUSG", "https://api.llama.fi/protocol/ondo-yield-assets"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "franklin-benji-fobxx",
+    "name": "Franklin OnChain US Government Money Fund (FOBXX / BENJI)",
+    "issuer": "Franklin Templeton",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A US SEC-registered 1940 Act government money market fund holding at least 99.5% US government securities, cash and fully collateralized repos; each BENJI token is one $1.00 fund share with daily yield accrual.",
+    "tokens": ["BENJI"],
+    "chains": ["Stellar", "Ethereum", "Solana", "Base", "Avalanche", "Polygon", "Arbitrum", "Aptos", "BNB Chain"],
+    "tvl_usd_approx": 1029000000,
+    "apy_pct_approx": 3.5,
+    "terms": {
+      "min_investment": "$20 via the Benji Investments app (retail; institutional channels higher)",
+      "kyc": "kyc_retail",
+      "jurisdiction": "US retail investors in eligible states (standard US mutual fund restrictions apply to non-US persons); institutions via Benji Institutional portal",
+      "redemption": "Subscriptions/redemptions in USD through the Benji app/portal at daily NAV; USDC on/off-ramp conversions supported; peer-to-peer BENJI transfers enabled",
+      "lockup": "None",
+      "fees": "Expense ratio contractually capped/waived to ~0.20% net; no mint/redeem fees"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "Benji Investments mobile app (retail, US) or Benji Institutional web portal", "url": "https://digitalassets.franklintempleton.com/benji/"},
+        {"method": "FOBXX fund page (yields, prospectus)", "url": "https://www.franklintempleton.com/investments/options/money-market-funds/products/29386/SINGLCLASS/franklin-on-chain-u-s-government-money-fund/FOBXX"}
+      ]
+    },
+    "defillama_slug": null,
+    "risk_notes": "The most retail-friendly and most heavily regulated of the treasuries group (registered US money market fund, $20 minimum), but tokens live inside Franklin's permissioned Benji ecosystem — no DEX trading, wallet-whitelisted transfers. Not listed as a protocol on DeFiLlama (tracked on rwa.xyz); BENJI platform total ~$1.03B, 7-day yield 3.50% (Mar 2026).",
+    "sources": ["https://digitalassets.franklintempleton.com/benji/", "https://eco.com/support/en/articles/15254016-benji-deep-dive-2026-franklin-templeton-s-tokenized-money-market", "https://www.theblock.co/news/defi/2026-08-12-sec-clears-franklin-templeton-funds-use-onchain-benji-system-cash-management-411654"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "superstate-ustb",
+    "name": "USTB — Invesco Short Duration US Government Securities Fund (formerly Superstate)",
+    "issuer": "Superstate (tokenization/transfer agent); Invesco Advisers became investment manager in Q2 2026",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A private fund holding short-duration US Treasury bills seeking current income with liquidity and principal stability; ownership represented by the USTB token or book-entry records.",
+    "tokens": ["USTB"],
+    "chains": ["Ethereum", "Solana", "Plume"],
+    "tvl_usd_approx": 643000000,
+    "apy_pct_approx": 3.53,
+    "terms": {
+      "min_investment": "No public minimum stated (institutional-scale in practice; 0.10% fee rebate above $25M)",
+      "kyc": "accredited",
+      "jurisdiction": "US Accredited Investors and Qualified Purchasers (US-focused offering, entity onboarding via Superstate)",
+      "redemption": "Each market day in USD or USDC; USDC redemptions immediate/same-day, USD same-day with 1pm ET cutoff",
+      "lockup": "None; allowlisted addresses only",
+      "fees": "Management fee up to 0.15%, with 0.10% rebate on balances over $25M"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {"method": "Onboard with Superstate (KYC as accredited investor/QP), then subscribe in USD or USDC", "url": "https://superstate.com/ustb"}
+      ]
+    },
+    "defillama_slug": "invesco-ustb",
+    "risk_notes": "DeFiLlama's 'Invesco USTB' entry IS Superstate's USTB — not a ticker collision: Invesco took over as investment manager (announced Mar 2026, completed Q2 2026) and the fund was renamed, keeping the same USTB ticker, contracts and token address, with Superstate as digital transfer agent. Fund AUM $829.7M (on-chain token TVL lower because some ownership is book-entry); 30-day yield 3.53%.",
+    "sources": ["https://superstate.com/ustb", "https://www.prnewswire.com/news-releases/invesco-and-superstate-advance-institutional-tokenization-through-ustb-partnership-302722437.html", "https://www.ledgerinsights.com/invesco-to-take-over-superstates-ustb-tokenized-mmf-in-tradfi-rebrand/", "https://api.llama.fi/protocol/invesco-ustb"],
+    "verified_at": "2026-09-01"
+  }
+]

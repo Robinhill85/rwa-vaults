@@ -1,0 +1,181 @@
+[
+  {
+    "id": "spiko",
+    "name": "Spiko (EUTBL / USTBL money market funds)",
+    "issuer": "Spiko (Paris, France) — AMF-regulated fund manager; funds are French UCITS money market funds",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "Short-term French/EU and US government Treasury bills held in AMF-approved UCITS money market funds (EUTBL holds euro-denominated EU T-bills, USTBL holds US T-bills), with CACEIS as custodian.",
+    "tokens": ["EUTBL", "USTBL", "UKTBL", "CHTBL"],
+    "chains": ["Ethereum", "Polygon", "Arbitrum", "Base", "Stellar", "Starknet", "Etherlink"],
+    "tvl_usd_approx": 2500000000,
+    "apy_pct_approx": 4.1,
+    "terms": {
+      "min_investment": "€/$1,000 on the first subscription only; subsequent orders and redemptions from €/$1",
+      "kyc": "kyc_retail",
+      "jurisdiction": "France-domiciled UCITS regulated by the AMF; open to EU/EEA retail individuals and businesses — the key differentiator: a genuinely retail-accessible EU-regulated tokenized MMF. Not offered to US persons.",
+      "redemption": "Daily subscriptions/redemptions at NAV; order cut-off 10:30 CET, executed on next known NAV (T+0/T+1 settlement); minimum redemption €1",
+      "lockup": "None",
+      "fees": "0.25%/yr management (EUTBL), 0.30%/yr (USTBL); 0% subscription and 0% redemption fees; yields quoted net of fees (~2.1-2.6% EUR, ~3.7-4.1% USD as of Aug 2026)"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "Spiko app — open an account in ~5 minutes (KYC), deposit EUR/USD via bank transfer or stablecoins", "url": "https://app.spiko.io"},
+        {"method": "Spiko website / product pages", "url": "https://www.spiko.io"}
+      ]
+    },
+    "defillama_slug": "spiko",
+    "risk_notes": "Regulated UCITS short-term VNAV money market fund, so credit risk is essentially sovereign T-bill risk plus fund/custodian operational risk; NAV is variable (not a hard $1 peg) and yields track ECB/Fed short rates. Token layer adds smart-contract and chain-bridge risk across 7 networks.",
+    "sources": ["https://www.spiko.io/", "https://www.spiko.io/spiko-euro", "https://www.spiko.io/blog/spiko-launches-the-worlds-first-tokenized-money-market-funds", "https://app.rwa.xyz/assets/USTBL", "https://defillama.com/protocol/spiko"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "openeden-tbill",
+    "name": "OpenEden TBILL Vault",
+    "issuer": "OpenEden — TBILL tokens issued by Treasury Bills Institutional Liquidity Limited, a BVI FSC-regulated professional fund",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "Short-dated US Treasury bills (~99% of portfolio, maturities under 6 months) plus a small allocation to an AAAm-rated Treasury money market fund; rated AA+f/S1+ by S&P.",
+    "tokens": ["TBILL"],
+    "chains": ["BNB Chain", "XRPL", "Ethereum", "Solana", "Arbitrum"],
+    "tvl_usd_approx": 247000000,
+    "apy_pct_approx": 3.6,
+    "terms": {
+      "min_investment": "First deposit 100,000 USDC minimum; subsequent deposits from 1 USDC",
+      "kyc": "accredited",
+      "jurisdiction": "BVI professional fund; open to Accredited/Professional Investors globally (KYC/AML onboarding required); not a retail product",
+      "redemption": "On-chain redemption to USDC at NAV, minimum redemption 1 USDC; near-instant/24-7 via smart contract subject to liquidity",
+      "lockup": "None",
+      "fees": "0.30%/yr total expense ratio + 0.05% (5 bps) transaction fee on redemptions"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {"method": "OpenEden app — onboard as accredited/professional investor, deposit USDC", "url": "https://openeden.com/tbill"},
+        {"method": "Docs / onboarding requirements", "url": "https://docs.openeden.com/tbill/faq"}
+      ]
+    },
+    "defillama_slug": "openeden-tbill",
+    "risk_notes": "Underlying is high-quality (S&P AA+f rated) but access is permissioned: TBILL is non-transferable to non-whitelisted wallets, so no secondary-market exit — you depend on OpenEden's redemption mechanism and the BVI fund structure. Most supply now sits on BNB Chain (~$202M of $247M).",
+    "sources": ["https://docs.openeden.com/tbill/faq", "https://openeden.com/tbill", "https://app.rwa.xyz/assets/TBILL", "https://www.spglobal.com/ratings/en/regulatory/article/-/view/sourceId/101644198", "https://defillama.com/protocol/openeden-tbill"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "wisdomtree-wtgxx",
+    "name": "WisdomTree Government Money Market Digital Fund (WTGXX) / WisdomTree Connect",
+    "issuer": "WisdomTree Digital Trust / WisdomTree, Inc. (NYSE: WT), SEC-registered under the Investment Company Act of 1940",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A '40-Act US government money market fund holding short-term US government securities and repos, targeting a stable $1.00 NAV, with fund shares recorded as tokens on public blockchains.",
+    "tokens": ["WTGXX"],
+    "chains": ["Ethereum", "Stellar", "Avalanche", "Arbitrum", "Base", "Optimism", "Plume", "Solana"],
+    "tvl_usd_approx": 1030000000,
+    "apy_pct_approx": 3.7,
+    "terms": {
+      "min_investment": "$1 (initial and subsequent purchases)",
+      "kyc": "kyc_retail",
+      "jurisdiction": "US only — SEC-registered fund offered to US persons via WisdomTree Prime (retail app, most US states) and WisdomTree Connect (institutional/business)",
+      "redemption": "Daily at $1.00 stable NAV; 24/7 trading and instant settlement being rolled out via WisdomTree Connect; standard MMF gates/fees can apply in stress",
+      "lockup": "None",
+      "fees": "0.25% expense ratio; no subscription/redemption fees in normal conditions"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "WisdomTree Prime mobile app (US retail)", "url": "https://www.wisdomtreeprime.com/digital-funds/wtgxx/"},
+        {"method": "WisdomTree Connect (institutions/businesses, wallet-based access, 13 tokenized funds)", "url": "https://www.wisdomtreeconnect.com/digital-funds/money-market/wtgxx"}
+      ]
+    },
+    "defillama_slug": "wisdomtree",
+    "risk_notes": "Strongest regulatory wrapper of the group (SEC-registered '40-Act MMF from a public asset manager), but geographically inverted vs Spiko: US-persons only, so inaccessible to EU retail. Stable-NAV MMF risk applies — $1.00 is targeted, not guaranteed, and redemption fees/gates can be imposed. DeFiLlama TVL (~$1.03B) covers WisdomTree's tokenized fund suite.",
+    "sources": ["https://www.wisdomtreeconnect.com/digital-funds/money-market/wtgxx", "https://www.wisdomtreeprime.com/digital-funds/wtgxx/", "https://ir.wisdomtree.com/news-events/press-releases/detail/725/wisdomtree-connect-now-offers-13-tokenized-funds-across", "https://defillama.com/protocol/wisdomtree"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "midas-mtbill",
+    "name": "Midas mTBILL",
+    "issuer": "Midas (regulated German/European tokenization platform; tokens issued as ISIN-bearing tracker certificates under European law)",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "A tokenized certificate tracking short-term US Treasury exposure, primarily via BlackRock's iShares $ Treasury Bond 0-1yr UCITS ETF held with regulated custodians; sister token mBASIS instead tracks a crypto basis-trade strategy (not treasuries).",
+    "tokens": ["mTBILL"],
+    "chains": ["Ethereum", "Base"],
+    "tvl_usd_approx": 71000000,
+    "apy_pct_approx": 3.2,
+    "terms": {
+      "min_investment": "No stated minimum currently (rwa.xyz lists 0 USDC); earlier instant-mint tiers had higher thresholds",
+      "kyc": "kyc_retail",
+      "jurisdiction": "Non-US (and non-UK) persons only; KYC/AML 'greenlisting' required to mint/redeem; EU-friendly but not a UCITS fund — it's a debt certificate on Midas",
+      "redemption": "Instant on-chain mint/redeem vs USDC at NAV via Midas smart contracts (subject to liquidity buffer); primary redemption otherwise processed against the underlying ETF",
+      "lockup": "None",
+      "fees": "0% management/issuance fees; rwa.xyz lists 0% redemption, historical docs cite ~15 bps redemption fee on primary redemption; ETF TER borne inside NAV"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "Midas app — connect wallet, complete KYC greenlisting, mint mTBILL with USDC (geo-blocked for US/UK)", "url": "https://midas.app/mtbill"},
+        {"method": "Secondary DeFi markets (mTBILL is a permissionless-transfer ERC-20 once issued)", "url": "https://midas.app/"}
+      ]
+    },
+    "defillama_slug": "midas-rwa",
+    "risk_notes": "You hold a certificate (debt claim) on Midas that tracks a BlackRock T-bill ETF — issuer/structure risk sits above the sovereign risk, unlike direct fund shares. mTBILL itself is ~$71M; the larger DeFiLlama figure is all Midas products including mBASIS and vault strategies with very different risk profiles.",
+    "sources": ["https://midas.app/mtbill", "https://app.rwa.xyz/assets/mTBILL", "https://forum.arbitrum.foundation/t/midas-step-application/23635", "https://defillama.com/protocol/midas-rwa"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "opentrade",
+    "name": "OpenTrade Yield Vaults",
+    "issuer": "OpenTrade (UK; works with an FCA-regulated asset manager; investment-committee-reviewed vaults)",
+    "asset_class": "tokenized_treasuries",
+    "underlying": "Stablecoin (USDC/EURC) vaults whose deposits are deployed into US Treasury bills, money market funds and other institutional fixed-income/RWA strategies via regulated asset managers, paying yield back on-chain.",
+    "tokens": [],
+    "chains": ["Avalanche", "Plume", "Ethereum"],
+    "tvl_usd_approx": 258000000,
+    "apy_pct_approx": 4.0,
+    "terms": {
+      "min_investment": "Varies by vault/partner — e.g. from 1 USDC on partner integrations (IXS), ~$100 on InvestaX Earn; direct OpenTrade relationships are negotiated B2B",
+      "kyc": "institutional_only",
+      "jurisdiction": "B2B: onboards exchanges, neobanks, fintechs, wallets and institutional investors (non-US focus); retail reaches it only indirectly through partner apps (e.g. Criptan, Littio, IXS, El Dorado) which run their own KYC",
+      "redemption": "Daily/flexible entry-exit with no lockups on core USDC treasury vaults; settlement typically T+0/T+1 through partner rails",
+      "lockup": "None on flexible-term vaults; fixed-term products exist",
+      "fees": "Not publicly standardized — spread/management fees are embedded per-vault and per-partner agreement"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {"method": "Direct B2B onboarding for institutions/fintechs", "url": "https://www.opentrade.io/"},
+        {"method": "Indirectly as retail via partner apps that embed OpenTrade yield (own KYC per app)", "url": "https://docs.opentrade.io/"}
+      ]
+    },
+    "defillama_slug": "opentrade",
+    "risk_notes": "Infrastructure/B2B layer rather than a fund you buy directly — end users carry both OpenTrade's structure risk and their partner platform's counterparty risk, and fee/yield terms are opaque compared with Spiko/WisdomTree. Underlying treasury vaults are conservative; newer vaults (private credit, staking-powered yield) are not treasury risk.",
+    "sources": ["https://www.opentrade.io/", "https://docs.opentrade.io/", "https://build.avax.network/integrations/opentrade", "https://www.ixs.finance/news/ixs-offer-institutional-on-chain-yield-through-mmfs-and-blackrock-backed-bond-etf", "https://defillama.com/protocol/opentrade"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "hastra",
+    "name": "Hastra (wYLDS / PRIME)",
+    "issuer": "Hastra — a DeFi liquidity protocol incubated by Figure Technology (NYSE-listed) and the Provenance Blockchain Foundation; Hastra itself is not a registered fund issuer",
+    "asset_class": "private_credit",
+    "underlying": "NOT treasuries: wYLDS is a wrapper backed 1:1 by YLDS, Figure's SEC-registered yield-bearing stablecoin (a face-amount certificate), and PRIME/AUTO stake wYLDS into yield from Figure's Democratized Prime HELOC and auto-loan lending pools — consumer-credit yield, not T-bills.",
+    "tokens": ["wYLDS", "PRIME", "AUTO"],
+    "chains": ["Ethereum", "Solana"],
+    "tvl_usd_approx": 597000000,
+    "apy_pct_approx": 3.3,
+    "terms": {
+      "min_investment": "None — permissionless wallet interaction",
+      "kyc": "none",
+      "jurisdiction": "Permissionless DeFi protocol (US-linked via Figure/YLDS's SEC registration, but Hastra tokens themselves are unregistered; standard sanctioned-jurisdiction restrictions in ToS)",
+      "redemption": "On-chain: swap/claim wYLDS back toward YLDS via redemption vaults; unstake PRIME/AUTO to wYLDS. Distributions are variable and not guaranteed",
+      "lockup": "None stated for wYLDS; staking tokens redeem back to wYLDS",
+      "fees": "No on-chain protocol fee; Figure monetizes via off-chain lending spreads. wYLDS ~3.3% APY, PRIME ~5.7% APY (variable)"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "hastra.io app — connect a Solana or Ethereum wallet, acquire wYLDS, optionally stake for PRIME/AUTO", "url": "https://hastra.io/"}
+      ]
+    },
+    "defillama_slug": "hastra",
+    "risk_notes": "Legitimate provenance (incubated by publicly-traded Figure, Dec-2025 RWA Consortium with Solana/Chainlink partners) but NOT a tokenized-treasury vault: yield comes from HELOC/auto-loan credit spreads wrapped in an unregistered DeFi token. Very new, with only ~400-500 active wallets against ~$597M TVL — implying heavy concentration in a few large holders; Figure formally disclaims issuing or endorsing wYLDS/PRIME. Treat as RWA private-credit DeFi exposure, not a T-bill cash substitute.",
+    "sources": ["https://hastra.io/", "https://hastra.io/terms", "https://defillama.com/protocol/hastra", "https://investors.figure.com/news-releases/news-release-details/figure-and-leading-crypto-partners-launch-rwa-consortium-onchain"],
+    "verified_at": "2026-09-01"
+  }
+]

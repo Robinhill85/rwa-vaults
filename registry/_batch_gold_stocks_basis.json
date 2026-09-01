@@ -1,0 +1,213 @@
+[
+  {
+    "id": "paxos-gold-paxg",
+    "name": "Pax Gold",
+    "issuer": "Paxos Trust Company, N.A. (NYDFS-regulated New York trust company)",
+    "asset_class": "gold",
+    "underlying": "Each PAXG token represents one fine troy ounce of a physical LBMA Good Delivery gold bar held in Brink's vaults in London, custodied by Paxos Trust.",
+    "tokens": ["PAXG"],
+    "chains": ["Ethereum", "Solana"],
+    "tvl_usd_approx": 1907000000,
+    "apy_pct_approx": 0,
+    "terms": {
+      "min_investment": "~0.01 troy oz (~$20-40) on the Paxos platform; any fraction on exchanges/DEXs",
+      "kyc": "kyc_retail",
+      "jurisdiction": "US (NYDFS-regulated); token itself trades globally, available to US retail",
+      "redemption": "Redeemable via Paxos for USD, unallocated loco London gold, or physical LBMA Good Delivery bars (minimum ~430 PAXG = one full bar, collected in London); smaller physical amounts via third parties like Alpha Bullion",
+      "lockup": "None",
+      "fees": "Zero custody/storage fees and zero Paxos on-chain transfer fee; tiered creation/redemption fees on the Paxos platform; large flat fee (reported ~$15k per request, unconfirmed) plus logistics for physical bar redemption; normal gas on DEX trades"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "Buy/redeem directly with Paxos (KYC account)", "url": "https://www.paxos.com/pax-gold"},
+        {"method": "Buy on exchanges (Coinbase, Kraken, Binance) or DEXs (Uniswap, Solana DEXs)", "url": "https://www.coinbase.com/price/pax-gold"}
+      ]
+    },
+    "defillama_slug": "paxos-gold",
+    "risk_notes": "Gold pays no yield; you hold price exposure plus issuer/custody risk on Paxos. Physical redemption is effectively institutional-scale (one whole ~430 oz bar, ~$1.5M+, picked up in London).",
+    "sources": ["https://www.paxos.com/pax-gold", "https://www.paxos.com/paxg-1pager-2026.pdf", "https://xgram.io/blog/can-you-redeen-paxg-for-physical-gold-bars", "https://defillama.com/protocol/paxos-gold"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "tether-gold-xaut",
+    "name": "Tether Gold",
+    "issuer": "TG Commodities Limited (Tether Gold, redomiciled to El Salvador under its DALMA license)",
+    "asset_class": "gold",
+    "underlying": "Each XAUT represents one fine troy ounce of physical LBMA Good Delivery gold held on an allocated basis in a vault in Switzerland.",
+    "tokens": ["XAUT"],
+    "chains": ["Ethereum", "TON"],
+    "tvl_usd_approx": 3142000000,
+    "apy_pct_approx": 0,
+    "terms": {
+      "min_investment": "50 XAUT (~$170k+ at 2026 gold prices) to buy directly from Tether Gold; any fraction on exchanges",
+      "kyc": "kyc_retail",
+      "jurisdiction": "El Salvador issuer, Swiss vaulting; direct platform excludes US persons and other restricted jurisdictions",
+      "redemption": "Verified direct customers can redeem for physical gold delivered to a Swiss address (full-bar increments, ~430 XAUT minimum for a bar) or have the bar sold and receive cash proceeds",
+      "lockup": "None",
+      "fees": "0.25% fee on direct purchase and on redemption; zero custody/storage fees; shipping/insurance on physical delivery; gas on transfers"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "Direct purchase/redemption (KYC, 50 XAUT min, non-US)", "url": "https://gold.tether.to/"},
+        {"method": "Buy fractional XAUT on exchanges (Bitfinex, Bybit, OKX, KuCoin)", "url": "https://www.bitfinex.com/"}
+      ]
+    },
+    "defillama_slug": "tether-gold",
+    "risk_notes": "No yield; concentrated issuer risk with Tether-affiliated entity and lighter regulatory oversight than Paxos (El Salvador regime, attestations rather than a US trust charter). Direct mint/redeem thresholds put primary access out of retail reach; retail is secondary-market only.",
+    "sources": ["https://gold.tether.to/faq", "https://gold.tether.to/legal/termsofservice", "https://defillama.com/protocol/tether-gold"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "ondo-global-markets",
+    "name": "Ondo Global Markets (Ondo Stocks)",
+    "issuer": "Ondo Finance",
+    "asset_class": "tokenized_stocks",
+    "underlying": "Tokens providing 1:1 price exposure to 430+ US-listed stocks and ETFs (e.g. TSLAon, NVDAon, SPYon), backed by real securities held with regulated broker-dealer custodians and minted/redeemed against Wall Street market liquidity.",
+    "tokens": ["TSLAon", "NVDAon", "SPYon", "QQQon", "GOOGLon", "CRCLon"],
+    "chains": ["Ethereum", "Solana", "BNB Chain"],
+    "tvl_usd_approx": 953000000,
+    "apy_pct_approx": null,
+    "terms": {
+      "min_investment": "No meaningful minimum (fractional tokens)",
+      "kyc": "kyc_retail",
+      "jurisdiction": "Non-US only — offered exclusively to eligible non-US persons in supported jurisdictions; US persons excluded",
+      "redemption": "Mint and redeem at prevailing market price 24/5 for the full list; 24/7 instant mint/redeem live since June 2026 for the most-traded names (SPYon, QQQon, CRCLon, NVDAon, TSLAon, GOOGLon)",
+      "lockup": "None",
+      "fees": "No explicit platform fee schedule published; costs embedded in mint/redeem spread plus network gas; venue fees apply on CEX/DEX trades"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "Onboard and mint/redeem on the Ondo Stocks platform (KYC, non-US)", "url": "https://app.ondo.finance/"},
+        {"method": "Trade on integrated venues: MetaMask, CEXs, DEXs and aggregators across Ethereum/Solana/BNB", "url": "https://ondo.finance/ondo-stocks"}
+      ]
+    },
+    "defillama_slug": "ondo-global-markets",
+    "risk_notes": "Retail-friendly but strictly non-US; you hold price exposure via Ondo's issuing structure, not direct share ownership (no shareholder voting), with issuer/custodian and regulatory-perimeter risk. First tokenized-stock platform past $1B TVL — larger than all competitors combined.",
+    "sources": ["https://ondo.finance/ondo-stocks", "https://ondo.finance/blog/real-24-7-trading-for-tokenized-stocks", "https://solana.com/news/ondo-global-markets-tokenized-stocks-etfs-solana", "https://defillama.com/protocol/ondo-global-markets"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "xstocks-backed",
+    "name": "xStocks",
+    "issuer": "Backed Finance (Backed Assets, Swiss/Jersey structure under an EU/EEA prospectus regime)",
+    "asset_class": "tokenized_stocks",
+    "underlying": "Fully collateralized tracker certificates on blue-chip US stocks and ETFs (TSLAx, AAPLx, SPYx, etc.), each backed 1:1 by the underlying security held with a regulated custodian; tokens are freely transferable SPL/ERC-20s.",
+    "tokens": ["TSLAx", "AAPLx", "NVDAx", "SPYx", "MSTRx"],
+    "chains": ["Solana", "Ethereum", "BNB Chain", "Base"],
+    "tvl_usd_approx": 442000000,
+    "apy_pct_approx": null,
+    "terms": {
+      "min_investment": "None on exchanges/DEXs (fractional); primary mint/redeem with Backed is for qualified/professional investors",
+      "kyc": "kyc_retail",
+      "jurisdiction": "Not available to US, Canadian, UK persons (and other excluded jurisdictions); eligible across much of EU, LatAm, Asia, Africa per Backed's EU prospectus regime",
+      "redemption": "Retail exits via secondary markets (Kraken, Bybit, Solana DEXs, 24/7); direct primary redemption for underlying value restricted to qualified investors onboarded with Backed",
+      "lockup": "None",
+      "fees": "No custody fee to holders; exchange trading fees or DEX swap fees; Backed primary market fees apply to qualified investors"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "Trade on Kraken or Bybit (exchange KYC, non-US/CA/UK)", "url": "https://www.kraken.com/"},
+        {"method": "Swap permissionlessly on Solana DEXs (Jupiter, Raydium)", "url": "https://xstocks.fi/"},
+        {"method": "Primary mint/redeem for qualified investors via Backed", "url": "https://backed.fi/"}
+      ]
+    },
+    "defillama_slug": "xstocks",
+    "risk_notes": "Debt-instrument (certificate) structure, not direct equity — no voting rights, dividends handled via token adjustments; issuer and tracking risk. Explicitly prohibited for US/Canada/UK persons even though the on-chain tokens are technically freely transferable.",
+    "sources": ["https://xstocks.fi/", "https://assets.backed.fi/legal-documentation", "https://backed.fi/news-updates/backed-announces-xstocks-coming-soon-to-kraken-and-solana", "https://eco.com/support/en/articles/15083158-kraken-xstocks-explained", "https://defillama.com/protocol/xstocks"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "ethena-susde",
+    "name": "Ethena sUSDe (staked USDe)",
+    "issuer": "Ethena Labs (Ethena GmbH / offshore issuing structure)",
+    "asset_class": "basis_yield",
+    "underlying": "NOT a traditional RWA: sUSDe is staked USDe, a synthetic dollar backed by a delta-neutral basis trade — Ethena holds spot BTC/ETH/liquid-staking collateral plus a large liquid stablecoin sleeve and shorts equivalent perpetual futures, so price risk nets to ~zero while the position harvests perp funding rates, staking yield, and stablecoin/DeFi lending yield; sUSDe accrues that yield via a rising exchange rate.",
+    "tokens": ["sUSDe", "USDe"],
+    "chains": ["Ethereum", "Solana", "Arbitrum", "Base", "Mantle", "many L2s via LayerZero"],
+    "tvl_usd_approx": 4117000000,
+    "apy_pct_approx": 4.8,
+    "terms": {
+      "min_investment": "None (permissionless staking of any USDe amount)",
+      "kyc": "none",
+      "jurisdiction": "Offshore/unregulated for on-chain users; direct mint/redeem of USDe restricted to whitelisted (KYC'd, non-US) approved participants; not MiCA-authorized (delisted from some EU venues)",
+      "redemption": "Unstake sUSDe -> 7-day cooldown -> withdraw USDe; USDe itself exits via deep DEX liquidity or whitelisted redemption",
+      "lockup": "7-day unstaking cooldown",
+      "fees": "No deposit/unstake fee; ~10% protocol fee taken from gross yield before distribution"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "Buy USDe on a DEX/CEX and stake to sUSDe in the Ethena app", "url": "https://app.ethena.fi/"},
+        {"method": "Buy sUSDe directly on Curve/Uniswap or use via Pendle/Aave", "url": "https://curve.fi/"}
+      ]
+    },
+    "defillama_slug": "ethena-usde",
+    "risk_notes": "Yield is path-dependent and highly variable (35% peak in 2024, ~4-5% mid-2026 as funding compressed and backing shifted ~89% to liquid cash/lending); risks include funding-rate inversion, exchange/custodian failure, and the October 2025-style deleveraging events. Insurance fund ~$73M (~1.7% of supply) is the loss buffer.",
+    "sources": ["https://ethena.fi/", "https://gov.ethenafoundation.com/t/ethenas-may-2026-governance-update/796", "https://eco.com/support/en/articles/14798653-susde-explained-ethena-s-yield-bearing-stablecoin", "https://defillama.com/protocol/ethena-usde"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "ethena-usdtb",
+    "name": "Ethena USDtb",
+    "issuer": "Ethena Labs (offshore issuer; US issuance transitioning to Anchorage Digital Bank as first GENIUS Act-compliant federally regulated stablecoin)",
+    "asset_class": "basis_yield",
+    "underlying": "A fully-reserved US dollar stablecoin backed by cash and short-duration US Treasury exposure, held predominantly (~90%) in BlackRock's tokenized treasury fund BUIDL — a true T-bill-backed RWA stable, unlike its basis-trade sibling USDe.",
+    "tokens": ["USDtb"],
+    "chains": ["Ethereum"],
+    "tvl_usd_approx": 483000000,
+    "apy_pct_approx": 0,
+    "terms": {
+      "min_investment": "None on secondary markets; direct mint/redeem reserved for approved institutional parties",
+      "kyc": "none",
+      "jurisdiction": "Offshore issuance (BVI structure) moving onshore to Anchorage Digital Bank (US OCC-chartered) under the GENIUS Act; direct minters must be KYC'd approved participants, mostly non-US institutions",
+      "redemption": "Whitelisted institutions mint/redeem 1:1 against reserves; everyone else buys/sells on DEXs and CEXs",
+      "lockup": "None",
+      "fees": "No fee to hold; mint/redeem terms per institutional agreement; reserve yield accrues to the issuer, not holders (GENIUS-compliant stables cannot pay holder interest — venues like Bybit have run separate 5% APR holding promos)"
+    },
+    "access": {
+      "retail_accessible": true,
+      "how_to_invest": [
+        {"method": "Buy on secondary markets (Curve, Bybit and other CEXs)", "url": "https://curve.fi/"},
+        {"method": "Institutional mint/redeem via Ethena", "url": "https://usdtb.money/"}
+      ]
+    },
+    "defillama_slug": "ethena-usdtb",
+    "risk_notes": "Holders get stability, not yield — the T-bill income goes to the issuer. Two-tier access (institutions mint, retail only buys) plus reliance on BUIDL/BlackRock and the Anchorage transition are the main structural dependencies; supply has fallen from its ~$1.4B peak to ~$483M.",
+    "sources": ["https://usdtb.money/", "https://www.anchorage.com/insights/anchorage-digital-partners-with-ethena-labs-to-launch-first-genius-compliant-federally-regulated-stablecoin", "https://app.rwa.xyz/assets/USDtb", "https://defillama.com/protocol/ethena-usdtb"],
+    "verified_at": "2026-09-01"
+  },
+  {
+    "id": "re-tokenized-reinsurance",
+    "name": "Re Protocol (re.xyz)",
+    "issuer": "Re (Resilience Foundation / Re licensed reinsurance vehicles, operating on a Bermuda-style transformer structure)",
+    "asset_class": "reinsurance",
+    "underlying": "Deposit tokens (reUSD senior tranche, reUSDe mezzanine) whose capital collateralizes real-world reinsurance contracts — low-volatility programs like property, trucking, aviation and workers' comp — so holders earn insurance premium yield plus a base money-market rate, tranched by loss priority.",
+    "tokens": ["reUSD", "reUSDe", "RE"],
+    "chains": ["Ethereum", "Avalanche"],
+    "tvl_usd_approx": 328000000,
+    "apy_pct_approx": 6.4,
+    "terms": {
+      "min_investment": "No public minimum for reUSD deposits via the app; earlier tokenized fund vintages required accredited-investor-scale tickets",
+      "kyc": "kyc_retail",
+      "jurisdiction": "Non-US persons only (Regulation S) in permitted jurisdictions after KYC/AML; earlier fund products also admitted US accredited investors, but the current token suite prohibits US persons",
+      "redemption": "reUSD: near-real-time from an on-chain liquidity buffer subject to daily caps, falling back to a quarterly queue if the buffer drops to 1% of supply; reUSDe: quarterly windows only, sized by an independent actuary against regulatory surplus",
+      "lockup": "reUSD effectively liquid within caps; reUSDe quarterly (capital is deployed as offchain reinsurance collateral); RE staking has lockups/cooldowns",
+      "fees": "No published deposit fee; yield quoted net (reUSD ~ SOFR + 250bps, currently ~6.4%; reUSDe ~ SOFR + 850bps, currently ~12.3%)"
+    },
+    "access": {
+      "retail_accessible": false,
+      "how_to_invest": [
+        {"method": "KYC onboarding and deposit into reUSD/reUSDe on the Re app (non-US)", "url": "https://re.xyz/"},
+        {"method": "Institutional programs on Avalanche's institutional DeFi ecosystem", "url": "https://re.xyz/insights/re-protocol-token-suite-explained"}
+      ]
+    },
+    "defillama_slug": "re",
+    "risk_notes": "Genuine insurance underwriting risk: mezzanine reUSDe absorbs losses before reUSD, and capital is locked in offchain reinsurance collateral trusts with quarterly, actuary-gated exits — this is not redeemable-on-demand DeFi. US persons are excluded from the current token suite despite the protocol's US roots.",
+    "sources": ["https://re.xyz/insights/re-protocol-token-suite-explained", "https://re.xyz/insights/re-tge-launch", "https://www.coindesk.com/business/2024/05/14/rwa-platform-re-debuts-tokenized-reinsurance-fund-on-avalanche-with-15m-commitment-from-nexus-mutual", "https://defillama.com/protocol/re"],
+    "verified_at": "2026-09-01"
+  }
+]
