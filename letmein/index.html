@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Will RWA let me in? — retail-accessible RWA yield vaults</title>
+<meta name="description" content="Yield that doesn't need a bull market. The verified RWA vaults that actually let a retail wallet in — no KYC, or under $500 minimum.">
+<meta property="og:title" content="Will RWA let me in?">
+<meta property="og:description" content="Yield that doesn't need a bull market. The RWA vaults that actually let a retail wallet in.">
+<meta property="og:image" content="https://willrwaletmein.com/hero.jpg">
+<link rel="canonical" href="https://willrwaletmein.com/">
+<style>
+:root {
+  --bg-top: #2c4bff; --bg-mid: #1f37d6; --bg-bot: #15268f;
+  --panel: rgba(7, 15, 54, 0.55); --panel-deep: rgba(4, 10, 40, 0.6);
+  --line: rgba(255, 255, 255, 0.14); --grid: rgba(255, 255, 255, 0.07);
+  --text: #eef2ff; --muted: #a9b8f2;
+  --accent: #ffb224; --accent2: #9db4ff;
+  --up: #5be39a; --down: #ff6b6b;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  color: var(--text);
+  font: 15px/1.55 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 55%, var(--bg-bot) 100%) fixed;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.85), rgba(0,0,0,.35));
+          mask-image: linear-gradient(180deg, rgba(0,0,0,.85), rgba(0,0,0,.35));
+}
+main { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 42px 20px 64px; }
+a { color: #fff; }
+
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent2); font-weight: 700; margin-bottom: 12px; }
+h1 { font-size: clamp(30px, 5.4vw, 52px); line-height: 1.04; letter-spacing: -.03em; font-weight: 800; text-transform: uppercase; text-shadow: 0 2px 0 rgba(0,0,0,.12); max-width: 15em; }
+h1 em { font-style: normal; color: var(--accent); }
+.pitch { margin: 18px 0 0; font-size: 17px; color: #e6ecff; max-width: 42em; }
+.pitch strong { color: #fff; }
+.hero-row { display: flex; gap: 26px; align-items: flex-start; }
+.hero-copy { min-width: 0; }
+.hero-img { flex: 0 0 auto; width: 280px; max-width: 34%; border-radius: 12px; border: 1px solid var(--line); box-shadow: 0 8px 30px rgba(0,0,0,.25); }
+
+.answer { margin: 30px 0 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; backdrop-filter: blur(6px); display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.answer .big { font-size: 40px; font-weight: 800; color: var(--up); line-height: 1; }
+.answer .line { font-size: 16px; }
+.answer .line strong { color: var(--accent); }
+
+.grouphead { margin: 30px 0 4px; display: flex; align-items: baseline; gap: 12px; }
+.grouphead h2 { font-size: 20px; font-weight: 800; text-transform: uppercase; }
+.grouphead .n { color: var(--accent2); font-size: 13px; }
+.groupnote { font-size: 13px; color: var(--muted); margin-bottom: 12px; max-width: 56em; }
+
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; margin-bottom: 10px; backdrop-filter: blur(6px); display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 6px 18px; align-items: center; }
+.card .name { font-weight: 700; font-size: 16px; }
+.card .what { font-size: 13px; color: #dde5ff; max-width: 46em; margin-top: 2px; }
+.card .meta { font-size: 11.5px; color: var(--muted); margin-top: 7px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.stamp { font-size: 10px; letter-spacing: .08em; padding: 2px 7px; border: 1px solid currentColor; border-radius: 4px; text-transform: uppercase; font-weight: 600; }
+.stamp.open { color: var(--up); }
+.stamp.kyc { color: var(--accent2); }
+.stamp.new { color: var(--accent); }
+.figs { text-align: right; }
+.figs .apy { font-size: 22px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
+.figs .apy small { font-size: 11px; color: var(--muted); font-weight: 400; }
+.figs .min { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.figs a.go { display: inline-block; margin-top: 8px; font-size: 12.5px; font-weight: 700; padding: 7px 14px; border-radius: 999px; background: var(--accent); color: #1a1503; text-decoration: none; }
+.figs a.go:hover { filter: brightness(1.08); }
+
+.cta { margin-top: 34px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; text-align: center; backdrop-filter: blur(6px); }
+.cta a { color: var(--accent); font-weight: 700; }
+footer { margin-top: 26px; color: var(--muted); font-size: 12.5px; position: relative; z-index: 1; }
+footer p { max-width: 64em; margin-bottom: 8px; }
+
+@media (max-width: 700px) {
+  .hero-row { flex-direction: column; }
+  .hero-img { width: 100%; max-width: 100%; }
+  .card { grid-template-columns: 1fr; }
+  .figs { text-align: left; }
+}
+</style>
+</head>
+<body>
+<main>
+  <section class="hero-row">
+    <div class="hero-copy">
+      <div class="eyebrow">willrwaletmein.com</div>
+      <h1>Yield that doesn't need <em>a bull market.</em></h1>
+      <p class="pitch"><strong>Most DeFi yield is recycled crypto</strong> — token emissions, trader leverage, points. It spikes when everyone's greedy and evaporates when they're not. <strong>RWA yield is paid by the other economy:</strong> T-bill coupons, bond interest, insurance premiums, real loan repayments — cash flows that arrive whether crypto pumps or not, settled to your wallet onchain.</p>
+    </div>
+    <img class="hero-img" src="/hero.jpg" alt="Engraved bank vault on a pedestal labeled Tokenized Real-World Assets">
+  </section>
+
+  <div class="answer">
+    <span class="big" id="total">–</span>
+    <span class="line">verified vaults will let a retail wallet in — <strong id="split">…</strong></span>
+  </div>
+
+  <section id="groups"></section>
+
+  <div class="cta">
+    Want the full picture — every tier, every term, all ~100 vaults?<br>
+    Compare minimums, KYC, redemption and fees at <a href="https://vaultterms.com">vaultterms.com</a>
+  </div>
+
+  <footer>
+    <p><strong>This is information, not advice.</strong> Yields are targets or trailing figures — they vary and can be negative. Terms verified against issuer documents; issuers change terms without telling us. Always read the issuer's own documents before depositing. "No KYC" describes vault deposits; bonus programs or fiat off-ramps may still require identity verification.</p>
+    <p>Disclosure: IXS is a client of this site's author. · Data: hand-verified registry + live DeFiLlama figures · A <a href="https://vaultterms.com">VaultTerms</a> campaign page.</p>
+  </footer>
+</main>
+
+<script>
+const fmtMin = n => n===0 ? "No minimum" : "$"+n.toLocaleString("en-US")+" min";
+const esc = s => String(s??"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function apyOf(v){
+  if (v.yield_profile && v.yield_profile.target_pct!=null) return {n:v.yield_profile.target_pct, tag:"target"};
+  if (v.live && v.live.apy_pct!=null) return {n:Math.round(v.live.apy_pct*100)/100, tag:"live"};
+  if (v.apy_pct_approx!=null) return {n:v.apy_pct_approx, tag:"approx"};
+  return {n:null, tag:""};
+}
+function card(v){
+  const apy = apyOf(v);
+  const go = (v.access.how_to_invest||[])[0];
+  return `<div class="card">
+    <div>
+      <div class="name">${esc(v.name)}</div>
+      <div class="what">${esc(v.underlying)}</div>
+      <div class="meta">
+        <span class="stamp ${v.terms.kyc==="none"?"open":"kyc"}">${v.terms.kyc==="none"?"No KYC":"Basic KYC"}</span>
+        ${v.status==="new" ? '<span class="stamp new">New</span>' : ""}
+        <span>${(v.chains||[]).slice(0,3).join(" · ")}</span>
+      </div>
+    </div>
+    <div class="figs">
+      <div class="apy">${apy.n!=null ? apy.n+"%" : "—"} <small>${apy.tag}</small></div>
+      <div class="min">${fmtMin(v.access.min_usd||0)}</div>
+      ${go ? `<a class="go" href="${esc(go.url)}" target="_blank" rel="noopener">Get in ↗</a>` : ""}
+    </div>
+  </div>`;
+}
+fetch("/registry/vaults.enriched.json").then(r=>r.json()).then(data=>{
+  const live = data.filter(v => v.id!=="goldfinch-prime");
+  const noKyc = live.filter(v => v.terms.kyc==="none");
+  const cheap = live.filter(v => v.terms.kyc==="kyc_retail" && (v.access.min_usd||0)<=500 && v.access.retail_accessible);
+  const sortA = a => a.sort((x,y)=>(apyOf(y).n||0)-(apyOf(x).n||0));
+  sortA(noKyc); sortA(cheap);
+  document.getElementById("total").textContent = noKyc.length + cheap.length;
+  document.getElementById("split").textContent = `${noKyc.length} with no KYC at all, ${cheap.length} more from $500 or less.`;
+  document.getElementById("groups").innerHTML = `
+    <div class="grouphead"><h2>No KYC — just a wallet</h2><span class="n">${noKyc.length} vaults</span></div>
+    <p class="groupnote">Deposit from any wallet. No forms, no documents, no waiting. The only real-world fixed income in this club is marked.</p>
+    ${noKyc.map(card).join("")}
+    <div class="grouphead"><h2>Under $500 — basic KYC</h2><span class="n">${cheap.length} vaults</span></div>
+    <p class="groupnote">Standard retail onboarding (think exchange-level KYC), minimums from $1. Where you're eligible depends on your country — full jurisdiction detail on VaultTerms.</p>
+    ${cheap.map(card).join("")}`;
+}).catch(()=>{ document.getElementById("groups").innerHTML = "<p>Data failed to load — see <a href='https://vaultterms.com'>vaultterms.com</a>.</p>"; });
+</script>
+</body>
+</html>
