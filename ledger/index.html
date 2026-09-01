@@ -217,7 +217,7 @@ footer a { color: #fff; text-decoration: underline; }
 
   <footer>
     <p><strong>This is information, not advice.</strong> Nothing here is a recommendation to invest, and yields shown are targets or trailing figures that can fall or go negative. Terms were verified against official issuer documents on the date shown per entry; issuers change terms without telling us. Always read the issuer's own documents before sending money anywhere.</p>
-    <p>Access verdicts show whether an issuer admits <em>anyone</em> from a region at <em>any</em> tier — a "will take your money" result can still require accreditation or institutional onboarding; the stamp on each entry says which. Disclosure: IXS is a client of this site's author; their entry is marked.</p>
+    <p>Access verdicts show whether an issuer admits <em>anyone</em> from a region at <em>any</em> tier — a "will take your money" result can still require accreditation or institutional onboarding; the stamp on each entry says which. VaultTerms is built by Overxceed, whose clients include IXS — client or not, every vault here is held to the same standard: terms verified against official issuer documents, shown unedited.</p>
     <p class="fine">Curated registry, hand-verified · live TVL &amp; APY from DeFiLlama · APY cross-checked via AskSurf · research powered by <a href="https://coinmarketcap.com" target="_blank" rel="noopener">CoinMarketCap Skill Hub</a> · <span id="counts"></span></p>
   </footer>
 </main>
@@ -284,7 +284,7 @@ function vaultHtml(v){
       </tbody></table>`:""}
       <div class="v" style="margin-top:8px">${esc(promo.caveats)}</div>
     </div>` : "";
-  const disclosure = v.id.startsWith("ixs") ? `<div class="disclosure">Disclosure: IXS is a client of this site's author.</div>` : "";
+  const disclosure = v.id.startsWith("ixs") ? `<div class="disclosure">IXS is an Overxceed client. Its terms are verified against issuer documents to the same standard as every other vault on this page.</div>` : "";
   return `
   <article class="vault ${dead?"dead":""}" data-id="${v.id}" data-class="${v.asset_class}">
     <div class="v-top">
