@@ -293,6 +293,7 @@ function vaultHtml(v){
         <p class="underlying">${esc(v.underlying)}</p>
         <div class="stamps">
           ${dead ? `<span class="stamp dead">Wound down</span>` : ""}
+          ${v.status==="new" ? `<span class="stamp open">New</span>` : ""}
           <span class="stamp ${kycClass}">${KYC_LABEL[v.terms.kyc]||esc(v.terms.kyc)}</span>
           ${promo ? `<span class="stamp bonus">Bonus live</span>` : ""}
           <span class="chainlist">${(v.chains||[]).slice(0,4).join(" · ")}${(v.chains||[]).length>4 ? " +"+(v.chains.length-4):""}</span>
@@ -300,7 +301,7 @@ function vaultHtml(v){
       </div>
       <div class="v-figures">
         <div class="fig"><div class="k">Yield</div><div class="n">${apy.n!=null ? apy.n+"%" : "—"} <small>${apy.tag}</small></div></div>
-        <div class="fig"><div class="k">TVL</div><div class="n">${fmtUsd(tvl)} <small>${v.live && v.live.tvl_usd!=null ? "live":"approx"}</small></div></div>
+        <div class="fig"><div class="k">TVL</div><div class="n">${v.status==="new" && tvl==null ? `<span style="color:var(--up)">New</span> <small>launching</small>` : `${fmtUsd(tvl)} <small>${v.live && v.live.tvl_usd!=null ? "live":"approx"}</small>`}</div></div>
         <div class="fig"><div class="k">Minimum</div><div class="n plain">${fmtMin(v.access.min_usd||0)}</div></div>
         <div class="fig"><div class="k">Lockup</div><div class="n plain">${esc((v.terms.lockup||"—").split(";")[0])}</div></div>
         <div class="regions">Admits: ${reg}</div>

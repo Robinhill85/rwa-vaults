@@ -1381,8 +1381,8 @@
   },
   {
     "id": "ixs-blackrock-hy-bond",
-    "name": "IXS/InvestaX High Yield Corporate Bond Vault (Avalanche)",
-    "issuer": "InvestaX / IXS \u2014 regulated and operated under license from the Monetary Authority of Singapore (MAS); custody via Wilmington Trust; yield rails by OpenTrade",
+    "name": "IXS High Yield Corporate Bond Vault (Avalanche)",
+    "issuer": "IXS \u2014 regulated under license from the Monetary Authority of Singapore (MAS); custody via Wilmington Trust; yield rails by OpenTrade",
     "asset_class": "corporate_bonds",
     "underlying": "USDC vault whose deposits are deployed via OpenTrade into the iShares 0-5 Year High Yield Corporate Bond ETF (SHYG) \u2014 short-duration sub-investment-grade US corporate bonds \u2014 with daily interest accrual paid on-chain.",
     "tokens": [],
@@ -1420,9 +1420,9 @@
       "min_usd": 100
     },
     "defillama_slug": null,
-    "risk_notes": "High-yield (junk) corporate bond credit + duration risk via SHYG \u2014 returns are variable and can be negative (last quarter ~0.85% before fees vs the 7%/yr target); NAV moves with rates and credit conditions. 50 bps exit fee. Platform/rails risk: InvestaX issuer, Wilmington Trust custody, OpenTrade deployment. Vault deposits are permissionless (per IXS, Sep 2026); the in-app 'Whitelist Unavailable' notice applies to the legacy earn flow / bonus claim, not the ERC-4626 vault. Earlier public materials showed conflicting rates (6% landing, 13.36% in-app APR, 8.5% 2025 promo) \u2014 the investor summary's 7% target / ~5% trailing is the authoritative framing. BlackRock manages the ETF and does not endorse the product.",
+    "risk_notes": "High-yield (junk) corporate bond credit + duration risk via SHYG \u2014 returns are variable and can be negative (last quarter ~0.85% before fees vs the 7%/yr target); NAV moves with rates and credit conditions. 50 bps exit fee. Platform/rails risk: IXS issuer, Wilmington Trust custody, OpenTrade deployment. Vault deposits are permissionless (per IXS, Sep 2026); the in-app 'Whitelist Unavailable' notice applies to the legacy earn flow / bonus claim, not the ERC-4626 vault. Earlier public materials showed conflicting rates (6% landing, 13.36% in-app APR, 8.5% 2025 promo) \u2014 the investor summary's 7% target / ~5% trailing is the authoritative framing. BlackRock manages the ETF and does not endorse the product.",
     "sources": [
-      "InvestaX HYCB Vault Investor Summary PDF (2026-09-01, provided by client)",
+      "IXS HYCB Vault Investor Summary PDF (2026-09-01, provided by client)",
       "https://vaults.ixs.finance",
       "https://app.ixs.finance/#/earn",
       "https://www.ixs.finance/news/ixs-offer-institutional-on-chain-yield-through-mmfs-and-blackrock-backed-bond-etf"
@@ -1471,8 +1471,9 @@
           }
         ],
         "caveats": "Bonus paid in IXS tokens, which carry their own price volatility; annualized rate is the fixed 90-day bonus expressed yearly and is separate from (not additive guidance on) the variable vault yield. One bonus per verified identity.",
-        "source": "InvestaX HYCB Vault Investor Summary (HYCB_Vault_Investor_Summary.pdf, received 2026-09-01)"
+        "source": "IXS HYCB Vault Investor Summary (received 2026-09-01)"
       }
-    ]
+    ],
+    "status": "new"
   }
 ]

@@ -58,7 +58,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 3607276178.290448,
       "apy_pct": 3.27266
     }
@@ -119,7 +119,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 2762953582.1633124,
       "apy_pct": 3.29008
     }
@@ -186,7 +186,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 2515623030.8162904,
       "apy_pct": 3.55,
       "apy_check_asksurf": 3.55
@@ -247,7 +247,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 2515623030.8162904,
       "apy_pct": 3.55,
       "apy_check_asksurf": 3.55
@@ -312,7 +312,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": null,
       "apy_pct": null
     }
@@ -367,8 +367,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
-      "tvl_usd": 642715636.4420688,
+      "as_of": "2026-09-01T00:23:52+00:00",
+      "tvl_usd": 642906346.5670173,
       "apy_pct": 3.39087
     }
   },
@@ -434,7 +434,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 2504029529.412178,
       "apy_pct": null
     }
@@ -496,7 +496,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 246783523.93478322,
       "apy_pct": 3.18969
     }
@@ -560,7 +560,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 1030450726.3518857,
       "apy_pct": null
     }
@@ -618,8 +618,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
-      "tvl_usd": 147059766.85000008,
+      "as_of": "2026-09-01T00:23:52+00:00",
+      "tvl_usd": 147059766.8500001,
       "apy_pct": 3.28
     }
   },
@@ -676,7 +676,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 258544499.9093516,
       "apy_pct": null
     }
@@ -732,9 +732,9 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
-      "tvl_usd": 596530453.5015527,
-      "apy_pct": 5.73554
+      "as_of": "2026-09-01T00:23:52+00:00",
+      "tvl_usd": 596529985.5488944,
+      "apy_pct": 5.7355
     }
   },
   {
@@ -794,8 +794,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
-      "tvl_usd": 2994676390.1972156,
+      "as_of": "2026-09-01T00:23:52+00:00",
+      "tvl_usd": 2995273892.0230527,
       "apy_pct": 5.04328,
       "apy_check_asksurf": 5.04
     }
@@ -860,7 +860,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 870841981.5641487,
       "apy_pct": null
     }
@@ -906,7 +906,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 1608064.7005953758,
       "apy_pct": null
     }
@@ -969,7 +969,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 95493611.82401611,
       "apy_pct": 8.6586
     }
@@ -1019,8 +1019,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
-      "tvl_usd": 237399915.71725562,
+      "as_of": "2026-09-01T00:23:52+00:00",
+      "tvl_usd": 237387366.25520197,
       "apy_pct": null
     }
   },
@@ -1074,7 +1074,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 254965097.05963522,
       "apy_pct": null
     }
@@ -1132,7 +1132,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 1907345778.5930154,
       "apy_pct": null
     }
@@ -1189,7 +1189,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 3142472013.933556,
       "apy_pct": null
     }
@@ -1253,7 +1253,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 953408243.3384814,
       "apy_pct": null
     }
@@ -1322,7 +1322,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 441847675.9117476,
       "apy_pct": null
     }
@@ -1385,9 +1385,9 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
-      "tvl_usd": 4117127601.450224,
-      "apy_pct": 4.80051,
+      "as_of": "2026-09-01T00:23:52+00:00",
+      "tvl_usd": 4117030330.285165,
+      "apy_pct": 4.80067,
       "apy_check_asksurf": 4.86
     }
   },
@@ -1443,7 +1443,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 483262968.89936286,
       "apy_pct": null
     }
@@ -1503,15 +1503,15 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": 328070074.9604463,
-      "apy_pct": 6.38596
+      "apy_pct": 6.40011
     }
   },
   {
     "id": "ixs-blackrock-hy-bond",
-    "name": "IXS/InvestaX High Yield Corporate Bond Vault (Avalanche)",
-    "issuer": "InvestaX / IXS \u2014 regulated and operated under license from the Monetary Authority of Singapore (MAS); custody via Wilmington Trust; yield rails by OpenTrade",
+    "name": "IXS High Yield Corporate Bond Vault (Avalanche)",
+    "issuer": "IXS \u2014 regulated under license from the Monetary Authority of Singapore (MAS); custody via Wilmington Trust; yield rails by OpenTrade",
     "asset_class": "corporate_bonds",
     "underlying": "USDC vault whose deposits are deployed via OpenTrade into the iShares 0-5 Year High Yield Corporate Bond ETF (SHYG) \u2014 short-duration sub-investment-grade US corporate bonds \u2014 with daily interest accrual paid on-chain.",
     "tokens": [],
@@ -1549,9 +1549,9 @@
       "min_usd": 100
     },
     "defillama_slug": null,
-    "risk_notes": "High-yield (junk) corporate bond credit + duration risk via SHYG \u2014 returns are variable and can be negative (last quarter ~0.85% before fees vs the 7%/yr target); NAV moves with rates and credit conditions. 50 bps exit fee. Platform/rails risk: InvestaX issuer, Wilmington Trust custody, OpenTrade deployment. Vault deposits are permissionless (per IXS, Sep 2026); the in-app 'Whitelist Unavailable' notice applies to the legacy earn flow / bonus claim, not the ERC-4626 vault. Earlier public materials showed conflicting rates (6% landing, 13.36% in-app APR, 8.5% 2025 promo) \u2014 the investor summary's 7% target / ~5% trailing is the authoritative framing. BlackRock manages the ETF and does not endorse the product.",
+    "risk_notes": "High-yield (junk) corporate bond credit + duration risk via SHYG \u2014 returns are variable and can be negative (last quarter ~0.85% before fees vs the 7%/yr target); NAV moves with rates and credit conditions. 50 bps exit fee. Platform/rails risk: IXS issuer, Wilmington Trust custody, OpenTrade deployment. Vault deposits are permissionless (per IXS, Sep 2026); the in-app 'Whitelist Unavailable' notice applies to the legacy earn flow / bonus claim, not the ERC-4626 vault. Earlier public materials showed conflicting rates (6% landing, 13.36% in-app APR, 8.5% 2025 promo) \u2014 the investor summary's 7% target / ~5% trailing is the authoritative framing. BlackRock manages the ETF and does not endorse the product.",
     "sources": [
-      "InvestaX HYCB Vault Investor Summary PDF (2026-09-01, provided by client)",
+      "IXS HYCB Vault Investor Summary PDF (2026-09-01, provided by client)",
       "https://vaults.ixs.finance",
       "https://app.ixs.finance/#/earn",
       "https://www.ixs.finance/news/ixs-offer-institutional-on-chain-yield-through-mmfs-and-blackrock-backed-bond-etf"
@@ -1600,11 +1600,12 @@
           }
         ],
         "caveats": "Bonus paid in IXS tokens, which carry their own price volatility; annualized rate is the fixed 90-day bonus expressed yearly and is separate from (not additive guidance on) the variable vault yield. One bonus per verified identity.",
-        "source": "InvestaX HYCB Vault Investor Summary (HYCB_Vault_Investor_Summary.pdf, received 2026-09-01)"
+        "source": "IXS HYCB Vault Investor Summary (received 2026-09-01)"
       }
     ],
+    "status": "new",
     "live": {
-      "as_of": "2026-08-31T23:57:44+00:00",
+      "as_of": "2026-09-01T00:23:52+00:00",
       "tvl_usd": null,
       "apy_pct": null
     }
