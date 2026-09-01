@@ -65,6 +65,11 @@ a { color: #fff; }
 .chip[aria-pressed="true"] { background: var(--accent); color: #1a1503; border-color: var(--accent); font-weight: 700; }
 .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
+/* new-on-ledger banner */
+.newbanner { border: 2px solid var(--accent); background: rgba(255,178,36,.07); border-radius: 14px; padding: 14px 18px; margin: 4px 0 10px; backdrop-filter: blur(6px); display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; font-size: 14px; }
+.newbanner .tagn { font-size: 10px; letter-spacing: .08em; padding: 2px 7px; border: 1px solid var(--accent); border-radius: 4px; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+.newbanner a { color: var(--accent); font-weight: 700; }
+
 /* class sections */
 .classhead { display: flex; align-items: baseline; gap: 14px; margin: 30px 0 4px; }
 .classhead h2 { font-size: 20px; font-weight: 800; text-transform: uppercase; letter-spacing: .02em; }
@@ -208,6 +213,8 @@ footer a { color: #fff; text-decoration: underline; }
 
   <nav class="rail" id="rail" aria-label="Asset class filter"></nav>
 
+  <div id="newbanner"></div>
+
   <section id="ledger" aria-live="polite"></section>
 
   <section id="tracked-section">
@@ -287,7 +294,7 @@ function vaultHtml(v){
     </div>` : "";
   const disclosure = v.id.startsWith("ixs") ? `<div class="disclosure">IXS is an Overxceed client. Its terms are verified against issuer documents to the same standard as every other vault on this page.</div>` : "";
   return `
-  <article class="vault ${dead?"dead":""}" data-id="${v.id}" data-class="${v.asset_class}">
+  <article class="vault ${dead?"dead":""}" id="v-${v.id}" data-id="${v.id}" data-class="${v.asset_class}">
     <div class="v-top">
       <div class="v-id">
         <div class="eyebrow">${esc(v.issuer.split("(")[0].split("—")[0].trim())}</div>
@@ -412,6 +419,10 @@ Promise.all([
     `${data.length} verified · ${tracked ? tracked.protocols.length : 0} tracked · ${total} vaults` + (asOf ? ` · figures as of ${asOf.live.as_of.slice(0,10)}` : "");
   document.getElementById("counts").textContent = total+" vaults · "+fmtUsd(
     data.reduce((s,v)=>s+((v.live&&v.live.tvl_usd)||v.tvl_usd_approx||0),0) + (tracked ? tracked.protocols.reduce((s,r)=>s+r.tvl_usd,0) : 0))+" tracked TVL";
+  const fresh = data.filter(v => v.status === "new");
+  document.getElementById("newbanner").innerHTML = fresh.map(v => `
+    <span class="tagn">New on the ledger</span>
+    <span><strong>${v.name}</strong> — the first agent-addressable RWA vault (ERC-7540): a permissionless rail for AI agents plus a basic-KYC route for humans, from $100. <a href="#v-${v.id}">Jump to the entry ↓</a></span>`).join("");
   buildRail();
   render();
   renderTracked();

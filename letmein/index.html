@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Will RWA let me in? — retail-accessible RWA yield vaults</title>
-<meta name="description" content="Yield that doesn't need a bull market. The verified RWA vaults that actually let a retail wallet in — no KYC, or under $500 minimum.">
+<meta name="description" content="Yield that doesn't need a bull market. The verified RWA vaults that will actually let you in — from $100 with basic KYC, or agent-addressable with none.">
 <meta property="og:title" content="Will RWA let me in?">
-<meta property="og:description" content="Yield that doesn't need a bull market. The RWA vaults that actually let a retail wallet in.">
+<meta property="og:description" content="Yield that doesn't need a bull market. The RWA vaults that will actually let you in.">
 <meta property="og:image" content="https://willrwaletmein.com/hero.jpg">
 <link rel="canonical" href="https://willrwaletmein.com/">
 <style>
@@ -69,6 +69,11 @@ h1 em { font-style: normal; color: var(--accent); }
 .figs a.go { display: inline-block; margin-top: 8px; font-size: 12.5px; font-weight: 700; padding: 7px 14px; border-radius: 999px; background: var(--accent); color: #1a1503; text-decoration: none; }
 .figs a.go:hover { filter: brightness(1.08); }
 
+.spotlight { border: 2px solid var(--accent); background: rgba(255,178,36,.07); border-radius: 14px; padding: 18px 20px; margin-bottom: 10px; backdrop-filter: blur(6px); }
+.spotlight .routes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.spotlight .route { background: var(--panel-deep); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 12.5px; color: #dde5ff; }
+.spotlight .route b { display: block; color: var(--accent2); font-size: 10.5px; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 3px; }
+@media (max-width: 700px) { .spotlight .routes { grid-template-columns: 1fr; } }
 .cta { margin-top: 34px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; text-align: center; backdrop-filter: blur(6px); }
 .cta a { color: var(--accent); font-weight: 700; }
 footer { margin-top: 26px; color: var(--muted); font-size: 12.5px; position: relative; z-index: 1; }
@@ -95,7 +100,7 @@ footer p { max-width: 64em; margin-bottom: 8px; }
 
   <div class="answer">
     <span class="big" id="total">–</span>
-    <span class="line">verified vaults will let a retail wallet in — <strong id="split">…</strong></span>
+    <span class="line">verified vaults will let you in — <strong id="split">…</strong></span>
   </div>
 
   <section id="groups"></section>
@@ -143,23 +148,47 @@ function card(v){
 }
 fetch("/registry/vaults.enriched.json").then(r=>r.json()).then(data=>{
   const live = data.filter(v => v.id!=="goldfinch-prime");
-  const noKyc = live.filter(v => v.terms.kyc==="none");
-  const cheap = live.filter(v => v.terms.kyc==="kyc_retail" && (v.access.min_usd||0)<=500 && v.access.retail_accessible);
-  const agents = live.filter(v => v.access.agent_addressable);
+  const spotlight = live.filter(v => v.status==="new");
+  const rest = live.filter(v => v.status!=="new");
+  const noKyc = rest.filter(v => v.terms.kyc==="none");
+  const cheap = rest.filter(v => v.terms.kyc==="kyc_retail" && (v.access.min_usd||0)<=500 && v.access.retail_accessible);
   const sortA = a => a.sort((x,y)=>(apyOf(y).n||0)-(apyOf(x).n||0));
-  sortA(noKyc); sortA(cheap); sortA(agents);
-  document.getElementById("total").textContent = noKyc.length + cheap.length;
-  document.getElementById("split").textContent = `${noKyc.length} with no KYC at all, ${cheap.length} more from $500 or less — and ${agents.length} your AI agent can deposit into without asking anyone.`;
+  sortA(noKyc); sortA(cheap);
+  document.getElementById("total").textContent = spotlight.length + noKyc.length + cheap.length;
+  document.getElementById("split").textContent = `${spotlight.length} brand-new (spotlight below), ${cheap.length} from $500 or less with basic KYC, and ${noKyc.length} with no KYC at all.`;
+  const spot = v => `<div class="spotlight">
+    <div class="card" style="background:none;border:none;padding:0;margin:0">
+      <div>
+        <div class="name">${esc(v.name)}</div>
+        <div class="what">${esc(v.underlying)}</div>
+        <div class="meta">
+          <span class="stamp new">New</span>
+          <span class="stamp agent">Agent addressable</span>
+          <span class="stamp kyc">Basic KYC</span>
+          <span>${(v.chains||[]).slice(0,3).join(" · ")}</span>
+        </div>
+      </div>
+      <div class="figs">
+        <div class="apy">${apyOf(v).n!=null ? apyOf(v).n+"%" : "—"} <small>${apyOf(v).tag}</small></div>
+        <div class="min">${fmtMin(v.access.min_usd||0)}</div>
+        ${(v.access.how_to_invest||[])[0] ? `<a class="go" href="${esc(v.access.how_to_invest[0].url)}" target="_blank" rel="noopener">Get in ↗</a>` : ""}
+      </div>
+    </div>
+    <div class="routes">
+      <div class="route"><b>For your AI agent</b>No KYC — agents cannot pass one, and this ERC-7540 rail does not ask. Any wallet, one API call.</div>
+      <div class="route"><b>For you</b>One-time basic KYC, deposit from $100, withdraw anytime with next-day settlement.</div>
+    </div>
+  </div>`;
   document.getElementById("groups").innerHTML = `
-    <div class="grouphead"><h2>No KYC — just a wallet</h2><span class="n">${noKyc.length} vaults</span></div>
-    <p class="groupnote">Deposit from any wallet. No forms, no documents, no waiting. The only real-world fixed income in this club is marked.</p>
-    ${noKyc.map(card).join("")}
+    <div class="grouphead"><h2>New — the first agent-addressable RWA vault</h2><span class="n">${spotlight.length} vault${spotlight.length===1?"":"s"}</span></div>
+    <p class="groupnote">A new category: an ERC-7540 vault with two doors — a permissionless rail built for AI agents, and a basic-KYC route for humans. Real-world bond yield either way.</p>
+    ${spotlight.map(spot).join("")}
     <div class="grouphead"><h2>Under $500 — basic KYC</h2><span class="n">${cheap.length} vaults</span></div>
-    <p class="groupnote">Standard retail onboarding (think exchange-level KYC), minimums from $1. Where you're eligible depends on your country — full jurisdiction detail on VaultTerms.</p>
+    <p class="groupnote">Standard retail onboarding — exchange-level KYC, minimums from $1. The regulated wrappers live here: SEC-registered money market funds, MAS-licensed vaults, gold trusts. Eligibility depends on your country — full detail on VaultTerms.</p>
     ${cheap.map(card).join("")}
-    <div class="grouphead"><h2>For AI agents — no KYC possible</h2><span class="n">${agents.length} vault${agents.length===1?"":"s"}</span></div>
-    <p class="groupnote">Agents can't pass KYC — this rail doesn't ask. Permissionless ERC-4626 vaults an autonomous wallet can deposit into directly, one API call. (Humans use the KYC route above.)</p>
-    ${agents.map(card).join("")}`;
+    <div class="grouphead"><h2>No KYC — just a wallet</h2><span class="n">${noKyc.length} vaults</span></div>
+    <p class="groupnote">No forms, no documents — but know what you are holding: this club is crypto-native yield (collateralized lending books, carry trades, unregistered wrappers). None of these are regulated fund shares.</p>
+    ${noKyc.map(card).join("")}`;
 }).catch(()=>{ document.getElementById("groups").innerHTML = "<p>Data failed to load — see <a href='https://vaultterms.com'>vaultterms.com</a>.</p>"; });
 </script>
 </body>
