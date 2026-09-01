@@ -1403,12 +1403,8 @@
       "retail_accessible": true,
       "how_to_invest": [
         {
-          "method": "IXS app > Earn > High Yield Corporate Bond \u2014 connect wallet, complete KYC whitelist, deposit USDC",
-          "url": "https://app.ixs.finance/#/earn"
-        },
-        {
-          "method": "IXS Permissionless Vaults landing (ERC-4626 / Agent Rail API)",
-          "url": "https://vaults.ixs.finance"
+          "method": "IXS Permissionless Vaults \u2014 deposit USDC",
+          "url": "https://vaults.ixs.finance/vaults"
         }
       ],
       "regions": {
