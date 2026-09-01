@@ -1393,9 +1393,9 @@
     "apy_pct_approx": 7.0,
     "terms": {
       "min_investment": "$100 USDC ($100 minimum also qualifies for the deposit bonus)",
-      "kyc": "none",
-      "jurisdiction": "Permissionless ERC-4626 vault \u2014 any wallet can deposit, no KYC on the vault itself (confirmed by IXS, Sep 2026). Identity verification is only required to claim the IXS deposit bonus at redemption. Issuer regulated under MAS (Singapore) license.",
-      "redemption": "Withdraw anytime, settlement next day; principal and accrued vault yield kept on early exit (only unvested bonus is forfeited)",
+      "kyc": "kyc_retail",
+      "jurisdiction": "Two routes in: humans deposit via the permissioned vault after one-time KYC with IXS (MAS-licensed, Singapore; per-country eligibility at onboarding, US unverified). AI agents deposit via the permissionless ERC-4626 Agent Rail \u2014 no KYC (agents can't pass one), any wallet, one API call.",
+      "redemption": "Withdraw anytime, settlement next day; principal and accrued vault yield kept on early exit (only unvested bonus is forfeited). Same mechanics on both the permissioned and agent rails.",
       "lockup": "None on principal",
       "fees": "50 bps exit fee; no stated deposit or management fee to the investor"
     },
@@ -1408,15 +1408,16 @@
         }
       ],
       "regions": {
-        "us": true,
+        "us": false,
         "eu": true,
         "row": true,
-        "note": "Permissionless at the contract level; standard sanctioned-jurisdiction restrictions in ToS. Bonus claim requires identity verification."
+        "note": "Human (KYC) route: eligibility set at IXS onboarding, US unverified. Agent Rail: permissionless at the contract level, standard sanctioned-jurisdiction ToS restrictions."
       },
-      "min_usd": 100
+      "min_usd": 100,
+      "agent_addressable": true
     },
     "defillama_slug": null,
-    "risk_notes": "High-yield (junk) corporate bond credit + duration risk via SHYG \u2014 returns are variable and can be negative (last quarter ~0.85% before fees vs the 7%/yr target); NAV moves with rates and credit conditions. 50 bps exit fee. Platform/rails risk: IXS issuer, Wilmington Trust custody, OpenTrade deployment. Vault deposits are permissionless (per IXS, Sep 2026); the in-app 'Whitelist Unavailable' notice applies to the legacy earn flow / bonus claim, not the ERC-4626 vault. Earlier public materials showed conflicting rates (6% landing, 13.36% in-app APR, 8.5% 2025 promo) \u2014 the investor summary's 7% target / ~5% trailing is the authoritative framing. BlackRock manages the ETF and does not endorse the product.",
+    "risk_notes": "High-yield (junk) corporate bond credit + duration risk via SHYG \u2014 returns are variable and can be negative (last quarter ~0.85% before fees vs the 7%/yr target); NAV moves with rates and credit conditions. 50 bps exit fee. Platform/rails risk: IXS issuer, Wilmington Trust custody, OpenTrade deployment. Access is dual-rail: the in-app vault is permissioned (KYC/whitelist), while the ERC-4626 Agent Rail is permissionless and intended for AI agents. Displayed rates have varied across IXS surfaces (6% / 13.36% / 8.5% promo) \u2014 the investor summary's 7% target / ~5% trailing is the authoritative framing. BlackRock manages the ETF and does not endorse the product.",
     "sources": [
       "IXS HYCB Vault Investor Summary PDF (2026-09-01, provided by client)",
       "https://vaults.ixs.finance",
@@ -1439,7 +1440,7 @@
           "start": "2026-08-30",
           "end": "2026-09-12"
         },
-        "mechanic": "Fixed IXS-token bonus set at deposit, independent of vault performance; vests exactly 90 days after deposit; claim within 30 days of vesting or it expires; bonuses vest and pay Nov 28 - Dec 11 2026; processing pauses mid-Dec to Jan 5 (claim windows in that period resume after Jan 5). Early withdrawal forfeits the unvested bonus. The vault itself is permissionless; KYC applies only to the bonus claim (one bonus per verified identity, verified at redemption).",
+        "mechanic": "Fixed IXS-token bonus set at deposit, independent of vault performance; vests exactly 90 days after deposit; claim within 30 days of vesting or it expires; bonuses vest and pay Nov 28 - Dec 11 2026; processing pauses mid-Dec to Jan 5 (claim windows in that period resume after Jan 5). Early withdrawal forfeits the unvested bonus. Bonus claims require identity verification (one bonus per verified identity, verified at redemption).",
         "tiers": [
           {
             "deposit_usd": 100,

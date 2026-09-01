@@ -58,7 +58,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
+      "as_of": "2026-09-01T12:16:12+00:00",
       "tvl_usd": 3607276178.2904487,
       "apy_pct": 3.27266
     }
@@ -119,8 +119,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 2762953582.163313,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 2706166881.5015893,
       "apy_pct": 3.29008
     }
   },
@@ -186,8 +186,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 2521328651.9301343,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 2524211200.7890987,
       "apy_pct": 3.55,
       "apy_check_asksurf": 3.55
     }
@@ -247,8 +247,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 2521328651.9301343,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 2524211200.7890987,
       "apy_pct": 3.55,
       "apy_check_asksurf": 3.55
     }
@@ -312,7 +312,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
+      "as_of": "2026-09-01T12:16:12+00:00",
       "tvl_usd": null,
       "apy_pct": null
     }
@@ -367,8 +367,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 642906346.5670173,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 642390842.6507038,
       "apy_pct": 3.39087
     }
   },
@@ -434,8 +434,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 2503418070.2608805,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 2495787597.511756,
       "apy_pct": null
     }
   },
@@ -496,9 +496,9 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 246783523.93478322,
-      "apy_pct": 3.18969
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 246770419.36782408,
+      "apy_pct": 3.29618
     }
   },
   {
@@ -560,7 +560,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
+      "as_of": "2026-09-01T12:16:12+00:00",
       "tvl_usd": 1030450726.3518857,
       "apy_pct": null
     }
@@ -618,8 +618,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 147059766.8500001,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 147059777.2700001,
       "apy_pct": 3.28
     }
   },
@@ -676,8 +676,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 258540113.24916017,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 258567738.71610576,
       "apy_pct": null
     }
   },
@@ -732,9 +732,9 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 596529985.5488944,
-      "apy_pct": 5.7355
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 598465175.891388,
+      "apy_pct": 5.75074
     }
   },
   {
@@ -794,9 +794,9 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 2995273892.0230527,
-      "apy_pct": 5.04328,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 2988951439.257215,
+      "apy_pct": 5.06779,
       "apy_check_asksurf": 5.04
     }
   },
@@ -860,8 +860,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 870832241.0108705,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 870809240.7404382,
       "apy_pct": null
     }
   },
@@ -906,8 +906,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 1608046.714048766,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 1600557.773621212,
       "apy_pct": null
     }
   },
@@ -969,8 +969,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 95648269.141747,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 95554181.05963494,
       "apy_pct": 8.6586
     }
   },
@@ -1019,8 +1019,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 237387366.25520197,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 239393468.4232678,
       "apy_pct": null
     }
   },
@@ -1074,8 +1074,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 254964183.852818,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 255086864.45013753,
       "apy_pct": null
     }
   },
@@ -1132,8 +1132,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 1904779374.0233188,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 1875647807.3556495,
       "apy_pct": null
     }
   },
@@ -1189,8 +1189,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 3138778185.553951,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 3089114636.5353446,
       "apy_pct": null
     }
   },
@@ -1253,8 +1253,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 952149405.2060219,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 942640315.790097,
       "apy_pct": null
     }
   },
@@ -1322,8 +1322,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 440832926.88555205,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 437773693.9041097,
       "apy_pct": null
     }
   },
@@ -1385,9 +1385,9 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 4117030330.285165,
-      "apy_pct": 4.80067,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 4180720110.247295,
+      "apy_pct": 4.80276,
       "apy_check_asksurf": 4.86
     }
   },
@@ -1443,8 +1443,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 483239735.2900351,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 483199753.7773405,
       "apy_pct": null
     }
   },
@@ -1503,8 +1503,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
-      "tvl_usd": 328059274.67279637,
+      "as_of": "2026-09-01T12:16:12+00:00",
+      "tvl_usd": 328066688.477899,
       "apy_pct": 6.40011
     }
   },
@@ -1522,9 +1522,9 @@
     "apy_pct_approx": 7.0,
     "terms": {
       "min_investment": "$100 USDC ($100 minimum also qualifies for the deposit bonus)",
-      "kyc": "none",
-      "jurisdiction": "Permissionless ERC-4626 vault \u2014 any wallet can deposit, no KYC on the vault itself (confirmed by IXS, Sep 2026). Identity verification is only required to claim the IXS deposit bonus at redemption. Issuer regulated under MAS (Singapore) license.",
-      "redemption": "Withdraw anytime, settlement next day; principal and accrued vault yield kept on early exit (only unvested bonus is forfeited)",
+      "kyc": "kyc_retail",
+      "jurisdiction": "Two routes in: humans deposit via the permissioned vault after one-time KYC with IXS (MAS-licensed, Singapore; per-country eligibility at onboarding, US unverified). AI agents deposit via the permissionless ERC-4626 Agent Rail \u2014 no KYC (agents can't pass one), any wallet, one API call.",
+      "redemption": "Withdraw anytime, settlement next day; principal and accrued vault yield kept on early exit (only unvested bonus is forfeited). Same mechanics on both the permissioned and agent rails.",
       "lockup": "None on principal",
       "fees": "50 bps exit fee; no stated deposit or management fee to the investor"
     },
@@ -1537,15 +1537,16 @@
         }
       ],
       "regions": {
-        "us": true,
+        "us": false,
         "eu": true,
         "row": true,
-        "note": "Permissionless at the contract level; standard sanctioned-jurisdiction restrictions in ToS. Bonus claim requires identity verification."
+        "note": "Human (KYC) route: eligibility set at IXS onboarding, US unverified. Agent Rail: permissionless at the contract level, standard sanctioned-jurisdiction ToS restrictions."
       },
-      "min_usd": 100
+      "min_usd": 100,
+      "agent_addressable": true
     },
     "defillama_slug": null,
-    "risk_notes": "High-yield (junk) corporate bond credit + duration risk via SHYG \u2014 returns are variable and can be negative (last quarter ~0.85% before fees vs the 7%/yr target); NAV moves with rates and credit conditions. 50 bps exit fee. Platform/rails risk: IXS issuer, Wilmington Trust custody, OpenTrade deployment. Vault deposits are permissionless (per IXS, Sep 2026); the in-app 'Whitelist Unavailable' notice applies to the legacy earn flow / bonus claim, not the ERC-4626 vault. Earlier public materials showed conflicting rates (6% landing, 13.36% in-app APR, 8.5% 2025 promo) \u2014 the investor summary's 7% target / ~5% trailing is the authoritative framing. BlackRock manages the ETF and does not endorse the product.",
+    "risk_notes": "High-yield (junk) corporate bond credit + duration risk via SHYG \u2014 returns are variable and can be negative (last quarter ~0.85% before fees vs the 7%/yr target); NAV moves with rates and credit conditions. 50 bps exit fee. Platform/rails risk: IXS issuer, Wilmington Trust custody, OpenTrade deployment. Access is dual-rail: the in-app vault is permissioned (KYC/whitelist), while the ERC-4626 Agent Rail is permissionless and intended for AI agents. Displayed rates have varied across IXS surfaces (6% / 13.36% / 8.5% promo) \u2014 the investor summary's 7% target / ~5% trailing is the authoritative framing. BlackRock manages the ETF and does not endorse the product.",
     "sources": [
       "IXS HYCB Vault Investor Summary PDF (2026-09-01, provided by client)",
       "https://vaults.ixs.finance",
@@ -1568,7 +1569,7 @@
           "start": "2026-08-30",
           "end": "2026-09-12"
         },
-        "mechanic": "Fixed IXS-token bonus set at deposit, independent of vault performance; vests exactly 90 days after deposit; claim within 30 days of vesting or it expires; bonuses vest and pay Nov 28 - Dec 11 2026; processing pauses mid-Dec to Jan 5 (claim windows in that period resume after Jan 5). Early withdrawal forfeits the unvested bonus. The vault itself is permissionless; KYC applies only to the bonus claim (one bonus per verified identity, verified at redemption).",
+        "mechanic": "Fixed IXS-token bonus set at deposit, independent of vault performance; vests exactly 90 days after deposit; claim within 30 days of vesting or it expires; bonuses vest and pay Nov 28 - Dec 11 2026; processing pauses mid-Dec to Jan 5 (claim windows in that period resume after Jan 5). Early withdrawal forfeits the unvested bonus. Bonus claims require identity verification (one bonus per verified identity, verified at redemption).",
         "tiers": [
           {
             "deposit_usd": 100,
@@ -1601,7 +1602,7 @@
     ],
     "status": "new",
     "live": {
-      "as_of": "2026-09-01T00:46:44+00:00",
+      "as_of": "2026-09-01T12:16:12+00:00",
       "tvl_usd": null,
       "apy_pct": null
     }

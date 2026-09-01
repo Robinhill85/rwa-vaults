@@ -85,6 +85,7 @@ a { color: #fff; }
 .stamp.gate { color: var(--accent); }
 .stamp.dead { color: var(--down); }
 .stamp.bonus { color: #1a1503; background: var(--accent); border-color: var(--accent); }
+.stamp.agent { color: var(--accent2); border-style: dashed; }
 .chainlist { font-size: 11px; color: var(--muted); }
 .v-figures { border-left: 1px solid var(--line); padding-left: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 9px 12px; align-content: start; }
 .fig .k { font-size: 10px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
@@ -161,7 +162,7 @@ footer a { color: #fff; text-decoration: underline; }
       <p class="tag"><strong>What actually backs your yield — and whether they'll let you in.</strong> A hand-verified ledger of real-world-asset vaults: underlying assets, minimums, KYC tier, jurisdiction, redemption, fees, and the practical way in. Live TVL &amp; APY joined daily.</p>
       <p class="status" id="updated">loading figures…</p>
     </div>
-    <img class="hero-img" src="hero.jpg" alt="Engraved bank vault statue on a pedestal labeled Tokenized Real-World Assets">
+    <img class="hero-img" src="/hero.jpg" alt="Engraved bank vault statue on a pedestal labeled Tokenized Real-World Assets">
   </section>
 
   <section class="desk">
@@ -295,6 +296,7 @@ function vaultHtml(v){
         <div class="stamps">
           ${dead ? `<span class="stamp dead">Wound down</span>` : ""}
           ${v.status==="new" ? `<span class="stamp open">New</span>` : ""}
+          ${v.access.agent_addressable ? `<span class="stamp agent">Agent addressable</span>` : ""}
           <span class="stamp ${kycClass}">${KYC_LABEL[v.terms.kyc]||esc(v.terms.kyc)}</span>
           ${promo ? `<span class="stamp bonus">Bonus live</span>` : ""}
           <span class="chainlist">${(v.chains||[]).slice(0,4).join(" · ")}${(v.chains||[]).length>4 ? " +"+(v.chains.length-4):""}</span>
@@ -400,8 +402,8 @@ document.getElementById("v-reset").addEventListener("click", ()=>{
 });
 
 Promise.all([
-  fetch("registry/vaults.enriched.json").then(r => r.ok ? r.json() : Promise.reject(r.status)),
-  fetch("registry/tracked.json").then(r => r.ok ? r.json() : null).catch(() => null)
+  fetch("/registry/vaults.enriched.json").then(r => r.ok ? r.json() : Promise.reject(r.status)),
+  fetch("/registry/tracked.json").then(r => r.ok ? r.json() : null).catch(() => null)
 ]).then(([data, tracked]) => {
   VAULTS = data; TRACKED = tracked;
   const asOf = data.find(v=>v.live && v.live.as_of);

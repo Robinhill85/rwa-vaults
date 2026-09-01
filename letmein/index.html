@@ -61,6 +61,7 @@ h1 em { font-style: normal; color: var(--accent); }
 .stamp.open { color: var(--up); }
 .stamp.kyc { color: var(--accent2); }
 .stamp.new { color: var(--accent); }
+.stamp.agent { color: var(--accent2); border-style: dashed; }
 .figs { text-align: right; }
 .figs .apy { font-size: 22px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
 .figs .apy small { font-size: 11px; color: var(--muted); font-weight: 400; }
@@ -128,6 +129,7 @@ function card(v){
       <div class="what">${esc(v.underlying)}</div>
       <div class="meta">
         <span class="stamp ${v.terms.kyc==="none"?"open":"kyc"}">${v.terms.kyc==="none"?"No KYC":"Basic KYC"}</span>
+        ${v.access.agent_addressable ? '<span class="stamp agent">Agent addressable</span>' : ""}
         ${v.status==="new" ? '<span class="stamp new">New</span>' : ""}
         <span>${(v.chains||[]).slice(0,3).join(" · ")}</span>
       </div>
@@ -143,17 +145,21 @@ fetch("/registry/vaults.enriched.json").then(r=>r.json()).then(data=>{
   const live = data.filter(v => v.id!=="goldfinch-prime");
   const noKyc = live.filter(v => v.terms.kyc==="none");
   const cheap = live.filter(v => v.terms.kyc==="kyc_retail" && (v.access.min_usd||0)<=500 && v.access.retail_accessible);
+  const agents = live.filter(v => v.access.agent_addressable);
   const sortA = a => a.sort((x,y)=>(apyOf(y).n||0)-(apyOf(x).n||0));
-  sortA(noKyc); sortA(cheap);
+  sortA(noKyc); sortA(cheap); sortA(agents);
   document.getElementById("total").textContent = noKyc.length + cheap.length;
-  document.getElementById("split").textContent = `${noKyc.length} with no KYC at all, ${cheap.length} more from $500 or less.`;
+  document.getElementById("split").textContent = `${noKyc.length} with no KYC at all, ${cheap.length} more from $500 or less — and ${agents.length} your AI agent can deposit into without asking anyone.`;
   document.getElementById("groups").innerHTML = `
     <div class="grouphead"><h2>No KYC — just a wallet</h2><span class="n">${noKyc.length} vaults</span></div>
     <p class="groupnote">Deposit from any wallet. No forms, no documents, no waiting. The only real-world fixed income in this club is marked.</p>
     ${noKyc.map(card).join("")}
     <div class="grouphead"><h2>Under $500 — basic KYC</h2><span class="n">${cheap.length} vaults</span></div>
     <p class="groupnote">Standard retail onboarding (think exchange-level KYC), minimums from $1. Where you're eligible depends on your country — full jurisdiction detail on VaultTerms.</p>
-    ${cheap.map(card).join("")}`;
+    ${cheap.map(card).join("")}
+    <div class="grouphead"><h2>For AI agents — no KYC possible</h2><span class="n">${agents.length} vault${agents.length===1?"":"s"}</span></div>
+    <p class="groupnote">Agents can't pass KYC — this rail doesn't ask. Permissionless ERC-4626 vaults an autonomous wallet can deposit into directly, one API call. (Humans use the KYC route above.)</p>
+    ${agents.map(card).join("")}`;
 }).catch(()=>{ document.getElementById("groups").innerHTML = "<p>Data failed to load — see <a href='https://vaultterms.com'>vaultterms.com</a>.</p>"; });
 </script>
 </body>
