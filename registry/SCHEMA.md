@@ -36,3 +36,5 @@ the curated fields below are the moat and change rarely.
 
 - `vaults.json` — curated registry (this repo's source of truth)
 - `enrich.py` — joins live DeFiLlama TVL/APY onto the registry → `vaults.enriched.json`
+
+| `cmc` | object? | joined from CoinMarketCap RWA API by `cmc_rwa.py`: `issuer_id`, `issuer_name`, `num_tokens`, `wrappers[]` (token, underlying, premium_pct vs blended tokenized average), `as_of` |

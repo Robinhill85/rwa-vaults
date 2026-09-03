@@ -1,0 +1,178 @@
+{
+  "as_of": "2026-09-03T23:26:08+00:00",
+  "total": 24,
+  "issuers": [
+    {
+      "issuer_id": "6878977dcbbf471de3366e85",
+      "name": "Backed Assets",
+      "website": "https://assets.backed.fi/",
+      "logo": null,
+      "num_tokens": 976,
+      "ledger_vault_id": "xstocks-backed"
+    },
+    {
+      "issuer_id": "688ca4ccabae9b5b9fb3167a",
+      "name": "Ondo Assets",
+      "website": "https://ondo.finance/",
+      "logo": null,
+      "num_tokens": 544,
+      "ledger_vault_id": "ondo-global-markets"
+    },
+    {
+      "issuer_id": "695e11f774b54210f3b95dc3",
+      "name": "NA (Derivatives)",
+      "website": null,
+      "logo": null,
+      "num_tokens": 235
+    },
+    {
+      "issuer_id": "6a465832fbe3004b1a0ea2dd",
+      "name": "Robinhood",
+      "website": "https://robinhood.com/us/en/",
+      "logo": null,
+      "num_tokens": 102
+    },
+    {
+      "issuer_id": "688c6172abae9b5b9fb30359",
+      "name": "Dinari Assets",
+      "website": "https://dinari.com/",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/5a59aaed_253f_4771_8e52_4ecc50ef127c_medium.jpg",
+      "num_tokens": 91
+    },
+    {
+      "issuer_id": "6a2aed5097c45356b1a5f710",
+      "name": "bStocks",
+      "website": null,
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/Untitled_design__2_.png",
+      "num_tokens": 72
+    },
+    {
+      "issuer_id": "6a43600c282e7240b76c8bbb",
+      "name": "Reality",
+      "website": null,
+      "logo": null,
+      "num_tokens": 71
+    },
+    {
+      "issuer_id": "689612983f270c6ff4781b96",
+      "name": "PreStocks Assets",
+      "website": "https://prestocks.com/",
+      "logo": null,
+      "num_tokens": 22
+    },
+    {
+      "issuer_id": "699ed38db54c9320b15928e3",
+      "name": "Hyperliquid Assets",
+      "website": "https://app.hyperliquid.xyz/trade",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/hyperliquid.png",
+      "num_tokens": 12
+    },
+    {
+      "issuer_id": "6a2d54b697c45356b1a634f4",
+      "name": "Backpack",
+      "website": "https://backpack.exchange",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/M7sS2GzR_400x400.png",
+      "num_tokens": 5
+    },
+    {
+      "issuer_id": "6a436076282e7240b76c8bf9",
+      "name": "Republic",
+      "website": "https://republic.com/",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/for2i2.png",
+      "num_tokens": 2
+    },
+    {
+      "issuer_id": "68904e9cabae9b5b9fb358ac",
+      "name": "Tether Holdings",
+      "website": "https://tether.to/",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/tether.png",
+      "num_tokens": 2,
+      "ledger_vault_id": "tether-gold-xaut"
+    },
+    {
+      "issuer_id": "68904cceabae9b5b9fb35839",
+      "name": "Comtech Gold",
+      "website": "https://www.comtechgold.com/",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/comtech.png",
+      "num_tokens": 1
+    },
+    {
+      "issuer_id": "68c117369d7eab1d58ebd51d",
+      "name": "Fidelity Investments Assets",
+      "website": "https://www.fidelity.com/",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/32.png",
+      "num_tokens": 1
+    },
+    {
+      "issuer_id": "68e25e8dd4cd001228754c7c",
+      "name": "Kinesis Assets",
+      "website": "https://kinesis.money/",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/3LFB_Kit_400x400.png",
+      "num_tokens": 1
+    },
+    {
+      "issuer_id": "68905a7babae9b5b9fb35a8d",
+      "name": "Matrixdock",
+      "website": "https://www.matrixdock.com/",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/matrixdock.png",
+      "num_tokens": 1
+    },
+    {
+      "issuer_id": "68904c24abae9b5b9fb35815",
+      "name": "Paxos",
+      "website": "https://www.paxos.com/",
+      "logo": null,
+      "num_tokens": 1,
+      "ledger_vault_id": "paxos-gold-paxg"
+    },
+    {
+      "issuer_id": "68b902a8f972b459c80de6a5",
+      "name": "Superstate Assets",
+      "website": "https://superstate.com/",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/Adobe_Express___file.png",
+      "num_tokens": 1
+    },
+    {
+      "issuer_id": "6a0be4e680ee5978ec4455ce",
+      "name": "Tessera Assets",
+      "website": "https://www.tessera.pe/",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/tessera.png",
+      "num_tokens": 1
+    },
+    {
+      "issuer_id": "68e27c8ad4cd001228754d67",
+      "name": "Token",
+      "website": "https://www.token.com.tr/",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/hoGtBUTO_400x400.png",
+      "num_tokens": 1
+    },
+    {
+      "issuer_id": "68905b43abae9b5b9fb35a95",
+      "name": "VNX",
+      "website": "https://vnx.li/",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/vnx.png",
+      "num_tokens": 1
+    },
+    {
+      "issuer_id": "68e27862d4cd001228754d31",
+      "name": "XAGx",
+      "website": "https://xagx.org/",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/bwdPlk2V_400x400.png",
+      "num_tokens": 1
+    },
+    {
+      "issuer_id": "6a72fe7072996604d45c6733",
+      "name": "Coinbase",
+      "website": "https://www.coinbase.com/en-sg/tokenize",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/m_UOfXvz_400x400.png",
+      "num_tokens": 0
+    },
+    {
+      "issuer_id": "688ca641abae9b5b9fb31815",
+      "name": "Swarm Assets",
+      "website": "https://swarm.com/",
+      "logo": "https://s2.coinmarketcap.com/static/img/issuer/11821.png",
+      "num_tokens": 0
+    }
+  ]
+}

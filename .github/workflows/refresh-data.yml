@@ -21,6 +21,11 @@ jobs:
       - name: Rebuild tracked tier (DeFiLlama RWA categories)
         run: python3 registry/fetch_tracked.py
 
+      - name: CoinMarketCap RWA layer (issuers, tokenized assets, wrapper premiums)
+        env:
+          CMC_API_KEY: ${{ secrets.CMC_API_KEY }}
+        run: python3 registry/cmc_rwa.py
+
       - name: Enrich curated registry (DeFiLlama + AskSurf cross-check)
         env:
           ASKSURF_API_KEY: ${{ secrets.ASKSURF_API_KEY }}
@@ -30,7 +35,7 @@ jobs:
         run: |
           git config user.name "vaultterms-bot"
           git config user.email "actions@github.com"
-          git add registry/tracked.json registry/vaults.enriched.json
+          git add registry/tracked.json registry/vaults.enriched.json registry/vaults.json registry/cmc_assets.json registry/cmc_premiums.json registry/cmc_issuers.json registry/cmc_calls.json
           if git diff --cached --quiet; then
             echo "No data changes today."
           else

@@ -1,0 +1,99 @@
+{
+  "as_of": "2026-09-03T23:26:08+00:00",
+  "calls": [
+    {
+      "endpoint": "/issuers/list",
+      "params": {
+        "limit": 250,
+        "active": "true"
+      },
+      "credits": 1,
+      "error_code": "0"
+    },
+    {
+      "endpoint": "/assets/list",
+      "params": {
+        "asset_type": "stock",
+        "limit": 50,
+        "sort": "tokenized_market_cap",
+        "sort_dir": "desc"
+      },
+      "credits": 1,
+      "error_code": "0"
+    },
+    {
+      "endpoint": "/assets/list",
+      "params": {
+        "asset_type": "commodity",
+        "limit": 50,
+        "sort": "tokenized_market_cap",
+        "sort_dir": "desc"
+      },
+      "credits": 1,
+      "error_code": "0"
+    },
+    {
+      "endpoint": "/assets/list",
+      "params": {
+        "asset_type": "currency",
+        "limit": 50,
+        "sort": "tokenized_market_cap",
+        "sort_dir": "desc"
+      },
+      "credits": 1,
+      "error_code": "0"
+    },
+    {
+      "endpoint": "/assets/list",
+      "params": {
+        "asset_type": "government_security",
+        "limit": 50,
+        "sort": "tokenized_market_cap",
+        "sort_dir": "desc"
+      },
+      "credits": 1,
+      "error_code": "0"
+    },
+    {
+      "endpoint": "/assets/list",
+      "params": {
+        "asset_type": "etf",
+        "limit": 50,
+        "sort": "tokenized_market_cap",
+        "sort_dir": "desc"
+      },
+      "credits": 1,
+      "error_code": "0"
+    },
+    {
+      "endpoint": "/assets/list",
+      "params": {
+        "asset_type": "real_estate",
+        "limit": 50,
+        "sort": "tokenized_market_cap",
+        "sort_dir": "desc"
+      },
+      "credits": 1,
+      "error_code": "0"
+    },
+    {
+      "endpoint": "/quotes/latest",
+      "params": {
+        "symbol": "NVDA,TSLA,AAPL,MSFT,GOOGL,AMZN,META,SPY,QQQ,GOLD",
+        "skip_invalid": "true"
+      },
+      "credits": 1,
+      "error_code": "0"
+    },
+    {
+      "endpoint": "/quotes/latest",
+      "params": {
+        "symbol": "SILVER,COIN,MSTR,CRCL",
+        "skip_invalid": "true"
+      },
+      "credits": 1,
+      "error_code": "0"
+    }
+  ],
+  "credits_total": 9
+}

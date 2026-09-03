@@ -1037,7 +1037,21 @@
       "https://xgram.io/blog/can-you-redeen-paxg-for-physical-gold-bars",
       "https://defillama.com/protocol/paxos-gold"
     ],
-    "verified_at": "2026-09-01"
+    "verified_at": "2026-09-01",
+    "cmc": {
+      "issuer_id": "68904c24abae9b5b9fb35815",
+      "issuer_name": "Paxos",
+      "num_tokens": 1,
+      "wrappers": [
+        {
+          "underlying": "GOLD",
+          "token": "PAXG",
+          "premium_pct": 0.157,
+          "market_cap": 1934029955.29
+        }
+      ],
+      "as_of": "2026-09-03T23:26:08+00:00"
+    }
   },
   {
     "id": "tether-gold-xaut",
@@ -1089,7 +1103,27 @@
       "https://gold.tether.to/legal/termsofservice",
       "https://defillama.com/protocol/tether-gold"
     ],
-    "verified_at": "2026-09-01"
+    "verified_at": "2026-09-01",
+    "cmc": {
+      "issuer_id": "68904e9cabae9b5b9fb358ac",
+      "issuer_name": "Tether Holdings",
+      "num_tokens": 2,
+      "wrappers": [
+        {
+          "underlying": "GOLD",
+          "token": "XAUt",
+          "premium_pct": -0.047,
+          "market_cap": 2737345868.69
+        },
+        {
+          "underlying": "GOLD",
+          "token": "XAUT0",
+          "premium_pct": 0.019,
+          "market_cap": 16637010.91
+        }
+      ],
+      "as_of": "2026-09-03T23:26:08+00:00"
+    }
   },
   {
     "id": "ondo-global-markets",
@@ -1148,7 +1182,63 @@
       "https://solana.com/news/ondo-global-markets-tokenized-stocks-etfs-solana",
       "https://defillama.com/protocol/ondo-global-markets"
     ],
-    "verified_at": "2026-09-01"
+    "verified_at": "2026-09-01",
+    "cmc": {
+      "issuer_id": "688ca4ccabae9b5b9fb3167a",
+      "issuer_name": "Ondo Assets",
+      "num_tokens": 544,
+      "wrappers": [
+        {
+          "underlying": "CRCL",
+          "token": "CRCLon",
+          "premium_pct": 0.007,
+          "market_cap": 123629739.77
+        },
+        {
+          "underlying": "SPY",
+          "token": "SPYon",
+          "premium_pct": 0.559,
+          "market_cap": 45128403
+        },
+        {
+          "underlying": "NVDA",
+          "token": "NVDAon",
+          "premium_pct": 0.264,
+          "market_cap": 38732277.73
+        },
+        {
+          "underlying": "QQQ",
+          "token": "QQQon",
+          "premium_pct": 0.269,
+          "market_cap": 32608624.61
+        },
+        {
+          "underlying": "MSTR",
+          "token": "MSTRon",
+          "premium_pct": -0.068,
+          "market_cap": 27976526.51
+        },
+        {
+          "underlying": "GOOGL",
+          "token": "GOOGLon",
+          "premium_pct": 0.12,
+          "market_cap": 20325047.98
+        },
+        {
+          "underlying": "TSLA",
+          "token": "TSLAon",
+          "premium_pct": 0.026,
+          "market_cap": 16871654.89
+        },
+        {
+          "underlying": "META",
+          "token": "METAon",
+          "premium_pct": 0.037,
+          "market_cap": 11112375.74
+        }
+      ],
+      "as_of": "2026-09-03T23:26:08+00:00"
+    }
   },
   {
     "id": "xstocks-backed",
@@ -1212,7 +1302,63 @@
       "https://eco.com/support/en/articles/15083158-kraken-xstocks-explained",
       "https://defillama.com/protocol/xstocks"
     ],
-    "verified_at": "2026-09-01"
+    "verified_at": "2026-09-01",
+    "cmc": {
+      "issuer_id": "6878977dcbbf471de3366e85",
+      "issuer_name": "Backed Assets",
+      "num_tokens": 976,
+      "wrappers": [
+        {
+          "underlying": "CRCL",
+          "token": "CRCLX",
+          "premium_pct": -0.001,
+          "market_cap": 82826768.33
+        },
+        {
+          "underlying": "TSLA",
+          "token": "TSLAX",
+          "premium_pct": -0.029,
+          "market_cap": 73582021.01
+        },
+        {
+          "underlying": "MSTR",
+          "token": "MSTRX",
+          "premium_pct": -0.075,
+          "market_cap": 72730723.45
+        },
+        {
+          "underlying": "SPY",
+          "token": "SPYX",
+          "premium_pct": 0.322,
+          "market_cap": 55598714.41
+        },
+        {
+          "underlying": "NVDA",
+          "token": "NVDAX",
+          "premium_pct": 0.3,
+          "market_cap": 39908024.54
+        },
+        {
+          "underlying": "QQQ",
+          "token": "QQQX",
+          "premium_pct": 0.205,
+          "market_cap": 36359221.15
+        },
+        {
+          "underlying": "GOOGL",
+          "token": "GOOGLX",
+          "premium_pct": 0.044,
+          "market_cap": 36092700.21
+        },
+        {
+          "underlying": "AAPL",
+          "token": "AAPLX",
+          "premium_pct": 0.187,
+          "market_cap": 13028859.42
+        }
+      ],
+      "as_of": "2026-09-03T23:26:08+00:00"
+    }
   },
   {
     "id": "ethena-susde",
