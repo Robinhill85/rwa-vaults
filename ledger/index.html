@@ -225,7 +225,7 @@ footer a { color: #fff; text-decoration: underline; }
 
   <footer>
     <p><strong>This is information, not advice.</strong> Nothing here is a recommendation to invest, and yields shown are targets or trailing figures that can fall or go negative. Terms were verified against official issuer documents on the date shown per entry; issuers change terms without telling us. Always read the issuer's own documents before sending money anywhere.</p>
-    <p>Access verdicts show whether an issuer admits <em>anyone</em> from a region at <em>any</em> tier — a "will take your money" result can still require accreditation or institutional onboarding; the stamp on each entry says which. VaultTerms is built by Overxceed, whose clients include IXS — client or not, every vault here is held to the same standard: terms verified against official issuer documents, shown unedited.</p>
+    <p>Access verdicts show whether an issuer admits <em>anyone</em> from a region at <em>any</em> tier — a "will take your money" result can still require accreditation or institutional onboarding; the stamp on each entry says which. Every vault here — including our client IXS's — is held to the same standard: terms verified against official issuer documents, shown unedited.</p>
     <p class="fine">Curated registry, hand-verified · live TVL &amp; APY from DeFiLlama · APY cross-checked via AskSurf · research powered by <a href="https://coinmarketcap.com" target="_blank" rel="noopener">CoinMarketCap Skill Hub</a> · <span id="counts"></span></p>
   </footer>
 </main>
@@ -270,7 +270,7 @@ function eligible(v){
   if (isDead(v)) return false;
   if (state.region !== "any" && !v.access.regions[state.region]) return false;
   if (state.ticket > 0 && (v.access.min_usd||0) > state.ticket) return false;
-  if (state.kyc !== "any" && KYC_RANK[v.terms.kyc] > KYC_RANK[state.kyc]) return false;
+  if (state.kyc !== "any" && KYC_RANK[v.terms.kyc] > KYC_RANK[state.kyc] && !(state.kyc === "none" && v.access.agent_addressable)) return false;
   return true;
 }
 
@@ -292,7 +292,7 @@ function vaultHtml(v){
       </tbody></table>`:""}
       <div class="v" style="margin-top:8px">${esc(promo.caveats)}</div>
     </div>` : "";
-  const disclosure = v.id.startsWith("ixs") ? `<div class="disclosure">IXS is an Overxceed client. Its terms are verified against issuer documents to the same standard as every other vault on this page.</div>` : "";
+  const disclosure = v.id.startsWith("ixs") ? `<div class="disclosure">IXS is a client of ours. Its terms are verified against issuer documents to the same standard as every other vault on this page.</div>` : "";
   return `
   <article class="vault ${dead?"dead":""}" id="v-${v.id}" data-id="${v.id}" data-class="${v.asset_class}">
     <div class="v-top">
@@ -303,9 +303,9 @@ function vaultHtml(v){
         <div class="stamps">
           ${dead ? `<span class="stamp dead">Wound down</span>` : ""}
           ${v.status==="new" ? `<span class="stamp open">New</span>` : ""}
-          ${v.access.agent_addressable ? `<span class="stamp agent">Agent addressable</span>` : ""}
+          ${v.access.agent_addressable ? `<span class="stamp agent">Agent addressable</span><span class="stamp open">No KYC · agents</span>` : ""}
           <span class="stamp ${kycClass}">${KYC_LABEL[v.terms.kyc]||esc(v.terms.kyc)}</span>
-          ${promo ? `<span class="stamp bonus">Bonus live</span>` : ""}
+          ${promo ? `<span class="stamp bonus">${esc(promo.badge || "Bonus live")}</span>` : ""}
           <span class="chainlist">${(v.chains||[]).slice(0,4).join(" · ")}${(v.chains||[]).length>4 ? " +"+(v.chains.length-4):""}</span>
         </div>
       </div>

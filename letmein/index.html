@@ -62,6 +62,7 @@ h1 em { font-style: normal; color: var(--accent); }
 .stamp.kyc { color: var(--accent2); }
 .stamp.new { color: var(--accent); }
 .stamp.agent { color: var(--accent2); border-style: dashed; }
+.stamp.bonus { color: #1a1503; background: var(--accent); border-color: var(--accent); }
 .figs { text-align: right; }
 .figs .apy { font-size: 22px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
 .figs .apy small { font-size: 11px; color: var(--muted); font-weight: 400; }
@@ -112,7 +113,7 @@ footer p { max-width: 64em; margin-bottom: 8px; }
 
   <footer>
     <p><strong>This is information, not advice.</strong> Yields are targets or trailing figures — they vary and can be negative. Terms verified against issuer documents; issuers change terms without telling us. Always read the issuer's own documents before depositing. "No KYC" describes vault deposits; bonus programs or fiat off-ramps may still require identity verification.</p>
-    <p>Built by Overxceed, whose clients include IXS — every vault here is held to the same verified-terms standard, client or not. · Data: hand-verified registry + live DeFiLlama figures · research powered by CoinMarketCap Skill Hub · A <a href="https://vaultterms.com">VaultTerms</a> campaign page.</p>
+    <p>Every vault here — including our client IXS's — is held to the same verified-terms standard. · Data: hand-verified registry + live DeFiLlama figures · research powered by CoinMarketCap Skill Hub · A <a href="https://vaultterms.com">VaultTerms</a> campaign page.</p>
   </footer>
 </main>
 
@@ -146,6 +147,7 @@ function card(v){
     </div>
   </div>`;
 }
+const today = new Date().toISOString().slice(0,10);
 fetch("/registry/vaults.enriched.json").then(r=>r.json()).then(data=>{
   const live = data.filter(v => v.id!=="goldfinch-prime");
   const spotlight = live.filter(v => v.status==="new");
@@ -164,7 +166,9 @@ fetch("/registry/vaults.enriched.json").then(r=>r.json()).then(data=>{
         <div class="meta">
           <span class="stamp new">New</span>
           <span class="stamp agent">Agent addressable</span>
-          <span class="stamp kyc">Basic KYC</span>
+          <span class="stamp open">No KYC · agents</span>
+          <span class="stamp kyc">Basic KYC · humans</span>
+          ${(v.promotions||[]).some(pr => pr.window && pr.window.start <= today && today <= pr.window.end) ? `<span class="stamp bonus">${esc((v.promotions.find(pr => pr.window.start <= today && today <= pr.window.end)).badge || "Bonus live")}</span>` : ""}
           <span>${(v.chains||[]).slice(0,3).join(" · ")}</span>
         </div>
       </div>

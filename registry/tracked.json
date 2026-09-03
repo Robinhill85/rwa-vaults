@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T04:34:51+00:00",
+  "generated_at": "2026-09-03T05:06:58+00:00",
   "note": "Auto-generated from DeFiLlama RWA categories. NOT hand-verified: no terms, KYC, or access data. Curated-tier vaults excluded.",
   "protocols": [
     {
@@ -418,7 +418,7 @@
       "chains": [
         "ICP"
       ],
-      "tvl_usd": 51964275,
+      "tvl_usd": 51962491,
       "change_7d_pct": 1.3,
       "url": "https://www.origyn.com/",
       "defillama_url": "https://defillama.com/protocol/origyn"
@@ -604,8 +604,8 @@
       "chains": [
         "Binance"
       ],
-      "tvl_usd": 23797196,
-      "change_7d_pct": -0.03,
+      "tvl_usd": 23797471,
+      "change_7d_pct": -0.02,
       "url": "https://goldfinger.finance/en",
       "defillama_url": "https://defillama.com/protocol/goldfinger"
     },
@@ -684,8 +684,8 @@
         "Flare",
         "Ethereum"
       ],
-      "tvl_usd": 17632063,
-      "change_7d_pct": 0.39,
+      "tvl_usd": 17652086,
+      "change_7d_pct": 0.5,
       "url": "https://vaults.clearpool.finance/",
       "defillama_url": "https://defillama.com/protocol/clearpool-tpool"
     },
@@ -701,7 +701,7 @@
         "Base",
         "Arbitrum"
       ],
-      "tvl_usd": 17625780,
+      "tvl_usd": 17625779,
       "change_7d_pct": -28.24,
       "url": "https://openeden.com/usdo",
       "defillama_url": "https://defillama.com/protocol/openeden-usdo"

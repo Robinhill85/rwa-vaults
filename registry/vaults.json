@@ -1468,7 +1468,8 @@
           }
         ],
         "caveats": "Bonus paid in IXS tokens, which carry their own price volatility; annualized rate is the fixed 90-day bonus expressed yearly and is separate from (not additive guidance on) the variable vault yield. One bonus per verified identity.",
-        "source": "IXS HYCB Vault Investor Summary (received 2026-09-01)"
+        "source": "IXS HYCB Vault Investor Summary (received 2026-09-01)",
+        "badge": "$IXS boosted rewards"
       }
     ],
     "status": "new",
