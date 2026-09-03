@@ -1,7 +1,5 @@
 {
   "rewrites": [
-    { "source": "/", "has": [{ "type": "host", "value": "willrwaletmein.com" }], "destination": "/letmein/index.html" },
-    { "source": "/", "has": [{ "type": "host", "value": "www.willrwaletmein.com" }], "destination": "/letmein/index.html" },
     { "source": "/", "destination": "/ledger/index.html" }
   ]
 }
