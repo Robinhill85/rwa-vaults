@@ -312,7 +312,7 @@ function vaultHtml(v){
   const invest = (v.access.how_to_invest||[]).map(h => `<a href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.method.split("—")[0].split("(")[0].trim())} ↗</a>`).join("");
   const promoHtml = promo ? `
     <div class="term promo">
-      <div class="k">${esc(promo.name)} — ends ${esc(promo.window.end)}</div>
+      <div class="k">${esc(promo.name)} · deposits ${esc(promo.window.start)} to ${esc(promo.window.end)}${promo.pool_ixs ? ` · pool ${Number(promo.pool_ixs).toLocaleString("en-US")} $IXS, first come first served` : ""}</div>
       <div class="v">${esc(promo.mechanic)}</div>
       ${promo.tiers ? `<table><thead><tr><th>Deposit</th><th>Bonus (in IXS)</th><th>Annualized</th></tr></thead><tbody>
         ${promo.tiers.map(t=>`<tr><td>$${t.deposit_usd.toLocaleString("en-US")}</td><td>$${t.bonus_ixs_usd} (${t.bonus_pct}%)</td><td>${t.annualized_pct}%</td></tr>`).join("")}

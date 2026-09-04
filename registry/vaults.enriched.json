@@ -58,8 +58,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 3583705652.790448,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 3583705652.790449,
       "apy_pct": 3.25797
     }
   },
@@ -119,7 +119,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
+      "as_of": "2026-09-04T07:47:10+00:00",
       "tvl_usd": 2687611257.2417164,
       "apy_pct": 3.18659
     }
@@ -186,8 +186,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 2524181700.4933915,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 2524094302.9783835,
       "apy_pct": 3.56,
       "apy_check_asksurf": 3.55
     }
@@ -247,8 +247,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 2524181700.4933915,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 2524094302.9783835,
       "apy_pct": 3.56,
       "apy_check_asksurf": 3.55
     }
@@ -312,7 +312,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
+      "as_of": "2026-09-04T07:47:10+00:00",
       "tvl_usd": null,
       "apy_pct": null
     }
@@ -367,7 +367,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
+      "as_of": "2026-09-04T07:47:10+00:00",
       "tvl_usd": 633182341.4684576,
       "apy_pct": 3.52239
     }
@@ -434,8 +434,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 2503290477.5015287,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 2503052376.1153216,
       "apy_pct": null
     }
   },
@@ -496,7 +496,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
+      "as_of": "2026-09-04T07:47:10+00:00",
       "tvl_usd": 246918898.74879816,
       "apy_pct": 3.74847
     }
@@ -560,7 +560,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
+      "as_of": "2026-09-04T07:47:10+00:00",
       "tvl_usd": 1230710605.1726115,
       "apy_pct": null
     }
@@ -618,8 +618,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 140534666.54000005,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 146052631.78000012,
       "apy_pct": 3.36
     }
   },
@@ -676,8 +676,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 254468723.0332759,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 254460897.06664556,
       "apy_pct": null
     }
   },
@@ -732,9 +732,9 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 601329610.4963559,
-      "apy_pct": 5.75351
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 599467584.0938901,
+      "apy_pct": 5.7273
     }
   },
   {
@@ -794,8 +794,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 2938992302.7522902,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 2937649308.157789,
       "apy_pct": 5.03219,
       "apy_check_asksurf": 5.08
     }
@@ -860,8 +860,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 820466154.940828,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 820464034.1262723,
       "apy_pct": null
     }
   },
@@ -906,8 +906,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 1577399.4391121222,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 1577371.6846747973,
       "apy_pct": null
     }
   },
@@ -969,8 +969,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 95432789.98177639,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 95438156.77598129,
       "apy_pct": 7.36182
     }
   },
@@ -1019,8 +1019,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 232761865.2227599,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 232780318.89488846,
       "apy_pct": null
     }
   },
@@ -1074,8 +1074,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 255508690.90677178,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 255514883.20720875,
       "apy_pct": null
     }
   },
@@ -1139,15 +1139,15 @@
         {
           "underlying": "GOLD",
           "token": "PAXG",
-          "premium_pct": 0.151,
-          "market_cap": 1932039982.95
+          "premium_pct": 0.109,
+          "market_cap": 1932774654.04
         }
       ],
-      "as_of": "2026-09-04T04:35:41+00:00"
+      "as_of": "2026-09-04T07:46:48+00:00"
     },
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 1923649921.416511,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 1919802302.0010128,
       "apy_pct": null
     }
   },
@@ -1210,21 +1210,21 @@
         {
           "underlying": "GOLD",
           "token": "XAUt",
-          "premium_pct": -0.037,
-          "market_cap": 2734953046.61
+          "premium_pct": -0.1,
+          "market_cap": 2735429376.23
         },
         {
           "underlying": "GOLD",
           "token": "XAUT0",
-          "premium_pct": 0.181,
-          "market_cap": 16647677.38
+          "premium_pct": 0.127,
+          "market_cap": 16849108.51
         }
       ],
-      "as_of": "2026-09-04T04:35:41+00:00"
+      "as_of": "2026-09-04T07:46:48+00:00"
     },
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 3163195924.1960044,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 3154795849.2691965,
       "apy_pct": null
     }
   },
@@ -1294,57 +1294,57 @@
         {
           "underlying": "CRCL",
           "token": "CRCLon",
-          "premium_pct": -0.058,
-          "market_cap": 123164299.31
+          "premium_pct": -0.027,
+          "market_cap": 122686529.88
         },
         {
           "underlying": "SPY",
           "token": "SPYon",
-          "premium_pct": 0.628,
-          "market_cap": 45214095.2
+          "premium_pct": 0.674,
+          "market_cap": 45210192.14
         },
         {
           "underlying": "NVDA",
           "token": "NVDAon",
-          "premium_pct": 0.042,
-          "market_cap": 38878948.18
+          "premium_pct": -0.013,
+          "market_cap": 38890852.57
         },
         {
           "underlying": "QQQ",
           "token": "QQQon",
-          "premium_pct": 0.299,
-          "market_cap": 32688641.51
+          "premium_pct": 0.339,
+          "market_cap": 32721495.25
         },
         {
           "underlying": "MSTR",
           "token": "MSTRon",
-          "premium_pct": 0.079,
-          "market_cap": 28081746.99
+          "premium_pct": -0.079,
+          "market_cap": 27740223.58
         },
         {
           "underlying": "GOOGL",
           "token": "GOOGLon",
-          "premium_pct": 0.171,
-          "market_cap": 20371056.29
+          "premium_pct": 0.169,
+          "market_cap": 20253249.49
         },
         {
           "underlying": "TSLA",
           "token": "TSLAon",
-          "premium_pct": 0.01,
-          "market_cap": 16655744.31
+          "premium_pct": 0.187,
+          "market_cap": 16673055.3
         },
         {
           "underlying": "META",
           "token": "METAon",
-          "premium_pct": 0.108,
-          "market_cap": 11152849.94
+          "premium_pct": 0.109,
+          "market_cap": 11115756.2
         }
       ],
-      "as_of": "2026-09-04T04:35:41+00:00"
+      "as_of": "2026-09-04T07:46:48+00:00"
     },
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 968281256.3894664,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 969510839.4120674,
       "apy_pct": null
     }
   },
@@ -1419,57 +1419,57 @@
         {
           "underlying": "CRCL",
           "token": "CRCLX",
-          "premium_pct": 0.076,
-          "market_cap": 82836264.59
-        },
-        {
-          "underlying": "MSTR",
-          "token": "MSTRX",
-          "premium_pct": 0.234,
-          "market_cap": 73146300.71
+          "premium_pct": -0.038,
+          "market_cap": 82404171.29
         },
         {
           "underlying": "TSLA",
           "token": "TSLAX",
-          "premium_pct": 0.022,
-          "market_cap": 72527622.33
+          "premium_pct": 0.019,
+          "market_cap": 72507368.58
+        },
+        {
+          "underlying": "MSTR",
+          "token": "MSTRX",
+          "premium_pct": -0.09,
+          "market_cap": 72107313.39
         },
         {
           "underlying": "SPY",
           "token": "SPYX",
-          "premium_pct": 0.349,
-          "market_cap": 55663422.46
+          "premium_pct": 0.373,
+          "market_cap": 55667025.02
         },
         {
           "underlying": "NVDA",
           "token": "NVDAX",
-          "premium_pct": 0.062,
-          "market_cap": 40044118.26
+          "premium_pct": 0.003,
+          "market_cap": 40067482.37
         },
         {
           "underlying": "QQQ",
           "token": "QQQX",
-          "premium_pct": 0.225,
-          "market_cap": 36462499.35
+          "premium_pct": 0.134,
+          "market_cap": 36374532.36
         },
         {
           "underlying": "GOOGL",
           "token": "GOOGLX",
-          "premium_pct": 0.043,
-          "market_cap": 36170601.21
+          "premium_pct": 0.019,
+          "market_cap": 36143551.84
         },
         {
           "underlying": "AAPL",
           "token": "AAPLX",
-          "premium_pct": 0.145,
-          "market_cap": 13035415.95
+          "premium_pct": 0.133,
+          "market_cap": 12996593.53
         }
       ],
-      "as_of": "2026-09-04T04:35:41+00:00"
+      "as_of": "2026-09-04T07:46:48+00:00"
     },
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 458635595.4289456,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 459096665.4713829,
       "apy_pct": null
     }
   },
@@ -1531,9 +1531,9 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 4278382012.1360564,
-      "apy_pct": 4.57613,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 4286456267.4899755,
+      "apy_pct": 4.57718,
       "apy_check_asksurf": 4.86
     }
   },
@@ -1589,8 +1589,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 482662184.90554553,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 482471134.4332558,
       "apy_pct": null
     }
   },
@@ -1649,8 +1649,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
-      "tvl_usd": 336345795.0030959,
+      "as_of": "2026-09-04T07:47:10+00:00",
+      "tvl_usd": 336395849.9714049,
       "apy_pct": 6.53694
     }
   },
@@ -1665,7 +1665,7 @@
       "Avalanche"
     ],
     "tvl_usd_approx": null,
-    "apy_pct_approx": 7.0,
+    "apy_pct_approx": 6.0,
     "terms": {
       "min_investment": "$100 USDC ($100 minimum also qualifies for the deposit bonus)",
       "kyc": "kyc_retail",
@@ -1692,30 +1692,32 @@
       "agent_addressable": true
     },
     "defillama_slug": null,
-    "risk_notes": "High-yield (junk) corporate bond credit + duration risk via SHYG \u2014 returns are variable and can be negative (last quarter ~0.85% before fees vs the 7%/yr target); NAV moves with rates and credit conditions. 50 bps exit fee. Platform/rails risk: IXS issuer, Wilmington Trust custody, OpenTrade deployment. Access is dual-rail: the in-app vault is permissioned (KYC/whitelist), while the ERC-7540 Agent Rail is permissionless and intended for AI agents. Displayed rates have varied across IXS surfaces (6% / 13.36% / 8.5% promo) \u2014 the investor summary's 7% target / ~5% trailing is the authoritative framing. BlackRock manages the ETF and does not endorse the product.",
+    "risk_notes": "High-yield (junk) corporate bond credit + duration risk via SHYG \u2014 returns are variable and can be negative (last quarter ~0.85% before fees vs the 6%/yr estimate); NAV moves with rates and credit conditions. 50 bps exit fee. Platform/rails risk: IXS issuer, Wilmington Trust custody, OpenTrade deployment. Access is dual-rail: the in-app vault is permissioned (KYC/whitelist), while the ERC-7540 Agent Rail is permissionless and intended for AI agents. Displayed rates have varied across IXS surfaces (6% / 13.36% / 8.5% promo) \u2014 the investor summary's 6% estimated / ~5% trailing is the authoritative framing. BlackRock manages the ETF and does not endorse the product.",
     "sources": [
-      "IXS HYCB Vault Investor Summary PDF (2026-09-01, provided by client)",
+      "IXS Token Rewards Campaign materials (2026-09-04, provided by client)",
       "https://vaults.ixs.finance",
       "https://app.ixs.finance/#/earn",
       "https://www.ixs.finance/news/ixs-offer-institutional-on-chain-yield-through-mmfs-and-blackrock-backed-bond-etf"
     ],
-    "verified_at": "2026-09-01",
+    "verified_at": "2026-09-04",
     "yield_profile": {
-      "target_pct": 7.0,
+      "target_pct": 6.0,
       "trailing_12m_pct": 5.0,
       "last_quarter_pct_before_fees": 0.85,
       "guaranteed": false,
-      "note": "Target yield, not fixed or guaranteed; returns are variable and can be negative. 90-day vault yield range shown in the investor doc: roughly 3.5%/yr recent rate up to the 7% target, net of the 50 bps exit fee."
+      "note": "Estimated yield of 6%/yr (IXS, Sep 4 2026 campaign materials), not fixed or guaranteed; returns are variable and can be negative. Trailing 12 months ~5%, last quarter ~0.85% before fees."
     },
     "promotions": [
       {
-        "name": "IXS Deposit Bonus Program",
+        "name": "$IXS Vault Rewards",
+        "badge": "$IXS Vault Rewards",
         "status": "active",
         "window": {
-          "start": "2026-08-30",
-          "end": "2026-09-12"
+          "start": "2026-09-04",
+          "end": "2026-09-18"
         },
-        "mechanic": "Fixed IXS-token bonus set at deposit, independent of vault performance; vests exactly 90 days after deposit; claim within 30 days of vesting or it expires; bonuses vest and pay Nov 28 - Dec 11 2026; processing pauses mid-Dec to Jan 5 (claim windows in that period resume after Jan 5). Early withdrawal forfeits the unvested bonus. Bonus claims require identity verification (one bonus per verified identity, verified at redemption).",
+        "pool_ixs": 500000,
+        "mechanic": "Deposit $100 or more between 4 and 18 September 2026 and a fixed $IXS reward is recorded at deposit, set in dollar terms and paid in $IXS tokens 90 days after your deposit date (between 3 and 17 December 2026). Claim within 30 days of your vesting date or the reward expires. One reward per depositing wallet; IXS may ask for re-verification if it suspects one person using several wallets. Withdraw before 90 days and you forfeit the unvested reward.",
         "tiers": [
           {
             "deposit_usd": 100,
@@ -1731,26 +1733,25 @@
           },
           {
             "deposit_usd": 5000,
-            "bonus_ixs_usd": 100,
-            "bonus_pct": 2.0,
-            "annualized_pct": 8
+            "bonus_ixs_usd": 75,
+            "bonus_pct": 1.5,
+            "annualized_pct": 6
           },
           {
             "deposit_usd": 10000,
-            "bonus_ixs_usd": 150,
-            "bonus_pct": 1.5,
-            "annualized_pct": 6
+            "bonus_ixs_usd": 100,
+            "bonus_pct": 1.0,
+            "annualized_pct": 4
           }
         ],
-        "caveats": "Bonus paid in IXS tokens, which carry their own price volatility; annualized rate is the fixed 90-day bonus expressed yearly and is separate from (not additive guidance on) the variable vault yield. One bonus per verified identity.",
-        "source": "IXS HYCB Vault Investor Summary (received 2026-09-01)",
-        "badge": "$IXS boosted rewards"
+        "caveats": "Fixed pool of 500,000 $IXS, first come first served until exhausted; IXS can end the program early and depositing does not guarantee an allocation. The reward is paid in $IXS tokens, which carry their own price volatility, and the annualized rate is the fixed 90-day reward expressed yearly, separate from the vault's own variable yield.",
+        "source": "IXS Token Rewards Campaign (final, received 2026-09-04)"
       }
     ],
     "status": "new",
     "vault_standard": "ERC-7540",
     "live": {
-      "as_of": "2026-09-04T04:35:43+00:00",
+      "as_of": "2026-09-04T07:47:10+00:00",
       "tvl_usd": null,
       "apy_pct": null
     }
