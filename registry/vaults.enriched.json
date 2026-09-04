@@ -58,8 +58,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 3583705652.790449,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 3583705652.790448,
       "apy_pct": 3.25797
     }
   },
@@ -119,7 +119,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
+      "as_of": "2026-09-04T04:35:43+00:00",
       "tvl_usd": 2687611257.2417164,
       "apy_pct": 3.18659
     }
@@ -186,8 +186,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 2527478436.138943,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 2524181700.4933915,
       "apy_pct": 3.56,
       "apy_check_asksurf": 3.55
     }
@@ -247,8 +247,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 2527478436.138943,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 2524181700.4933915,
       "apy_pct": 3.56,
       "apy_check_asksurf": 3.55
     }
@@ -312,7 +312,7 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
+      "as_of": "2026-09-04T04:35:43+00:00",
       "tvl_usd": null,
       "apy_pct": null
     }
@@ -367,8 +367,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 631403958.175562,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 633182341.4684576,
       "apy_pct": 3.52239
     }
   },
@@ -434,8 +434,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 2502788540.5555553,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 2503290477.5015287,
       "apy_pct": null
     }
   },
@@ -496,9 +496,9 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 246820638.22972977,
-      "apy_pct": 3.37647
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 246918898.74879816,
+      "apy_pct": 3.74847
     }
   },
   {
@@ -560,8 +560,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 1230710305.9987838,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 1230710605.1726115,
       "apy_pct": null
     }
   },
@@ -618,8 +618,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 140239931.27,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 140534666.54000005,
       "apy_pct": 3.36
     }
   },
@@ -676,8 +676,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 253985444.41164008,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 254468723.0332759,
       "apy_pct": null
     }
   },
@@ -732,9 +732,9 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 601529853.912489,
-      "apy_pct": 5.71717
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 601329610.4963559,
+      "apy_pct": 5.75351
     }
   },
   {
@@ -794,8 +794,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 2938042685.0442,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 2938992302.7522902,
       "apy_pct": 5.03219,
       "apy_check_asksurf": 5.08
     }
@@ -860,8 +860,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 820508400.8051717,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 820466154.940828,
       "apy_pct": null
     }
   },
@@ -906,8 +906,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 1590962.440843435,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 1577399.4391121222,
       "apy_pct": null
     }
   },
@@ -969,8 +969,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 95585778.89133248,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 95432789.98177639,
       "apy_pct": 7.36182
     }
   },
@@ -1019,8 +1019,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 232884632.1763594,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 232761865.2227599,
       "apy_pct": null
     }
   },
@@ -1074,8 +1074,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 255492604.59687224,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 255508690.90677178,
       "apy_pct": null
     }
   },
@@ -1139,15 +1139,15 @@
         {
           "underlying": "GOLD",
           "token": "PAXG",
-          "premium_pct": 0.13,
-          "market_cap": 1933238087.66
+          "premium_pct": 0.151,
+          "market_cap": 1932039982.95
         }
       ],
-      "as_of": "2026-09-03T23:30:31+00:00"
+      "as_of": "2026-09-04T04:35:41+00:00"
     },
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 1922250170.673702,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 1923649921.416511,
       "apy_pct": null
     }
   },
@@ -1210,21 +1210,21 @@
         {
           "underlying": "GOLD",
           "token": "XAUt",
-          "premium_pct": -0.056,
-          "market_cap": 2736694656.66
+          "premium_pct": -0.037,
+          "market_cap": 2734953046.61
         },
         {
           "underlying": "GOLD",
           "token": "XAUT0",
-          "premium_pct": 0.104,
-          "market_cap": 16648641.72
+          "premium_pct": 0.181,
+          "market_cap": 16647677.38
         }
       ],
-      "as_of": "2026-09-03T23:30:31+00:00"
+      "as_of": "2026-09-04T04:35:41+00:00"
     },
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 3159858474.7558246,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 3163195924.1960044,
       "apy_pct": null
     }
   },
@@ -1294,57 +1294,57 @@
         {
           "underlying": "CRCL",
           "token": "CRCLon",
-          "premium_pct": 0.018,
-          "market_cap": 123631887.63
+          "premium_pct": -0.058,
+          "market_cap": 123164299.31
         },
         {
           "underlying": "SPY",
           "token": "SPYon",
-          "premium_pct": 0.577,
-          "market_cap": 45139392.65
+          "premium_pct": 0.628,
+          "market_cap": 45214095.2
         },
         {
           "underlying": "NVDA",
           "token": "NVDAon",
-          "premium_pct": 0.268,
-          "market_cap": 38726968.59
+          "premium_pct": 0.042,
+          "market_cap": 38878948.18
         },
         {
           "underlying": "QQQ",
           "token": "QQQon",
-          "premium_pct": 0.275,
-          "market_cap": 32609559.66
+          "premium_pct": 0.299,
+          "market_cap": 32688641.51
         },
         {
           "underlying": "MSTR",
           "token": "MSTRon",
-          "premium_pct": -0.038,
-          "market_cap": 27973136.91
+          "premium_pct": 0.079,
+          "market_cap": 28081746.99
         },
         {
           "underlying": "GOOGL",
           "token": "GOOGLon",
-          "premium_pct": 0.109,
-          "market_cap": 20316614.42
+          "premium_pct": 0.171,
+          "market_cap": 20371056.29
         },
         {
           "underlying": "TSLA",
           "token": "TSLAon",
-          "premium_pct": 0.006,
-          "market_cap": 16869075.49
+          "premium_pct": 0.01,
+          "market_cap": 16655744.31
         },
         {
           "underlying": "META",
           "token": "METAon",
-          "premium_pct": 0.063,
-          "market_cap": 11117856.2
+          "premium_pct": 0.108,
+          "market_cap": 11152849.94
         }
       ],
-      "as_of": "2026-09-03T23:30:31+00:00"
+      "as_of": "2026-09-04T04:35:41+00:00"
     },
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 968383288.3899899,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 968281256.3894664,
       "apy_pct": null
     }
   },
@@ -1419,57 +1419,57 @@
         {
           "underlying": "CRCL",
           "token": "CRCLX",
-          "premium_pct": 0.04,
-          "market_cap": 82853682.2
-        },
-        {
-          "underlying": "TSLA",
-          "token": "TSLAX",
-          "premium_pct": -0.024,
-          "market_cap": 73589397.9
+          "premium_pct": 0.076,
+          "market_cap": 82836264.59
         },
         {
           "underlying": "MSTR",
           "token": "MSTRX",
-          "premium_pct": -0.057,
-          "market_cap": 72712330.82
+          "premium_pct": 0.234,
+          "market_cap": 73146300.71
+        },
+        {
+          "underlying": "TSLA",
+          "token": "TSLAX",
+          "premium_pct": 0.022,
+          "market_cap": 72527622.33
         },
         {
           "underlying": "SPY",
           "token": "SPYX",
-          "premium_pct": 0.342,
-          "market_cap": 55613851.15
+          "premium_pct": 0.349,
+          "market_cap": 55663422.46
         },
         {
           "underlying": "NVDA",
           "token": "NVDAX",
-          "premium_pct": 0.301,
-          "market_cap": 39901383.11
+          "premium_pct": 0.062,
+          "market_cap": 40044118.26
         },
         {
           "underlying": "QQQ",
           "token": "QQQX",
-          "premium_pct": 0.156,
-          "market_cap": 36340493.01
+          "premium_pct": 0.225,
+          "market_cap": 36462499.35
         },
         {
           "underlying": "GOOGL",
           "token": "GOOGLX",
-          "premium_pct": 0.037,
-          "market_cap": 36079034.85
+          "premium_pct": 0.043,
+          "market_cap": 36170601.21
         },
         {
           "underlying": "AAPL",
           "token": "AAPLX",
-          "premium_pct": 0.207,
-          "market_cap": 13025027.78
+          "premium_pct": 0.145,
+          "market_cap": 13035415.95
         }
       ],
-      "as_of": "2026-09-03T23:30:31+00:00"
+      "as_of": "2026-09-04T04:35:41+00:00"
     },
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 462669323.71442205,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 458635595.4289456,
       "apy_pct": null
     }
   },
@@ -1531,9 +1531,9 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 4257557255.1452355,
-      "apy_pct": 4.64111,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 4278382012.1360564,
+      "apy_pct": 4.57613,
       "apy_check_asksurf": 4.86
     }
   },
@@ -1589,8 +1589,8 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 482682892.2863599,
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 482662184.90554553,
       "apy_pct": null
     }
   },
@@ -1649,9 +1649,9 @@
     ],
     "verified_at": "2026-09-01",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
-      "tvl_usd": 334801450.9092385,
-      "apy_pct": 6.48349
+      "as_of": "2026-09-04T04:35:43+00:00",
+      "tvl_usd": 336345795.0030959,
+      "apy_pct": 6.53694
     }
   },
   {
@@ -1750,7 +1750,7 @@
     "status": "new",
     "vault_standard": "ERC-7540",
     "live": {
-      "as_of": "2026-09-03T23:30:34+00:00",
+      "as_of": "2026-09-04T04:35:43+00:00",
       "tvl_usd": null,
       "apy_pct": null
     }
