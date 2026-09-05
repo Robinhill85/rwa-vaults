@@ -20,9 +20,9 @@
   --panel-deep: rgba(4, 10, 40, 0.6);
   --line: rgba(255, 255, 255, 0.14);
   --grid: rgba(255, 255, 255, 0.07);
-  --text: #eef2ff; --muted: #a9b8f2;
-  --accent: #ffb224; --accent2: #9db4ff;
-  --up: #5be39a; --down: #ff6b6b;
+  --text: #eef2ff; --muted: #f5f8ff;
+  --accent: #ffb224; --accent2: #f5f8ff;
+  --up: #5be39a; --down: #ffb3b3;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -170,9 +170,46 @@ footer a { color: #fff; text-decoration: underline; }
   .v-top { grid-template-columns: 1fr; }
   .v-figures { border-left: none; border-top: 1px dashed var(--line); padding-left: 0; padding-top: 12px; }
   .terms { grid-template-columns: 1fr; }
-  .board th:nth-child(4), .board td:nth-child(4) { display: none; }
+
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+/* Clarity additions reuse the existing panels, chips and color tokens. */
+.desk, .vault, .cat-tile, .board { --muted: #d8e1ff; --accent2: #d8e1ff; }
+.newbanner .tagn, .promo th, .regions, .desk-title, .q label, .stamp, .chainlist, .fig .k, .fig .n small, .term .k, .srcs, .cmcbadge, .premium, .cat-tile .k, .cat-tile .sub, .board th, .cat, footer .fine, .data-note { font-size: 12px; }
+.vault.dead { opacity: 1; border-style: dashed; }
+.jump-nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 20px 0; }
+.jump-nav a { text-underline-offset: 4px; }
+.filter-bar { position: sticky; top: 0; z-index: 5; background: #1f37d6; border-bottom: 1px solid var(--line); padding: 10px 0; }
+.rail { position: static; padding-bottom: 0; margin: 0; }
+.filter-summary { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.active-filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.data-note { display: block; color: var(--muted); line-height: 1.5; font-weight: 400; margin-top: 4px; }
+.data-state { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; }
+.v-more > summary { color: var(--text); border: 1px solid var(--line); border-radius: 8px; background: var(--panel-deep); padding: 9px 12px; font-size: 14px; font-weight: 600; }
+:where(a, button, summary, .board-wrap):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+#ledger, #cmc-section, #premiums, #issuers, #tracked-section, .vault { scroll-margin-top: 180px; }
+#tracked-section { border-top: 1px dashed var(--line); margin-top: 32px; }
+#tracked-section h2, #tracked-section .tvl { font-weight: 500; }
+#tracked-section .tvl { color: var(--text); }
+.board-wrap { border-radius: 12px; }
+.board { min-width: 680px; }
+.board th:first-child, .board td:first-child { position: sticky; left: 0; background: #172c85; z-index: 1; min-width: 140px; max-width: 180px; overflow-wrap: anywhere; }
+table.board { overflow: visible; }
+.scroll-hint { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.glossary { margin: 20px 0; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+.glossary summary { cursor: pointer; font-weight: 600; }
+.glossary dl { display: grid; gap: 10px; margin-top: 12px; }
+.glossary dt { font-weight: 600; }
+.glossary dd { color: #d8e1ff; font-size: 13px; }
+@media (max-width: 720px) {
+  .rail { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; }
+  .rail .chip { flex-shrink: 0; }
+  .classhead { flex-wrap: wrap; gap: 6px; }
+  .classhead .meta { margin-left: 0; text-align: left; width: 100%; }
+  .q select { font-size: 16px; }
+  .v-figures { gap: 12px; }
+  .promo { overflow-x: auto; }
+}
 </style>
 </head>
 <body>
@@ -186,8 +223,18 @@ footer a { color: #fff; text-decoration: underline; }
     <img class="hero-img" src="/hero.jpg" alt="Engraved bank vault statue on a pedestal labeled Tokenized Real-World Assets">
   </section>
 
+  <nav class="jump-nav" aria-label="Jump to section"><a href="#ledger">Vaults</a><a href="#cmc-section">Tokenized assets</a><a href="#premiums">Wrapper premiums</a><a href="#issuers">Issuers</a><a href="#tracked-section">Tracked</a></nav>
+  <details class="glossary" id="glossary"><summary>Glossary &amp; data labels</summary><dl>
+    <div><dt>KYC tiers</dt><dd>Know your customer: identity checks. Retail KYC is basic onboarding; accredited/professional and qualified purchaser tiers add financial eligibility rules; institutions-only excludes individual retail investors. Requirements vary by jurisdiction.</dd></div>
+    <div><dt>Admitted</dt><dd>At least one investor tier from that region can apply. This does not mean every resident qualifies.</dd></div>
+    <div><dt>Qualified purchaser (QP)</dt><dd>A higher financial eligibility category than accredited investor. Check the issuer’s jurisdiction-specific requirements.</dd></div>
+    <div><dt>Wrapper vs blended</dt><dd>A wrapper is one issuer’s tokenized version of an asset. Its premium or discount is measured against CMC’s blended tokenized average, not the underlying stock-exchange price.</dd></div>
+    <div><dt>Basis-trade</dt><dd>A strategy seeking the price or funding difference between spot assets and derivatives. Returns can fall or reverse.</dd></div>
+    <div><dt>Live / approx / snapshot</dt><dd>Live means a provider reading captured within 48 hours, not a streaming quote. Approx means an estimate or target. Snapshot means a dated record, or a provider reading older than 48 hours or without a usable date. Sources refresh daily; none of these labels guarantees returns.</dd></div>
+    <div><dt>Unavailable / not covered</dt><dd>Unavailable means the value or feed could not be obtained. Not covered means a successful CMC category response reported no assets. A dash is never a zero yield.</dd></div>
+  </dl></details>
   <section class="desk">
-    <div class="desk-title">Eligibility desk</div>
+    <div class="desk-title">Eligibility desk · verified vaults only</div><p class="classnote">Category counts follow these answers. CMC and Tracked sections remain unfiltered. <a href="#glossary" onclick="document.getElementById('glossary').open=true">KYC tiers &amp; admitted: definitions</a></p>
     <div class="desk-grid">
       <div class="q">
         <label for="q-region">Where are you?</label>
@@ -206,7 +253,7 @@ footer a { color: #fff; text-decoration: underline; }
           <option value="1000">$1,000</option>
           <option value="10000">$10,000</option>
           <option value="100000">$100,000</option>
-          <option value="10000000">$1M+</option>
+          <option value="1000000">$1,000,000</option>
         </select>
       </div>
       <div class="q">
@@ -227,7 +274,7 @@ footer a { color: #fff; text-decoration: underline; }
     </div>
   </section>
 
-  <nav class="rail" id="rail" aria-label="Asset class filter"></nav>
+  <div class="filter-bar"><div class="filter-summary"><strong id="showing" role="status">Loading verified vaults…</strong><div id="active-filters" class="active-filters" aria-label="Active filters"></div></div><nav class="rail" id="rail" aria-label="Asset class filter; counts reflect eligibility filters"></nav></div>
 
   <div id="newbanner"></div>
 
@@ -237,21 +284,21 @@ footer a { color: #fff; text-decoration: underline; }
     <div class="classhead"><h2>Tokenized assets</h2><div class="meta" id="cmc-meta"></div></div>
     <p class="tracked-note">The categories no DeFi TVL tracker models — tokenized stocks, commodities, ETFs — sized from the <a href="https://coinmarketcap.com/api/documentation/pro-api-reference/real-world-assets" target="_blank" rel="noopener">CoinMarketCap Real-World Assets API</a>. Not hand-verified; market data only.</p>
     <div class="cats" id="cmc-cats"></div>
-    <div class="board-wrap"><table class="board" id="cmc-board"></table></div>
+    <p class="scroll-hint">Scroll horizontally for all columns. The first column stays visible.</p><div class="board-wrap" role="region" tabindex="0" aria-label="Tokenized assets table, scroll horizontally"><table class="board" id="cmc-board"></table></div>
 
-    <div class="classhead" style="margin-top:34px"><h2>Wrapper premiums</h2><div class="meta" id="prem-meta"></div></div>
+    <div class="classhead" style="margin-top:34px"><h2 id="premiums">Wrapper premiums</h2><a href="#glossary" title="Compare one issuer’s token with the blended tokenized average.">What does this mean?</a><div class="meta" id="prem-meta"></div></div>
     <p class="tracked-note">Same underlying, several issuers: each tokenized wrapper's price against the blended tokenized average from CMC. A wide gap means thin liquidity or a unit mismatch — not a free lunch.</p>
-    <div class="board-wrap"><table class="board" id="prem-board"></table></div>
+    <p class="scroll-hint">Scroll horizontally for all columns. The first column stays visible.</p><div class="board-wrap" role="region" tabindex="0" aria-label="Wrapper premiums table, scroll horizontally"><table class="board" id="prem-board"></table></div>
 
-    <div class="classhead" style="margin-top:34px"><h2>Issuers</h2><div class="meta" id="iss-meta"></div></div>
+    <div class="classhead" style="margin-top:34px"><h2 id="issuers">Issuers</h2><div class="meta" id="iss-meta"></div></div>
     <p class="tracked-note">Every RWA token issuer CoinMarketCap tracks, with the number of tokens each has issued. Issuers whose products carry hand-verified terms on this ledger are marked.</p>
-    <div class="board-wrap"><table class="board" id="iss-board"></table></div>
+    <p class="scroll-hint">Scroll horizontally for all columns. The first column stays visible.</p><div class="board-wrap" role="region" tabindex="0" aria-label="Issuers table, scroll horizontally"><table class="board" id="iss-board"></table></div>
   </section>
 
   <section id="tracked-section">
-    <div class="classhead"><h2>Tracked</h2><div class="meta" id="tracked-meta"></div></div>
+    <div class="classhead"><h2>Tracked</h2><span class="stamp">Not hand-verified</span><div class="meta" id="tracked-meta"></div></div>
     <p class="tracked-note"><strong>Not hand-verified.</strong> Auto-generated from DeFiLlama's RWA categories — live TVL only; no terms, KYC, or access data. Entries graduate to the verified ledger above as we research them.</p>
-    <div class="board-wrap"><table class="board" id="tracked-board"></table></div>
+    <p class="scroll-hint">Scroll horizontally for all columns. The first column stays visible.</p><div class="board-wrap" role="region" tabindex="0" aria-label="Tracked protocols table, scroll horizontally"><table class="board" id="tracked-board"></table></div>
   </section>
 
   <footer>
@@ -278,19 +325,22 @@ const TRACK_CAT = {rwa:"RWA", rwa_lending:"RWA Lending", basis_trading:"Basis"};
 const state = {region:"any", ticket:0, kyc:"any", klass:"all"};
 let VAULTS = [], TRACKED = null;
 
-const fmtUsd = n => n==null ? "—" : n>=1e9 ? "$"+(n/1e9).toFixed(2)+"B" : n>=1e6 ? "$"+(n/1e6).toFixed(1)+"M" : "$"+Math.round(n).toLocaleString("en-US");
-const fmtMin = n => n===0 ? "None" : "$"+n.toLocaleString("en-US");
+const fmtUsd = n => !Number.isFinite(n) ? "Unavailable" : n>0 && n<0.01 ? "<$0.01" : n>=1e9 ? "$"+(n/1e9).toFixed(2)+"B" : n>=1e6 ? "$"+(n/1e6).toFixed(1)+"M" : "$"+n.toLocaleString("en-US",{maximumFractionDigits:2});
+const fmtMin = n => !Number.isFinite(n) ? "Unavailable" : n===0 ? "None" : "$"+n.toLocaleString("en-US");
 const esc = s => String(s??"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
+const recent = date => { const age = Date.now()-Date.parse(date); return Number.isFinite(age) && age>=-60000 && age<=48*3600000; };
+const statusOf = (n,date,kind="live") => !Number.isFinite(n) ? "unavailable" : kind==="approx" ? "approx" : kind==="snapshot" || !recent(date) ? "snapshot" : "live";
+function provenance(source,date,kind="snapshot") { return `<span class="data-note">${kind?`<span class="data-state">${kind}</span> · `:""}${esc(source)} · as of ${esc(typeof date==="string" && Number.isFinite(Date.parse(date)) ? date.slice(0,10) : "date not supplied")}</span>`; }
+function financial(n,date,format=fmtUsd,kind="live") { return `${Number.isFinite(n)?format(n):"Unavailable"} <small class="data-state">${statusOf(n,date,kind)}</small>`; }
+const percent = n => `${n>0?"+":n<0?"−":""}${Math.abs(n).toFixed(2)}%`;
+const legacyCmc = (n,data) => data.schema_version!==2 && n===0 ? null : n;
 function apyOf(v){
-  const live = v.live && v.live.apy_pct;
-  const target = v.yield_profile ? v.yield_profile.target_pct : null;
-  const approx = v.apy_pct_approx;
-  if (target!=null) return {n:target, tag:"target"};
-  if (live!=null)   return {n:Math.round(live*100)/100, tag:"live"};
-  if (approx!=null) return {n:approx, tag:"approx"};
-  return {n:null, tag:""};
+  if (Number.isFinite(v.yield_profile?.target_pct)) return {n:v.yield_profile.target_pct, tag:"approx", date:v.verified_at, source:"Issuer target via VaultTerms"};
+  if (Number.isFinite(v.live?.apy_pct)) return {n:v.live.apy_pct, tag:"live", date:v.live.as_of, source:"DeFiLlama"};
+  return {n:v.apy_pct_approx, tag:"approx", date:v.verified_at, source:"VaultTerms research"};
 }
+function tvlOf(v) { return Number.isFinite(v.live?.tvl_usd) ? {n:v.live.tvl_usd,date:v.live.as_of,kind:"live",source:"DeFiLlama"} : {n:v.tvl_usd_approx,date:v.verified_at,kind:"approx",source:"VaultTerms research"}; }
 function activePromo(v){
   if (!v.promotions) return null;
   const today = new Date().toISOString().slice(0,10);
@@ -300,14 +350,14 @@ function isDead(v){ return v.id === "goldfinch-prime"; }
 function eligible(v){
   if (isDead(v)) return false;
   if (state.region !== "any" && !v.access.regions[state.region]) return false;
-  if (state.ticket > 0 && (v.access.min_usd||0) > state.ticket) return false;
+  if (state.ticket > 0 && (!Number.isFinite(v.access.min_usd) || v.access.min_usd > state.ticket)) return false;
   if (state.kyc !== "any" && KYC_RANK[v.terms.kyc] > KYC_RANK[state.kyc] && !(state.kyc === "none" && v.access.agent_addressable)) return false;
   return true;
 }
 
 function vaultHtml(v){
   const apy = apyOf(v);
-  const tvl = v.live && v.live.tvl_usd != null ? v.live.tvl_usd : v.tvl_usd_approx;
+  const tvl = tvlOf(v);
   const promo = activePromo(v);
   const dead = isDead(v);
   const kycClass = v.terms.kyc === "none" ? "open" : (KYC_RANK[v.terms.kyc] >= 2 ? "gate" : "kyc");
@@ -336,23 +386,24 @@ function vaultHtml(v){
           ${v.status==="new" ? `<span class="stamp open">New</span>` : ""}
           ${v.access.agent_addressable ? `<span class="stamp agent">Agent addressable</span><span class="stamp open">No KYC · agents</span>` : ""}
           ${v.cmc ? `<span class="cmcbadge">CMC · ${v.cmc.num_tokens} token${v.cmc.num_tokens===1?"":"s"} issued</span>` : ""}
-          <span class="stamp ${kycClass}">${KYC_LABEL[v.terms.kyc]||esc(v.terms.kyc)}</span>
+          <a href="#glossary" title="KYC is identity verification; higher tiers add investor eligibility requirements." class="stamp ${kycClass}">${KYC_LABEL[v.terms.kyc]||esc(v.terms.kyc)}</a>
           ${promo ? `<span class="stamp bonus">${esc(promo.badge || "Bonus live")}</span>` : ""}
           <span class="chainlist">${(v.chains||[]).slice(0,4).join(" · ")}${(v.chains||[]).length>4 ? " +"+(v.chains.length-4):""}</span>
         </div>
       </div>
       <div class="v-figures">
-        <div class="fig"><div class="k">Yield</div><div class="n">${apy.n!=null ? apy.n+"%" : "—"} <small>${apy.tag}</small></div></div>
-        <div class="fig"><div class="k">TVL</div><div class="n">${v.status==="new" && tvl==null ? `<span style="color:var(--up)">New</span> <small>launching</small>` : `${fmtUsd(tvl)} <small>${v.live && v.live.tvl_usd!=null ? "live":"approx"}</small>`}</div></div>
-        <div class="fig"><div class="k">Minimum</div><div class="n plain">${fmtMin(v.access.min_usd||0)}</div></div>
-        <div class="fig"><div class="k">Lockup</div><div class="n plain">${esc((v.terms.lockup||"—").split(";")[0])}</div></div>
-        <div class="regions">Admits: ${reg}</div>
-        ${v.cmc && v.cmc.wrappers && v.cmc.wrappers.length ? `<div class="premium" style="grid-column:1/-1">Wrapper vs blended (CMC): ${v.cmc.wrappers.filter(w=>Math.abs(w.premium_pct)<20).slice(0,4).map(w=>`${esc(w.token)} <b class="${w.premium_pct>=0?"p":"d"}">${w.premium_pct>=0?"+":""}${w.premium_pct.toFixed(2)}%</b>`).join(" · ")}</div>` : ""}
+        <div class="fig"><div class="k">Yield</div><div class="n">${financial(apy.n,apy.date,n=>n.toFixed(2)+"%",apy.tag)}</div>${provenance(apy.source,apy.date,"")}${!Number.isFinite(apy.n)?'<span class="data-note">No yield figure supplied; not a zero return.</span>':apy.tag==="approx"?'<span class="data-note">Estimate / target, not guaranteed.</span>':""}</div>
+        <div class="fig"><div class="k">TVL</div><div class="n">${financial(tvl.n,tvl.date,fmtUsd,tvl.kind)}</div>${provenance(tvl.source,tvl.date,"")}</div>
+        <div class="fig"><div class="k">Minimum</div><div class="n plain">${financial(v.access.min_usd,v.verified_at,fmtMin,"snapshot")}</div></div>
+        <div class="fig"><div class="k">Lockup</div><div class="n plain">${esc((v.terms.lockup||"Unavailable").split(";")[0])}</div></div>
+        <div style="grid-column:1/-1">${provenance("Issuer terms via VaultTerms",v.verified_at)}</div>
+        <div class="regions"><a href="#glossary" title="At least one investor tier from this region can apply; not every resident qualifies.">Admits</a>: ${reg}</div>
+        ${v.cmc && v.cmc.wrappers && v.cmc.wrappers.length ? `<div class="premium" style="grid-column:1/-1"><a href="#glossary" title="One issuer’s token price compared with CMC’s blended tokenized average, not the stock-exchange price.">Wrapper vs blended</a> (CMC): ${v.cmc.wrappers.filter(w=>Number.isFinite(w.premium_pct) && Math.abs(w.premium_pct)<20).slice(0,4).map(w=>`${esc(w.token)} <b class="${w.premium_pct>=0?"p":"d"}">${percent(w.premium_pct)}</b>`).join(" · ")}${provenance("CMC wrapper prices",v.cmc.as_of,recent(v.cmc.as_of)?"live":"snapshot")}</div>` : ""}
       </div>
     </div>
     <details class="v-more">
-      <summary>terms &amp; how to invest</summary>
-      <div class="terms">
+      <summary aria-label="View terms and how to invest in ${esc(v.name)}">View terms &amp; how to invest</summary>
+      <div class="terms"><div class="term full">${provenance("Issuer terms and campaign materials via VaultTerms",v.verified_at)}</div>
         <div class="term"><div class="k">Minimum investment</div><div class="v">${esc(v.terms.min_investment)}</div></div>
         <div class="term"><div class="k">Jurisdiction</div><div class="v">${esc(v.terms.jurisdiction)}</div></div>
         <div class="term"><div class="k">Redemption</div><div class="v">${esc(v.terms.redemption)}</div></div>
@@ -368,6 +419,7 @@ function vaultHtml(v){
 }
 
 function render(){
+  if(!VAULTS.length)return;
   const ledger = document.getElementById("ledger");
   const anyQ = state.region!=="any" || state.ticket>0 || state.kyc!=="any";
   let html = "";
@@ -376,8 +428,8 @@ function render(){
     const all = VAULTS.filter(v=>v.asset_class===k);
     const show = all.filter(v => !anyQ || eligible(v));
     if (!show.length) continue;
-    const tvl = show.reduce((s,v)=> s + ((v.live&&v.live.tvl_usd)||v.tvl_usd_approx||0), 0);
-    html += `<div class="classhead"><h2>${CLASS_META[k].name}</h2><div class="meta">${show.length} ${show.length===1?"entry":"entries"} · ${fmtUsd(tvl)} TVL</div></div>
+
+    html += `<div class="classhead"><h2>${CLASS_META[k].name}</h2><div class="meta">${show.length} ${show.length===1?"entry":"entries"} · figures sourced per field</div></div>
              <p class="classnote">${CLASS_META[k].note}</p>` + show.map(vaultHtml).join("");
   }
   ledger.innerHTML = html || `<div class="vault" style="text-align:center;color:var(--muted);padding:40px">No verified vaults match — that combination of region, ticket and KYC shuts every door we track. Loosen one.</div>`;
@@ -390,69 +442,72 @@ function render(){
   document.getElementById("v-line").textContent =
     anyQ ? (n===1 ? "vault will take your money." : "vaults will take your money.")
          : "verified vaults — answer the three questions to see which will take your money.";
-  document.getElementById("tracked-section").style.display = (state.klass==="all" && !anyQ) ? "" : "none";
-  document.getElementById("cmc-section").style.display = (state.klass==="all" && !anyQ) ? "" : "none";
+  document.getElementById("showing").textContent = `Showing ${n} of ${VAULTS.length} verified vaults`;
+  buildRail();
+  const filters = [["region",state.region!=="any" ? document.getElementById("q-region").selectedOptions[0].text : null],["ticket",state.ticket ? document.getElementById("q-ticket").selectedOptions[0].text : null],["kyc",state.kyc!=="any" ? document.getElementById("q-kyc").selectedOptions[0].text : null],["klass",state.klass!=="all" ? CLASS_META[state.klass].name : null]];
+  document.getElementById("active-filters").innerHTML = filters.filter(([,label])=>label).map(([key,label])=>`<button class="chip" data-clear="${key}" aria-label="Remove ${esc(label)} filter">${esc(label)} ×</button>`).join("") || '<span class="data-note">No active filters</span>';
+
 }
 
+function feedError(id,source){
+  document.getElementById(id+"-meta").innerHTML = provenance(source,null,"unavailable")+` <button class="chip" data-retry>Retry data</button>`;
+  document.getElementById(id+"-board").innerHTML = `<caption>${esc(source)} could not be loaded. This is an unavailable feed, not zero coverage.</caption>`;
+  if(id==="cmc") document.getElementById("cmc-cats").innerHTML="";
+}
+function table(headers,rows){return `<thead><tr>${headers.map(h=>`<th scope="col">${h}</th>`).join("")}</tr></thead><tbody>${rows.join("")}</tbody>`;}
 function renderTracked(){
-  if (!TRACKED) return;
-  const rows = TRACKED.protocols;
-  document.getElementById("tracked-meta").textContent = rows.length + " protocols · " + fmtUsd(rows.reduce((s,r)=>s+r.tvl_usd,0)) + " TVL";
-  document.getElementById("tracked-board").innerHTML = `
-    <thead><tr><th>#</th><th>Protocol</th><th>Category</th><th>Chains</th><th>TVL</th><th>7d</th></tr></thead>
-    <tbody>${rows.map((r,i)=>{
-      const ch = r.change_7d_pct;
-      const chCell = ch==null ? "<span class='chains-cell'>—</span>" : `<span class="${ch>=0?"up":"down"}">${ch>=0?"+":""}${ch}%</span>`;
-      return `<tr>
-        <td class="rank">${i+1}</td>
-        <td><a class="pname" href="${esc(r.defillama_url)}" target="_blank" rel="noopener">${esc(r.name)}</a></td>
-        <td><span class="cat">${TRACK_CAT[r.category]||r.category}</span></td>
-        <td class="chains-cell">${(r.chains||[]).slice(0,3).join(", ")}</td>
-        <td class="tvl">${fmtUsd(r.tvl_usd)}</td>
-        <td>${chCell}</td>
-      </tr>`;}).join("")}</tbody>`;
+  if (!TRACKED || !Array.isArray(TRACKED.protocols)) return feedError("tracked","DeFiLlama tracked feed");
+  const date=TRACKED.generated_at, rows=TRACKED.protocols;
+  document.getElementById("tracked-meta").innerHTML = `${rows.length} protocols · not hand-verified`+provenance("DeFiLlama",date,recent(date)?"live":"snapshot");
+  document.getElementById("tracked-board").innerHTML = table(["Protocol","Category","Chains","TVL","7d change"],rows.map(r=>`<tr>
+    <td><a class="pname" href="${esc(r.defillama_url)}" target="_blank" rel="noopener">${esc(r.name)}</a></td>
+    <td><span class="cat">${esc(TRACK_CAT[r.category]||r.category)}</span></td><td class="chains-cell">${esc((r.chains||[]).slice(0,3).join(", "))}</td>
+    <td class="tvl">${financial(r.tvl_usd,date)}</td><td>${financial(r.change_7d_pct,date,percent)}</td></tr>`));
+  if(!rows.length)document.getElementById("tracked-board").innerHTML='<caption>No tracked protocols in this snapshot.</caption>';
 }
 
 const TYPE_LABEL = {stock:"Stocks", commodity:"Commodities", currency:"Currencies", government_security:"Government securities", etf:"ETFs", real_estate:"Real estate"};
 function renderCmc(assets, prem, iss){
-  if (assets){
-    const t = assets.types;
-    document.getElementById("cmc-meta").textContent = "CMC · as of " + assets.as_of.slice(0,10);
-    document.getElementById("cmc-cats").innerHTML = Object.keys(TYPE_LABEL).map(k => {
-      const x = t[k]; const empty = !x || !x.count;
-      return `<div class="cat-tile ${empty?"empty":""}"><div class="k">${TYPE_LABEL[k]}</div><div class="n">${empty ? "not covered" : fmtUsd(x.tokenized_market_cap_top50)}</div><div class="sub">${empty ? "0 assets on CMC" : x.count.toLocaleString("en-US")+" assets · top 50 mcap"}</div></div>`;
+  if (assets?.types){
+    const t=assets.types,date=assets.as_of;
+    document.getElementById("cmc-meta").innerHTML=provenance("CMC assets/list",date,recent(date)?"live":"snapshot")+(assets.schema_version!==2?'<span class="data-note">Older snapshot: zero market-cap / volume values may represent missing data, so they are shown as unavailable.</span>':"");
+    document.getElementById("cmc-cats").innerHTML=Object.keys(TYPE_LABEL).map(k=>{
+      const x=t[k],notCovered=x?.count===0,missing=!x||!Number.isFinite(x.count);
+      return `<div class="cat-tile ${notCovered||missing?"empty":""}"><div class="k">${TYPE_LABEL[k]}</div><div class="n">${notCovered?"Not covered":missing?"Unavailable":financial(legacyCmc(x.tokenized_market_cap_top50,assets),date)}</div><div class="sub">${notCovered?"CMC returned no assets for this category in this snapshot; not a feed failure.":missing?"Category response missing; coverage is unknown.":`${x.count.toLocaleString("en-US")} assets · market cap of up to 50 assets`}</div></div>`;
     }).join("");
-    const rows = [];
-    for (const k of ["stock","commodity","etf"]) for (const a of (t[k]?.top||[])) rows.push({...a, type:k});
-    rows.sort((a,b)=> (b.tokenized_market_cap||0)-(a.tokenized_market_cap||0));
-    document.getElementById("cmc-board").innerHTML = `<thead><tr><th>#</th><th>Asset</th><th>Type</th><th>Tokenized mcap</th><th>Avg tokenized price</th><th>24h vol</th></tr></thead><tbody>${rows.slice(0,25).map((r,i)=>`<tr><td class="rank">${i+1}</td><td><strong>${esc(r.symbol)}</strong> <span class="chains-cell">${esc(r.name)}</span></td><td><span class="cat">${TYPE_LABEL[r.type]}</span></td><td class="tvl">${fmtUsd(r.tokenized_market_cap)}</td><td>${r.average_tokenized_price!=null ? "$"+Number(r.average_tokenized_price).toLocaleString("en-US",{maximumFractionDigits:2}) : "—"}</td><td class="chains-cell">${fmtUsd(r.tokenized_volume_24h)}</td></tr>`).join("")}</tbody>`;
-  }
-  if (prem){
-    const syms = Object.keys(prem.assets);
-    document.getElementById("prem-meta").textContent = syms.length + " underlyings · CMC quotes/latest";
-    const rows = syms.map(sym => { const a = prem.assets[sym]; const ok = a.tokens.filter(x=>x.premium_pct!=null && Math.abs(x.premium_pct)<20); return {sym, a, ok, mcap: a.tokenized_market_cap||0}; }).sort((x,y)=>y.mcap-x.mcap);
-    document.getElementById("prem-board").innerHTML = `<thead><tr><th>Underlying</th><th>Blended avg</th><th>Wrappers (issuer · premium vs blended)</th><th>Tokenized mcap</th></tr></thead><tbody>${rows.map(({sym,a,ok,mcap})=>`<tr><td><strong>${esc(sym)}</strong> <span class="chains-cell">${esc(a.name)}</span></td><td>${a.average_tokenized_price!=null ? "$"+Number(a.average_tokenized_price).toLocaleString("en-US",{maximumFractionDigits:2}) : "—"}</td><td class="premium">${ok.length ? ok.slice(0,5).map(x=>`${esc(x.symbol)} <span class="chains-cell">${esc(x.issuer||"")}</span> <b class="${x.premium_pct>=0?"p":"d"}">${x.premium_pct>=0?"+":""}${x.premium_pct.toFixed(2)}%</b>`).join(" · ") : "<span class='chains-cell'>no priced wrappers</span>"}${a.tokens.length>ok.length ? ` <span class="chains-cell">(+${a.tokens.length-ok.length} unpriced/outlier)</span>`:""}</td><td class="tvl">${fmtUsd(mcap)}</td></tr>`).join("")}</tbody>`;
-  }
-  if (iss){
-    document.getElementById("iss-meta").textContent = iss.issuers.length + " issuers · CMC issuers/list";
-    document.getElementById("iss-board").innerHTML = `<thead><tr><th>#</th><th>Issuer</th><th>Tokens issued</th><th>On this ledger</th></tr></thead><tbody>${iss.issuers.map((x,i)=>`<tr><td class="rank">${i+1}</td><td>${x.website ? `<a class="pname" href="${esc(x.website)}" target="_blank" rel="noopener">${esc(x.name)}</a>` : `<strong>${esc(x.name)}</strong>`}</td><td class="tvl">${(x.num_tokens||0).toLocaleString("en-US")}</td><td>${x.ledger_vault_id ? `<a href="#v-${x.ledger_vault_id}" style="color:var(--up);font-weight:600">verified terms ↓</a>` : "<span class='chains-cell'>—</span>"}</td></tr>`).join("")}</tbody>`;
-  }
+    const rows=[];for(const k of Object.keys(TYPE_LABEL))for(const r of t[k]?.top||[])rows.push({...r,type:k});
+    rows.sort((a,b)=>(b.tokenized_market_cap??-1)-(a.tokenized_market_cap??-1));
+    document.getElementById("cmc-board").innerHTML=table(["Asset","Type","Tokenized mcap","Avg tokenized price","24h volume"],rows.slice(0,25).map(r=>`<tr><td><strong>${esc(r.symbol)}</strong> <span class="chains-cell">${esc(r.name)}</span></td><td><span class="cat">${TYPE_LABEL[r.type]}</span></td><td class="tvl">${financial(legacyCmc(r.tokenized_market_cap,assets),date)}</td><td>${financial(r.average_tokenized_price,date)}</td><td>${financial(legacyCmc(r.tokenized_volume_24h,assets),date)}</td></tr>`));
+    if(!rows.length)document.getElementById("cmc-board").innerHTML='<caption>No asset rows in this CMC snapshot. See category coverage above.</caption>';
+  }else feedError("cmc","CMC assets/list");
+  if(prem?.assets){
+    const syms=Object.keys(prem.assets),date=prem.as_of;
+    document.getElementById("prem-meta").innerHTML=`${syms.length} underlyings`+provenance("CMC quotes/latest",date,recent(date)?"live":"snapshot");
+    document.getElementById("prem-board").innerHTML=table(["Underlying","Blended average","Wrappers: premium (+) / discount (−)","Tokenized mcap"],syms.sort((a,b)=>(prem.assets[b].tokenized_market_cap??-1)-(prem.assets[a].tokenized_market_cap??-1)).map(sym=>{
+      const a=prem.assets[sym],asOf=a.last_updated||date,tokens=a.tokens||[],ok=tokens.filter(x=>Number.isFinite(x.premium_pct)&&Math.abs(x.premium_pct)<20);
+      return `<tr><td><strong>${esc(sym)}</strong><span class="chains-cell"> ${esc(a.name)}</span>${provenance("CMC",asOf,recent(asOf)?"live":"snapshot")}</td><td>${financial(a.average_tokenized_price,asOf)}</td><td class="premium">${ok.length?ok.slice(0,5).map(x=>`${esc(x.symbol)} <span class="chains-cell">${esc(x.issuer)}</span> <b class="${x.premium_pct>=0?"p":"d"}">${percent(x.premium_pct)}</b>`).join(" · "):"Unavailable: no comparable priced wrappers."}${tokens.length>ok.length?` <span class="chains-cell">${tokens.length-ok.length} missing prices or excluded deviations of 20% or more.</span>`:""}</td><td class="tvl">${financial(a.tokenized_market_cap,asOf)}</td></tr>`;
+    }));
+    if(!syms.length)document.getElementById("prem-board").innerHTML='<caption>No wrapper quotes in this snapshot.</caption>';
+  }else feedError("prem","CMC quotes/latest");
+  if(Array.isArray(iss?.issuers)){
+    const date=iss.as_of;
+    document.getElementById("iss-meta").innerHTML=`${iss.issuers.length} issuers`+provenance("CMC issuers/list",date,recent(date)?"live":"snapshot");
+    document.getElementById("iss-board").innerHTML=table(["Issuer","Tokens issued","On this ledger"],iss.issuers.map(x=>`<tr><td>${x.website?`<a class="pname" href="${esc(x.website)}" target="_blank" rel="noopener">${esc(x.name)}</a>`:esc(x.name)}</td><td>${financial(x.num_tokens,date,n=>n.toLocaleString("en-US"))}</td><td>${x.ledger_vault_id?`<a href="#v-${esc(x.ledger_vault_id)}">View verified terms ↑</a>`:"No verified entry linked"}</td></tr>`));
+    if(!iss.issuers.length)document.getElementById("iss-board").innerHTML='<caption>No issuers in this snapshot.</caption>';
+  }else feedError("iss","CMC issuers/list");
 }
 
 function buildRail(){
-  const rail = document.getElementById("rail");
-  const counts = {all: VAULTS.length};
-  VAULTS.forEach(v => counts[v.asset_class]=(counts[v.asset_class]||0)+1);
-  rail.innerHTML = [`<button class="chip" data-k="all" aria-pressed="true">All · ${counts.all}</button>`]
-    .concat(CLASS_ORDER.filter(k=>counts[k]).map(k =>
-      `<button class="chip" data-k="${k}" aria-pressed="false">${CLASS_META[k].name} · ${counts[k]}</button>`)).join("");
-  rail.addEventListener("click", e => {
-    const b = e.target.closest(".chip"); if(!b) return;
-    state.klass = b.dataset.k;
-    rail.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c===b ? "true":"false"));
-    render();
-  });
+  const anyQ = state.region!=="any" || state.ticket>0 || state.kyc!=="any";
+  const matches = VAULTS.filter(v=>!anyQ || eligible(v));
+  const counts = {all: matches.length};
+  matches.forEach(v=>counts[v.asset_class]=(counts[v.asset_class]||0)+1);
+  document.getElementById("rail").innerHTML = ["all",...CLASS_ORDER].map(k=>`<button class="chip" data-k="${k}" title="${k==="basis_yield"?"Basis-trade: seeking spot/derivative price or funding differences; returns can reverse.":"Count matching the active eligibility filters"}" aria-pressed="${state.klass===k}">${k==="all"?"All":CLASS_META[k].name} · ${counts[k]||0}</button>`).join("");
 }
+document.getElementById("rail").addEventListener("click",e=>{ const b=e.target.closest("[data-k]"); if(b){state.klass=b.dataset.k;render();document.querySelector(`[data-k="${state.klass}"]`).focus({preventScroll:true});} });
+document.getElementById("active-filters").addEventListener("click",e=>{const b=e.target.closest("[data-clear]");if(!b)return;const key=b.dataset.clear;state[key]=key==="ticket"?0:key==="klass"?"all":"any";if(key!=="klass")document.getElementById("q-"+key).value=state[key];render();document.getElementById("v-reset").focus({preventScroll:true});});
+// Issuer links still work when eligibility filters have hidden their verified card.
+document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#v-"]');if(a&&!document.querySelector(a.getAttribute("href"))){document.getElementById("v-reset").click();}});
 
 ["q-region","q-ticket","q-kyc"].forEach(id => document.getElementById(id).addEventListener("change", e => {
   if(id==="q-region") state.region = e.target.value;
@@ -461,39 +516,47 @@ function buildRail(){
   render();
 }));
 document.getElementById("v-reset").addEventListener("click", ()=>{
-  state.region="any"; state.ticket=0; state.kyc="any";
+  state.region="any"; state.ticket=0; state.kyc="any"; state.klass="all";
   document.getElementById("q-region").value="any";
   document.getElementById("q-ticket").value="0";
   document.getElementById("q-kyc").value="any";
   render();
 });
 
-Promise.all([
-  fetch("/registry/vaults.enriched.json").then(r => r.ok ? r.json() : Promise.reject(r.status)),
-  fetch("/registry/tracked.json").then(r => r.ok ? r.json() : null).catch(() => null),
-  fetch("/registry/cmc_assets.json").then(r => r.ok ? r.json() : null).catch(() => null),
-  fetch("/registry/cmc_premiums.json").then(r => r.ok ? r.json() : null).catch(() => null),
-  fetch("/registry/cmc_issuers.json").then(r => r.ok ? r.json() : null).catch(() => null)
-]).then(([data, tracked, cmcAssets, cmcPrem, cmcIss]) => {
-  renderCmc(cmcAssets, cmcPrem, cmcIss);
-  VAULTS = data; TRACKED = tracked;
-  const asOf = data.find(v=>v.live && v.live.as_of);
-  const total = data.length + (tracked ? tracked.protocols.length : 0);
-  document.getElementById("updated").textContent =
-    `${data.length} verified · ${tracked ? tracked.protocols.length : 0} tracked · ${total} vaults` + (asOf ? ` · figures as of ${asOf.live.as_of.slice(0,10)}` : "");
-  document.getElementById("counts").textContent = total+" vaults · "+fmtUsd(
-    data.reduce((s,v)=>s+((v.live&&v.live.tvl_usd)||v.tvl_usd_approx||0),0) + (tracked ? tracked.protocols.reduce((s,r)=>s+r.tvl_usd,0) : 0))+" tracked TVL";
-  const fresh = data.filter(v => v.status === "new");
-  document.getElementById("newbanner").innerHTML = fresh.map(v => `
-    <span class="tagn">New on the ledger</span>
-    <span><strong>${v.name}</strong> — the first agent-addressable RWA vault (ERC-7540): a permissionless rail for AI agents plus a basic-KYC route for humans, from $100. <a href="#v-${v.id}">Jump to the entry ↓</a></span>`).join("");
-  buildRail();
-  render();
-  renderTracked();
-}).catch(() => {
-  document.getElementById("ledger").innerHTML = "<div class='vault'>The ledger failed to load its data (registry/vaults.enriched.json). If you're opening this file directly, serve the folder over HTTP instead.</div>";
-  document.getElementById("updated").textContent = "data unavailable";
-});
+let loading=false;
+async function loadData(){
+  if(loading)return; loading=true;
+  document.querySelectorAll('[data-retry]').forEach(b=>b.disabled=true);
+  const files=["vaults.enriched","tracked","cmc_assets","cmc_premiums","cmc_issuers"];
+  const results=await Promise.allSettled(files.map(async f=>{
+    const r=await fetch(`/registry/${f}.json`,{cache:"no-store",signal:AbortSignal.timeout(12000)});
+    if(!r.ok)throw new Error("Feed unavailable");return r.json();
+  }));
+  const [data,tracked,assets,prem,iss]=results.map(r=>r.status==="fulfilled"?r.value:null);
+  TRACKED=tracked;
+  renderCmc(assets,prem,iss);renderTracked();
+  if(Array.isArray(data)&&data.length&&data.every(v=>v.id&&v.access&&v.terms)){
+    VAULTS=data;
+    const trackedCount=Array.isArray(tracked?.protocols)?tracked.protocols.length:null;
+    document.getElementById("updated").textContent=`${data.length} verified · ${trackedCount??"unavailable"} tracked${trackedCount==null?"":` · ${data.length+trackedCount} total entries`} · source dates shown with each section or field`;
+    document.getElementById("counts").textContent=`${data.length} hand-verified entries. Tracked and CMC sections have market data only and are not filtered by the Eligibility Desk.`;
+    document.getElementById("newbanner").innerHTML=data.filter(v=>v.status==="new").map(v=>`<span class="tagn">New on the ledger</span> <a href="#v-${esc(v.id)}">${esc(v.name)} — view entry ↓</a>`).join("");
+    render();
+  }else{
+    VAULTS=[];
+    document.getElementById("ledger").innerHTML='<div class="vault" role="alert">Verified ledger unavailable. Your filters are saved. <button class="chip" data-retry>Retry data</button></div>';
+    document.getElementById("updated").textContent="Verified ledger unavailable; other feeds shown independently.";
+    document.getElementById("showing").textContent="Verified count unavailable";
+    document.getElementById("v-count").textContent="Unavailable";
+    document.getElementById("v-line").textContent="Eligibility cannot be checked until the ledger loads.";
+    document.getElementById("rail").innerHTML="";
+    document.getElementById("newbanner").innerHTML="";
+  }
+  loading=false;
+  document.querySelectorAll('[data-retry]').forEach(b=>b.disabled=false);
+}
+document.addEventListener("click",e=>{if(e.target.closest("[data-retry]"))loadData();if(e.target.closest('a[href="#glossary"]'))document.getElementById("glossary").open=true;});
+loadData();
 </script>
 </body>
 </html>

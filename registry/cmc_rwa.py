@@ -58,6 +58,12 @@ def get(path, **params):
     return body["data"]
 
 
+def sum_complete(rows, field):
+    """Missing contributions must not become a false zero or a full total."""
+    values = [row.get(field) for row in rows]
+    return round(sum(values)) if values and all(isinstance(v, (int, float)) for v in values) else None
+
+
 def main():
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     vaults = json.loads((HERE / "vaults.json").read_text())
@@ -80,17 +86,17 @@ def main():
         for x in a.get("rwa_assets", []):
             rows.append({
                 "symbol": x["symbol"], "name": x["name"], "rwa_id": x["rwa_id"], "rwa_rank": x.get("rwa_rank"),
-                "tokenized_market_cap": x.get("tokenized_market_cap") or 0,
+                "tokenized_market_cap": x.get("tokenized_market_cap"),
                 "average_tokenized_price": x.get("average_tokenized_price"),
-                "tokenized_volume_24h": x.get("tokenized_volume_24h") or 0,
+                "tokenized_volume_24h": x.get("tokenized_volume_24h"),
             })
         types[t] = {
             "count": a.get("total_size", len(rows)),
-            "tokenized_market_cap_top50": round(sum(r["tokenized_market_cap"] for r in rows)),
-            "volume_24h_top50": round(sum(r["tokenized_volume_24h"] for r in rows)),
+            "tokenized_market_cap_top50": sum_complete(rows, "tokenized_market_cap"),
+            "volume_24h_top50": sum_complete(rows, "tokenized_volume_24h"),
             "top": rows[:15],
         }
-    (HERE / "cmc_assets.json").write_text(json.dumps({"as_of": now, "types": types}, indent=2))
+    (HERE / "cmc_assets.json").write_text(json.dumps({"schema_version": 2, "as_of": now, "types": types}, indent=2))
 
     # 3) Wrapper premiums — two calls (batched symbols)
     prem = {}
