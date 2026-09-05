@@ -209,7 +209,17 @@ table.board { overflow: visible; }
   .q select { font-size: 16px; }
   .v-figures { gap: 12px; }
   .promo { overflow-x: auto; }
+  /* Fix actual table layout widths; max-width alone cannot constrain auto table cells. */
+  #iss-board { table-layout: fixed; width: 500px; min-width: 500px; }
+  #iss-board th, #iss-board td { overflow-wrap: anywhere; }
+  #iss-board th:first-child, #iss-board td:first-child { width: 140px; min-width: 140px; max-width: 140px; }
+  #iss-board th:nth-child(2) { width: 160px; }
+  #iss-board th:nth-child(3) { width: 200px; }
 }
+.help-trigger { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: help; text-decoration: underline dotted; text-underline-offset: 3px; }
+.help-trigger.data-state { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; }
+.help-trigger.stamp { font-size: 12px; padding: 2px 7px; border: 1px solid currentColor; }
+.context-help { position: fixed; z-index: 20; width: min(300px, calc(100vw - 24px)); padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: #0b164c; color: #eef2ff; font-size: 13px; line-height: 1.5; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
 </style>
 </head>
 <body>
@@ -227,10 +237,10 @@ table.board { overflow: visible; }
   <details class="glossary" id="glossary"><summary>Glossary &amp; data labels</summary><dl>
     <div><dt>KYC tiers</dt><dd>Know your customer: identity checks. Retail KYC is basic onboarding; accredited/professional and qualified purchaser tiers add financial eligibility rules; institutions-only excludes individual retail investors. Requirements vary by jurisdiction.</dd></div>
     <div><dt>Admitted</dt><dd>At least one investor tier from that region can apply. This does not mean every resident qualifies.</dd></div>
-    <div><dt>Qualified purchaser (QP)</dt><dd>A higher financial eligibility category than accredited investor. Check the issuer’s jurisdiction-specific requirements.</dd></div>
+    <div><dt>Qualified purchaser (QP)</dt><dd id="definition-qp">A higher financial eligibility category than accredited investor. Check the issuer’s jurisdiction-specific requirements.</dd></div>
     <div><dt>Wrapper vs blended</dt><dd>A wrapper is one issuer’s tokenized version of an asset. Its premium or discount is measured against CMC’s blended tokenized average, not the underlying stock-exchange price.</dd></div>
     <div><dt>Basis-trade</dt><dd>A strategy seeking the price or funding difference between spot assets and derivatives. Returns can fall or reverse.</dd></div>
-    <div><dt>Live / approx / snapshot</dt><dd>Live means a provider reading captured within 48 hours, not a streaming quote. Approx means an estimate or target. Snapshot means a dated record, or a provider reading older than 48 hours or without a usable date. Sources refresh daily; none of these labels guarantees returns.</dd></div>
+    <div><dt>Live / approx / snapshot</dt><dd id="definition-freshness">Live means a provider reading captured within 48 hours, not a streaming quote. Approx means an estimate or target. Snapshot means a dated record, or a provider reading older than 48 hours or without a usable date. Sources refresh daily; none of these labels guarantees returns.</dd></div>
     <div><dt>Unavailable / not covered</dt><dd>Unavailable means the value or feed could not be obtained. Not covered means a successful CMC category response reported no assets. A dash is never a zero yield.</dd></div>
   </dl></details>
   <section class="desk">
@@ -307,6 +317,8 @@ table.board { overflow: visible; }
     <p class="fine">Curated registry, hand-verified · live TVL &amp; APY from DeFiLlama · APY cross-checked via AskSurf · tokenized-asset data, wrapper premiums &amp; issuers from the <a href="https://coinmarketcap.com/api/documentation/pro-api-reference/real-world-assets" target="_blank" rel="noopener">CoinMarketCap RWA API</a> (#BuildwithCMC) · <span id="counts"></span></p>
   </footer>
 </main>
+<div id="context-help" class="context-help" role="tooltip" hidden></div>
+<script src="/ledger/context-help.js" defer></script>
 
 <script>
 const CLASS_META = {
@@ -331,8 +343,10 @@ const esc = s => String(s??"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",
 
 const recent = date => { const age = Date.now()-Date.parse(date); return Number.isFinite(age) && age>=-60000 && age<=48*3600000; };
 const statusOf = (n,date,kind="live") => !Number.isFinite(n) ? "unavailable" : kind==="approx" ? "approx" : kind==="snapshot" || !recent(date) ? "snapshot" : "live";
-function provenance(source,date,kind="snapshot") { return `<span class="data-note">${kind?`<span class="data-state">${kind}</span> · `:""}${esc(source)} · as of ${esc(typeof date==="string" && Number.isFinite(Date.parse(date)) ? date.slice(0,10) : "date not supplied")}</span>`; }
-function financial(n,date,format=fmtUsd,kind="live") { return `${Number.isFinite(n)?format(n):"Unavailable"} <small class="data-state">${statusOf(n,date,kind)}</small>`; }
+function helpLabel(label,key,classes="data-state") { return `<button type="button" class="help-trigger ${classes}" data-help="${key}" aria-label="About ${esc(label)}">${esc(label)}</button>`; }
+function statusLabel(kind) { return ["live","approx"].includes(kind) ? helpLabel(kind,"freshness") : `<span class="data-state">${esc(kind)}</span>`; }
+function provenance(source,date,kind="snapshot") { return `<span class="data-note">${kind?`${statusLabel(kind)} · `:""}${esc(source)} · as of ${esc(typeof date==="string" && Number.isFinite(Date.parse(date)) ? date.slice(0,10) : "date not supplied")}</span>`; }
+function financial(n,date,format=fmtUsd,kind="live") { return `${Number.isFinite(n)?format(n):"Unavailable"} ${statusLabel(statusOf(n,date,kind))}`; }
 const percent = n => `${n>0?"+":n<0?"−":""}${Math.abs(n).toFixed(2)}%`;
 const legacyCmc = (n,data) => data.schema_version!==2 && n===0 ? null : n;
 function apyOf(v){
@@ -386,7 +400,7 @@ function vaultHtml(v){
           ${v.status==="new" ? `<span class="stamp open">New</span>` : ""}
           ${v.access.agent_addressable ? `<span class="stamp agent">Agent addressable</span><span class="stamp open">No KYC · agents</span>` : ""}
           ${v.cmc ? `<span class="cmcbadge">CMC · ${v.cmc.num_tokens} token${v.cmc.num_tokens===1?"":"s"} issued</span>` : ""}
-          <a href="#glossary" title="KYC is identity verification; higher tiers add investor eligibility requirements." class="stamp ${kycClass}">${KYC_LABEL[v.terms.kyc]||esc(v.terms.kyc)}</a>
+          ${v.terms.kyc==="qualified_purchaser" ? helpLabel("QP only","qp",`stamp ${kycClass}`) : `<a href="#glossary" title="KYC is identity verification; higher tiers add investor eligibility requirements." class="stamp ${kycClass}">${KYC_LABEL[v.terms.kyc]||esc(v.terms.kyc)}</a>`}
           ${promo ? `<span class="stamp bonus">${esc(promo.badge || "Bonus live")}</span>` : ""}
           <span class="chainlist">${(v.chains||[]).slice(0,4).join(" · ")}${(v.chains||[]).length>4 ? " +"+(v.chains.length-4):""}</span>
         </div>
